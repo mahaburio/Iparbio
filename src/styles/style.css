@@ -207,6 +207,65 @@ li {
   width: 500px;
 }
 
+/* todo ~~~~~~~~~~ DISCOUNT-CHECKOUT-SECTION ~~~~~~~~~~ */
+
+.checkout-discount {
+  padding: 60px 0px;
+  background-color: var(--white-100);
+}
+
+.checkout-discount .discount-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 40px;
+  justify-content: center;
+}
+
+.checkout-discount .discount-cards .item {
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  font-size: 18px;
+  color: var(--white-100);
+  position: relative;
+}
+
+.checkout-discount .discount-cards .item .card-bg-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.checkout-discount .discount-cards .item .card-desc {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+}
+
+/* Help Section */
+
+.help-section {
+  position: relative;
+}
+
+.floating-bot {
+  position: fixed;
+  bottom: 70px;
+  right: 5%;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.floating-bot img {
+  width: 80px;
+}
+
+/* ! RESPONSIVE */
+
 @media screen and (max-width: 1440px) {
   .heading-title h1::after {
     width: 500px;
@@ -234,6 +293,17 @@ li {
 
   .best-sellers-section .heading-title h1::after {
     width: 120px;
+  }
+
+  /* Checkout Discount Cards */
+
+  .checkout-discount .discount-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .checkout-discount .discount-cards .item {
+    height: 450px;
   }
 }
 
@@ -264,6 +334,29 @@ li {
     line-height: 35px;
     font-size: 26px;
   }
+
+  .checkout-discount .discount-cards {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+
+  .checkout-discount .discount-cards .item {
+    height: 350px;
+  }
+
+  /* ? */
+  .benefits-section .ach-tt {
+    font-size: 18px;
+  }
+
+  .benefits-section .benefits-slider .product-img {
+    height: 75px;
+    width: 75px;
+  }
+
+  .benefits-section .benefits-slider .product-details h5 {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -278,10 +371,20 @@ li {
   .best-sellers-section .heading-title h1::after {
     width: 145px;
   }
+
+  /* Help Section */
+
+  .floating-bot {
+    bottom: 50px;
+  }
+
+  .floating-bot img {
+    width: 65px;
+  }
 }
 
 @media screen and (max-width: 500px) {
-  .arrow {
+  .featured-section .arrow {
     display: none;
   }
 
@@ -336,33 +439,5 @@ li {
   .container-fluid {
     max-width: 1200px;
     margin: 0 auto;
-  }
-}
-
-/* Hellp Section */
-
-.help-section {
-  position: relative;
-}
-
-.floating-bot {
-  position: fixed;
-  bottom: 70px;
-  right: 5%;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-.floating-bot img {
-  width: 80px;
-}
-
-@media screen and (max-width: 576px) {
-  .floating-bot {
-    bottom: 50px;
-  }
-
-  .floating-bot img {
-    width: 65px;
   }
 }

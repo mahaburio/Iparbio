@@ -1,0 +1,235 @@
+
+/* todo =================== community-section ===================== */
+
+.community-section {
+  padding: 50px 0px;
+  text-align: center;
+}
+
+.community-section .container {
+  background-color: var(--green-color);
+  height: 550px;
+  width: 100%;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.community-section .container .dashline-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../images/dashline-1.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 90%;
+  height: 100%;
+  position: relative;
+}
+
+.community-section .container .dashline-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  background-image: url("../images/dashline-2.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  background-size: contain;
+  position: relative;
+}
+
+.community-section .container .dashline-3 {
+  width: 75%;
+  background-image: url("../images/dashline-3.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.community-section .container .p-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.community-section .container .p-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.community-section .container .dashline-1 .img-1 {
+  position: absolute;
+  left: -5px;
+  top: 20%;
+}
+
+.community-section .container .dashline-1 .img-2 {
+  position: absolute;
+  left: 5px;
+  bottom: 15%;
+}
+
+.community-section .container .dashline-1 .img-3 {
+  position: absolute;
+  right: 5px;
+  bottom: 15%;
+}
+
+.community-section .container .dashline-2 .img-4 {
+  position: absolute;
+  right: 5px;
+  top: 15%;
+}
+
+.community-section .container .dashline-2 .leaf {
+  position: absolute;
+  left: -15px;
+  bottom: 30%;
+}
+
+.community-section .container .dashline-2 .face {
+  position: absolute;
+  right: -15px;
+  bottom: 25%;
+}
+
+.community-section .container .content h1 {
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--white-100);
+}
+
+.community-section .container .content .white-leaf img {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
+
+.community-section .container .content p {
+  font-family: "Roboto", serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--white-100);
+}
+
+.community-section .container .content .register-btn {
+  font-family: "Roboto", serif;
+  font-size: 23px;
+  font-weight: 400;
+  border: none;
+  background-color: var(--white-100);
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: var(--text-gray);
+  border: 1px solid var(--white-100);
+  transition: 0.3s ease;
+}
+
+.community-section .container .content .register-btn:hover {
+  background-color: var(--green-color);
+  color: var(--white-100);
+  border: 1px solid var(--white-100);
+  transition: 0.3s ease;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .community-section .container .content .white-leaf img {
+    height: 45px;
+    width: 45px;
+  }
+
+  .community-section .container .content h1 {
+    font-size: 40px;
+  }
+
+  .community-section .container .content p {
+    font-size: 20px;
+  }
+
+  .community-section .container .content .register-btn {
+    font-size: 20px;
+    padding: 8px 15px;
+  }
+
+  .community-section .container .p-img {
+    height: 45px;
+    width: 45px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .community-section {
+    padding: 50px 12px;
+  }
+
+  .community-section .container {
+    height: 275px;
+  }
+
+  .community-section .container .content .white-leaf img {
+    height: 27px;
+    width: 27px;
+  }
+
+  .community-section .container .content h1 {
+    font-size: 20px;
+  }
+
+  .community-section .container .content p {
+    font-size: 13px;
+  }
+
+  .community-section .container .content .register-btn {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .community-section .container .p-img {
+    height: 32px;
+    width: 32px;
+  }
+
+  .community-section .container .dashline-1 .img-1 {
+    display: none;
+  }
+
+  .community-section .container .dashline-1 .img-2 {
+    position: absolute;
+    left: 5px;
+    bottom: 15%;
+  }
+
+  .community-section .container .dashline-1 .img-3 {
+    display: none;
+  }
+
+  .community-section .container .dashline-1 .img-4 {
+    right: -10%;
+  }
+
+  .community-section .container .dashline-2 .leaf {
+    position: absolute;
+    left: -15px;
+    top: 10%;
+  }
+
+  .community-section .container .dashline-2 .face {
+    position: absolute;
+    right: -15px;
+    bottom: 15%;
+  }
+}

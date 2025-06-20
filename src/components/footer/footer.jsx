@@ -1,4 +1,6 @@
 import React from 'react';
+import '../../styles/footer/footer.css';
+
 const Footer = ({ footerDefault = true, footerOnlyDesc = false }) => {
   const renderCopyrightSection = () => (
     <div className="container">

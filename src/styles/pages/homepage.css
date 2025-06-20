@@ -134,6 +134,55 @@
   }
 }
 
+/* TODO ~~~~~~~~~ ABOUT-SECTION ~~~~~~~~~~~ */
+
+.about-section {
+  padding: 50px 0px;
+  background-color: var(--bg-gray);
+}
+
+.about-section .about-item {
+  border-bottom: 1px solid #dbdbdb;
+  cursor: pointer;
+  transition: 0.2s ease;
+  opacity: 0.3;
+}
+
+.about-section h4 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--black-100);
+}
+
+.about-section h5 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--green-color);
+}
+
+.about-section p {
+  color: var(--black-80);
+  font-size: 22px;
+  width: 95%;
+}
+
+.about-section .about-item.two {
+  opacity: 1;
+}
+
+.about-section .girl-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.about-section .girl-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 @media screen and (max-width: 1200px) {
   .product-grid .grid-item .img {
     height: 60px;
@@ -146,6 +195,21 @@
 
   .product-grid .grid-item .grid-details .desc {
     font-size: 16px;
+  }
+
+  /* ABout section */
+
+  .about-section h4 {
+    font-size: 26px;
+  }
+
+  .about-section h5 {
+    font-size: 16px;
+  }
+
+  .about-section p {
+    font-size: 16px;
+    width: 100%;
   }
 }
 
@@ -182,6 +246,40 @@
     gap: 3px;
     text-align: center;
   }
+
+  /* Logos Slider */
+
+  .logos-slider {
+    padding: 50px 0px;
+    background-color: var(--bg-gray);
+  }
+
+  .logos-slide .slide-item {
+    padding: 0px 20px;
+  }
+
+  .logos-slide .slide-item .dsc {
+    font-size: 14px;
+  }
+
+  /* About Section */
+
+  .about-row {
+    flex-direction: column-reverse;
+  }
+
+  .about-section h4 {
+    font-size: 20px;
+  }
+
+  .about-section h5 {
+    font-size: 16px;
+  }
+
+  .about-section p {
+    font-size: 15px;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -195,5 +293,20 @@
 
   .product-grid .grid-item .grid-details .desc span {
     display: none;
+  }
+
+  /* Logos Slider */
+
+  .logos-slide .slide-item img {
+    height: 50px;
+  }
+
+  .logos-slide .slide-item {
+    padding: 0px 20px;
+  }
+
+  #playPauseBtn {
+    top: -50px;
+    right: 20px;
   }
 }

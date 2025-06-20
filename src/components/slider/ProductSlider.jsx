@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery';
 import 'slick-carousel';
-import '../../styles/slider.css'
+import '../../styles/slider/slider.css'
 
 const ProductSliderInitialize = ({
   sectionClass = "featured-section",

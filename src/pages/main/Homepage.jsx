@@ -1,13 +1,23 @@
-import React from 'react';
-import { Header } from '../../components';
-import LogosSlider from '../../components/homepage/LogosSlider.jsx';
-import { HeroSection } from '../../components/common/HeroSection.jsx';
-import { ProductGridSection } from '../../components/homepage/ProductGridSection.jsx';
-import { Help } from '../../components/common/Help.jsx';
-import Footer from '../../components/footer/footer.jsx';
-import MainWrapper from '../../components/common/Mainwrapper.jsx';
 
-import ProductSliderInitialize from "../../components/slider/ProductSlider.jsx";
+import React, { useState } from "react";
+// Layout & Wrappers
+import MainWrapper from '../../components/common/Mainwrapper.jsx';
+import { Header } from '../../components';
+import Footer from '../../components/footer/footer.jsx';
+
+// Homepage Sections
+import { HeroSection } from '../../components/common/HeroSection.jsx';
+import { Help } from '../../components/common/Help.jsx';
+import CommunitySection from '../../components/common/Cta.jsx';
+import LogosSlider from '../../components/homepage/LogosSlider.jsx';
+import { ProductGridSection } from '../../components/homepage/ProductGridSection.jsx';
+import CheckoutCardsInitialize from '../../components/common/CheckoutCards.jsx';
+import {AboutSection} from '../../components/homepage/AboutSection.jsx';
+
+// Sliders
+import ProductSliderInitialize from '../../components/slider/ProductSlider.jsx';
+
+import '../../styles/pages/homepage.css';
 
 const featuredProducts = [
   {
@@ -93,11 +103,39 @@ const benefitsProducts = [
   },
 ]
 
+// 
+
+const discountCardsData = [
+  {
+    bgImg: "/images/card-img.webp",
+    discountText: "Get an extra 10% off at checkout!",
+    name: "Discover Vitamin"
+  },
+  {
+    bgImg: "/images/card-img.webp",
+    discountText: "Flat 15% off on first order!",
+    name: "New User Deal"
+  },
+  {
+    bgImg: "/images/card-img.webp",
+    discountText: "Buy 1 Get 1 Free for a limited time!",
+    name: "BOGO Offer"
+  }
+];
+
+
 function HomePage() {
+
+  const [user] = useState({
+    isLoggedIn: true,
+    name: "Alex Merry",
+    image: "/images/new-shop.webp"
+  });
+
   return (
     <MainWrapper className="homePage">
       {/* Header */}
-      <Header />
+      <Header user={user} />
 
       {/* Hero Section */}
       <HeroSection
@@ -110,17 +148,26 @@ function HomePage() {
       {/* Products Grid */}
       <ProductGridSection />
 
+      <AboutSection />
+
       {/* Product Slider */}
       <ProductSliderInitialize data={featuredProducts} />
 
       {/* Product Slider */}
-      <ProductSliderInitialize sectionClass='benefits-section' title='Benefits' sliderId='benefitsSlider' prevBtnId='prevBenefitsBtn' nextBtnId='nextBenefitsBtn' descTitle productDetailsPrice={false} data={benefitsProducts} />
+      <ProductSliderInitialize sectionClass='featured-section benefits-section' title='Benefits' sliderId='benefitsSlider' prevBtnId='prevBenefitsBtn' nextBtnId='nextBenefitsBtn' descTitle productDetailsPrice={false} data={benefitsProducts} />
 
       {/* Products Grid */}
       <LogosSlider />
 
       {/* Product Slider (Best Seller) */}
       <ProductSliderInitialize sectionClass='featured-section best-sellers-section' title='Best Sellers' sliderId='sellersSlider' prevBtnId='prevSellersBtn' nextBtnId='nextSellersBtn' data={featuredProducts} />
+
+      {/* Checkout Cards (Data dynamically Changable) */}
+      <CheckoutCardsInitialize discountCards={discountCardsData} />
+
+      {/* CTA Section (title, description, buttonText dynamically changeable) */}
+      <CommunitySection />
+
 
       {/* Help Section */}
       <Help />

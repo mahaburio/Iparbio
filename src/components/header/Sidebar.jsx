@@ -140,7 +140,7 @@ const SidebarComponent = () => {
               className="header d-flex align-items-center justify-content-between"
             >
               <div className="name fw-medium">Sort by</div>
-              <div className="arrow">
+              <div className="chev-down">
                 <i className="ri-arrow-down-s-line"></i>
               </div>
             </div>
@@ -173,7 +173,7 @@ const SidebarComponent = () => {
               className="header d-flex align-items-center justify-content-between"
             >
               <div className="name fw-medium">Benefits</div>
-              <div className="arrow">
+              <div className="chev-down">
                 <i className="ri-arrow-down-s-line"></i>
               </div>
             </div>
@@ -234,7 +234,7 @@ const SidebarComponent = () => {
               className="header d-flex align-items-center justify-content-between"
             >
               <div className="name fw-medium">Category</div>
-              <div className="arrow">
+              <div className="chev-down">
                 <i className="ri-arrow-down-s-line"></i>
               </div>
             </div>
@@ -288,7 +288,7 @@ const SidebarComponent = () => {
               className="header d-flex align-items-center justify-content-between"
             >
               <div className="name fw-medium">Brand</div>
-              <div className="arrow">
+              <div className="chev-down">
                 <i className="ri-arrow-down-s-line"></i>
               </div>
             </div>
