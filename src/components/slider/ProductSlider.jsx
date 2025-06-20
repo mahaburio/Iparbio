@@ -10,6 +10,8 @@ const ProductSliderInitialize = ({
   nextBtnId = "nextProductSlider",
   sliderId = "productSlider",
   productItemClass = "product-item",
+  descTitle = false,
+  productDetailsPrice = true,
   data = []
 }) => {
   useEffect(() => {
@@ -101,6 +103,13 @@ const ProductSliderInitialize = ({
             </button>
           </div>
         </div>
+
+        {descTitle && (
+          <p className="ach-tt mt-4">
+            Achieving Your Nutritional Goals is Easier Than You Think. Discover
+            Our Supportive Solutions.
+          </p>
+        )}
         <div className=" product-slider mt-5" id={sliderId}>
           {data.map((item, index) => (
             <div key={index} className={productItemClass}>
@@ -112,17 +121,23 @@ const ProductSliderInitialize = ({
               <div className="product-details">
                 <div className="product-name">{item.name}</div>
                 <p className="m-0 mb-2">{item.details}</p>
-                <div className="price">
-                  <div className="new-price">{item.price}</div>
-                </div>
-                <div className="prefered-price">{item.preferedPrice}</div>
-                <div className="btn-sec mt-3 text-center">
-                  <button className="green-btn">Add Order</button>
-                </div>
+
+                {productDetailsPrice && (
+                  <>
+                    <div className="price">
+                      <div className="new-price">{item.price}</div>
+                    </div>
+                    <div className="prefered-price">{item.preferedPrice}</div>
+                    <div className="btn-sec mt-3 text-center">
+                      <button className="green-btn">Add Order</button>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

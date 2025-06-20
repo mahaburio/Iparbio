@@ -1,4 +1,3 @@
-
 /* todo =================== FEATURED-SECTION ===================== */
 
 .featured-section {
@@ -61,12 +60,37 @@
 .product_page .product-item {
   border-radius: 4px;
   border: 1px solid transparent;
-  height: 420px !important;
+  height: 420px;
   width: 100%;
 }
 
 .product_page .product-item .product-header {
   height: 43%;
+}
+
+/* Benefits Section */
+
+.benefits-section {
+  padding: 50px 0px;
+}
+
+.benefits-section .ach-tt {
+  font-size: 24px;
+  color: var(--gray-100);
+  font-family: "Roboto", serif;
+}
+
+.benefits-section .benefits-slider .product-img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.benefits-section .benefits-slider .product-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 576px) {
@@ -188,13 +212,36 @@
   transition: 0.2s ease;
 }
 
-@media screen and (max-width: 450px) {
-  .product_page .product-item {
-    border-radius: 4px;
-    border: 1px solid transparent;
-    height: 350px !important;
-  }
+/* todo ~~~~~~~~~~ BENEFITS-SECTION ~~~~~~~~~~ */
+
+.benefits-section {
+  padding: 50px 0px;
 }
+
+.benefits-section .ach-tt {
+  font-size: 24px;
+  color: var(--gray-100);
+  font-family: "Roboto", serif;
+}
+
+.benefits-section .product-item .product-name{
+ font-size: 1.25rem;
+ margin-bottom: 8px;
+}
+
+.benefits-section .product-item .product-header .product-img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.benefits-section .product-item .product-header .product-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 
 @media screen and (max-width: 576px) {
   .featured-section {
@@ -249,5 +296,28 @@
 
   .product-item .green-btn {
     padding: 5px 12px;
+  }
+
+    /* ? */
+  .benefits-section .ach-tt {
+    font-size: 18px;
+  }
+
+.benefits-section .product-item .product-header .product-img {
+    height: 75px;
+    width: 75px;
+  }
+
+  .benefits-section .product-details h5 {
+    font-size: 18px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .product_page .product-item {
+    border-radius: 4px;
+    border: 1px solid transparent;
+    height: 350px !important;
   }
 }

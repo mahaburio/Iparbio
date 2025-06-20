@@ -1,4 +1,3 @@
-
 /* todo =================== PRODUCT-GRID-SECTION ===================== */
 
 .product-grid {
@@ -45,6 +44,94 @@
   font-family: "Roboto", serif;
   font-size: 18px;
   font-weight: 400;
+}
+
+/* todo ~~~~~~~~~~ LOGOS-SLIDER-SECTION ~~~~~~~~~~ */
+
+.logos-slider {
+  padding: 50px 0px;
+  background-color: var(--bg-gray);
+}
+
+.logos-slider .container {
+  position: relative;
+}
+
+.logos-slider .pause-icon button {
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  border: 1px solid var(--gray-40);
+  font-size: 22px;
+  color: var(--black-100);
+}
+
+#playPauseBtn {
+  cursor: pointer;
+  position: absolute;
+  top: -70px;
+  right: 10px;
+  color: var(--black-100);
+}
+
+#playPauseBtn i {
+  color: var(--black-100);
+}
+
+.paused #pauseIcon {
+  display: none;
+}
+
+.paused #playIcon {
+  display: block;
+}
+
+.logos {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+.logos-slide {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  animation-play-state: running;
+}
+
+.logos-slide.paused {
+  animation-play-state: paused;
+}
+
+.logos-slide .slide-item {
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  padding: 0px 30px;
+  text-align: center;
+}
+
+.logos-slide .slide-item img {
+  height: auto;
+  object-fit: cover;
+}
+
+.logos-slide .slide-item .dsc {
+  font-size: 16px;
+  color: var(--gray-100);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50%));
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -110,4 +197,3 @@
     display: none;
   }
 }
-

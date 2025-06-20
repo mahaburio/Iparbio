@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from '../../components';
+import LogosSlider from '../../components/homepage/LogosSlider.jsx';
 import { HeroSection } from '../../components/common/HeroSection.jsx';
 import { ProductGridSection } from '../../components/homepage/ProductGridSection.jsx';
 import { Help } from '../../components/common/Help.jsx';
@@ -46,7 +47,6 @@ const featuredProducts = [
     price: "$60",
     preferedPrice: "Preferred Price $95.99"
   },
-
   {
     name: "Daily Multivitamin",
     image: "/images/product-img-3.webp",
@@ -56,6 +56,42 @@ const featuredProducts = [
   },
 
 ];
+
+// Benefits product
+
+const benefitsProducts = [
+  {
+    name: "Mood & Relax",
+    image: "/images/mood-rl.webp",
+    details: "Natural And Powerful",
+  },
+  {
+    name: "Kids",
+    image: "/images/kids.webp",
+    details: "Natural And Powerful",
+  },
+  {
+    name: "Mood & Relax",
+    image: "/images/mood-rl.webp",
+    details: "Natural And Powerful",
+  },
+  {
+    name: "Mood & Relax",
+    image: "/images/kids.webp",
+    details: "Natural And Powerful",
+
+  },
+  {
+    name: "Mood & Relax",
+    image: "/images/mood-rl.webp",
+    details: "Natural And Powerful",
+  },
+  {
+    name: "Mood & Relax",
+    image: "/images/kids.webp",
+    details: "Natural And Powerful",
+  },
+]
 
 function HomePage() {
   return (
@@ -76,6 +112,15 @@ function HomePage() {
 
       {/* Product Slider */}
       <ProductSliderInitialize data={featuredProducts} />
+
+      {/* Product Slider */}
+      <ProductSliderInitialize sectionClass='benefits-section' title='Benefits' sliderId='benefitsSlider' prevBtnId='prevBenefitsBtn' nextBtnId='nextBenefitsBtn' descTitle productDetailsPrice={false} data={benefitsProducts} />
+
+      {/* Products Grid */}
+      <LogosSlider />
+
+      {/* Product Slider (Best Seller) */}
+      <ProductSliderInitialize sectionClass='featured-section best-sellers-section' title='Best Sellers' sliderId='sellersSlider' prevBtnId='prevSellersBtn' nextBtnId='nextSellersBtn' data={featuredProducts} />
 
       {/* Help Section */}
       <Help />

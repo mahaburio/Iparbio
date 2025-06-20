@@ -19,3 +19,31 @@ export function tabsInitialize() {
   });
 }
 
+import { useEffect } from "react";
+
+export function useLogoSlidePausePlay() {
+  useEffect(() => {
+    const logosSlide = document.querySelector(".logos-slide");
+    const playPauseBtn = document.querySelector("#playPauseBtn");
+
+    if (!logosSlide || !playPauseBtn) return;
+
+    // Duplicate content for infinite effect
+    logosSlide.innerHTML += logosSlide.innerHTML;
+
+    const toggleAnimation = () => {
+      const isPaused = logosSlide.style.animationPlayState === "paused";
+      logosSlide.style.animationPlayState = isPaused ? "running" : "paused";
+      playPauseBtn.classList.toggle("paused", !isPaused);
+    };
+
+    playPauseBtn.addEventListener("click", toggleAnimation);
+
+    // Cleanup
+    return () => {
+      playPauseBtn.removeEventListener("click", toggleAnimation);
+    };
+  }, []);
+}
+
+
