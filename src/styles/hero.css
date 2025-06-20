@@ -1,0 +1,274 @@
+
+/* todo =================== HERO-SECTION ===================== */
+
+.hero-section {
+  background-color: var(--bg-gray);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-section .container {
+  position: relative;
+}
+
+/* ? Subtotal Black card */
+.subtotal-card {
+  border-radius: 8px;
+  background-color: var(--black-100);
+  color: var(--white-100);
+  padding: 12px 15px;
+  font-size: 16px;
+  gap: 20px;
+  font-weight: 420;
+  position: absolute;
+  top: 105%;
+  right: 12px;
+  z-index: 999;
+}
+
+.subtotal-card a {
+  text-decoration: none;
+  color: var(--green-color);
+  position: relative;
+}
+
+.subtotal-card a::after {
+  content: "";
+  height: 1px;
+  top: 20px;
+  left: 0;
+  width: 0%;
+  position: absolute;
+  background-color: var(--green-color);
+  transition: 0.2s ease;
+}
+
+.subtotal-card a:hover::after {
+  width: 100%;
+}
+
+.subtotal-with-close {
+  gap: 20px;
+  top: 140%;
+  display: none;
+}
+
+.shoppage-new .subtotal-with-close {
+  gap: 20px;
+  top: 110%;
+  display: none;
+}
+
+@keyframes zoomin {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.subtotal-with-close.visible {
+  display: flex;
+  animation: zoomin 0.3s ease;
+}
+
+.subtotal-card .close-subtotal {
+  cursor: pointer;
+}
+
+.hero-section .left-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-section .title {
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--black-100);
+}
+
+.hero-section .desc {
+  font-family: "Roboto", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--text-gray);
+  margin-top: 10px;
+}
+
+.hero-section .btn-sec {
+  margin-top: 25px;
+  display: flex;
+  gap: 12px;
+}
+
+.hero-section .btn-sec button {
+  padding: 10px 20px;
+  font-size: 22px;
+  border-radius: 40px;
+}
+
+.hero-section .btn-sec .shop-btn {
+  background-color: var(--green-color);
+  color: var(--white-100);
+  border: 1px solid var(--green-color);
+  transition: 0.3s ease;
+}
+
+.hero-section .btn-sec .shop-btn:hover {
+  background-color: var(--white-100);
+  color: var(--green-color);
+  transition: 0.3s ease;
+}
+
+.hero-section .btn-sec .register-btn {
+  background-color: var(--white-color);
+  color: var(--text-gray);
+  border: 1px solid var(--text-gray);
+  transition: 0.3s ease;
+}
+
+.hero-section .right-img {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-section .right-img .green-leaf {
+  position: relative;
+  width: 700px;
+}
+
+.hero-section .right-img .green-leaf img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero-section .right-img .person-img {
+  width: 470px;
+  height: auto;
+  position: absolute;
+  left: 15%;
+  bottom: 0;
+}
+
+.hero-section .right-img .person-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-section .title {
+    font-size: 64px;
+    line-height: 1.1;
+  }
+
+  .hero-section .desc {
+    font-size: 19px;
+  }
+
+  .hero-section .right-img .green-leaf {
+    position: relative;
+    width: 100%;
+  }
+
+  .hero-section .right-img .person-img {
+    width: 400px;
+    height: 480px;
+  }
+
+  .hero-section .btn-sec button {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .hero-section .hero-content {
+    padding-top: 80px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-section .btn-sec {
+    justify-content: center;
+  }
+
+  .hero-section .hero-content .right-img {
+    margin-top: 50px;
+  }
+
+  .hero-section .hero-content .right-img .green-leaf {
+    width: 100%;
+  }
+
+  .hero-section .right-img .person-img {
+    width: auto;
+    height: 550px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section .right-img .person-img {
+    width: auto;
+    height: 85%;
+  }
+
+  .hero-section .right-img .person-img img {
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero-section .hero-content {
+    padding-top: 100px;
+  }
+
+  /* ? Subtotal Black card */
+  .subtotal-card {
+    font-size: 14px;
+    padding: 10px 10px;
+  }
+
+  .hero-section .title {
+    font-size: 36px;
+  }
+
+  .hero-section .desc {
+    font-size: 16px;
+    width: 70%;
+  }
+
+  .hero-section .left-content {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-section .hero-content .right-img {
+    margin-top: 30px;
+  }
+
+  .hero-section .hero-content .right-img .green-leaf {
+    width: 100%;
+  }
+
+  .hero-section .right-img .person-img {
+    width: auto;
+    height: 80%;
+  }
+
+  .hero-section .btn-sec button {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hero-section .right-img .person-img {
+    height: 85%;
+  }
+}

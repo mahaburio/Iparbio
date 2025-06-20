@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.7",
+    "jquery": "^3.7.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2",
     "react-transition-group": "^4.4.5",
     "remixicon": "^4.6.0",
-    "slick": "^1.12.2"
+    "slick": "^1.12.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

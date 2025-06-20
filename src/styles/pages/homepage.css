@@ -1,0 +1,113 @@
+
+/* todo =================== PRODUCT-GRID-SECTION ===================== */
+
+.product-grid {
+  padding: 60px 0px;
+}
+
+.product-grid .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px 10px;
+}
+
+.product-grid .grid-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.product-grid .grid-item .img {
+  height: 70px;
+  width: 70px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--black-100);
+}
+
+.product-grid .grid-item .grid-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-grid .grid-item .grid-details .name {
+  font-family: "Roboto", serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.product-grid .grid-item .grid-details .desc {
+  font-family: "Roboto", serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1200px) {
+  .product-grid .grid-item .img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .product-grid .grid-item .grid-details .name {
+    font-size: 16px;
+  }
+
+  .product-grid .grid-item .grid-details .desc {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .product-grid .grid-item .img {
+    height: 45px;
+    width: 45px;
+  }
+
+  .product-grid .grid-item .img img {
+    height: 25px;
+    width: 20px;
+    object-fit: contain;
+  }
+
+  .product-grid .grid-item .grid-details .name {
+    font-size: 14px;
+  }
+
+  .product-grid .grid-item .grid-details .desc {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-grid .grid-item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-grid .grid-item .grid-details {
+    align-items: center;
+    gap: 3px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .product-grid {
+    padding: 60px 0px;
+  }
+
+  .product-grid .container {
+    gap: 10px 5px;
+  }
+
+  .product-grid .grid-item .grid-details .desc span {
+    display: none;
+  }
+}
+
