@@ -1,12 +1,83 @@
-# React + Vite
+# IPAR React Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Live Demo
 
-Currently, two official plugins are available:
+👉 [Preview](https://iparbio.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📦 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ React (with Vite)
+- 🎨 CSS / Bootstrap CSS
+- 🧠 jQuery (for sliders)
+- 🧰 Slick Carousel
+- 📦 Netlify (Deployment)
+
+---
+
+## 📁 Folder Structure
+
+public/
+├── flag/
+├── images/
+└── svg/
+src/
+├── assets/
+├── components/
+│ ├── common/
+│ ├── footer/
+│ ├── header/
+│ ├── homepage/
+│ ├── slider/
+│ └── index.js
+├── hooks/
+├── pages/
+│ ├── dashboard/
+│ └── main/
+│ ├── HomePage.jsx
+│ └── ProductPage.jsx
+├── styles/
+│ ├── community/
+│ ├── footer/
+│ ├── header/
+│ ├── hero-section/
+│ ├── pages/
+│ ├── slider/
+│ └── style.css
+├── utils/
+│ └── custom.js
+├── App.jsx
+├── main.jsx
+└── index.html
+
+---
+
+## 🛠️ Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/mahaburio/Iparbio.git
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+
+---
+
+### 📌 Tips
+
+- Store the file as `README.md` in the root of your project.
+- Keep it clean and up-to-date.
+
+---
+
+Want me to auto-generate a `README.md` from your current project structure? Just share your tech stack and directory tree.
+
+
+👤 Author
+Made with ❤️ by Mahabur Rahman
+```
