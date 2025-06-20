@@ -1,0 +1,409 @@
+/* todo =================== FOOTER-SECTION ===================== */
+
+.footer-section {
+  background-color: var(--bg-gray);
+  width: 100%;
+  padding: 30px 50px;
+}
+
+.footer-section h4 {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 22px;
+}
+
+.footer-section .input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  height: 54px;
+  padding: 0px 15px;
+  justify-content: space-between;
+  border-radius: 50px;
+}
+
+.footer-section .input-wrapper input {
+  height: 100%;
+  width: calc(100% - 55px);
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Roboto", serif;
+  color: var(--black-100);
+}
+
+.footer-section .input-wrapper input::placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Roboto", serif;
+  color: var(--black-100);
+}
+
+.footer-section .input-wrapper .send-icon {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  background-color: var(--green-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid var(--green-color);
+  transition: 0.3s ease;
+}
+
+.footer-section .input-wrapper .send-icon:hover {
+  background-color: var(--white-100);
+  transition: 0.3s ease;
+}
+
+.footer-section .input-wrapper .send-icon i {
+  color: var(--white-100);
+  font-size: 28px;
+  position: relative;
+  left: -2px;
+  top: 2px;
+  transition: 0.3s ease;
+}
+
+.footer-section .input-wrapper .send-icon:hover i {
+  color: var(--green-color);
+  transition: 0.3s ease;
+}
+
+.footer-section p {
+  font-size: 18px;
+  font-family: "Roboto", serif;
+  line-height: 1.2;
+  margin-top: 15px;
+}
+
+.footer-section .listed-item {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section .listed-item li {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.footer-section .listed-item li a {
+  text-decoration: none;
+  color: var(--black-100);
+  font-size: 19px;
+  font-weight: 400;
+  font-family: "Roboto", serif;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+
+.footer-section .listed-item li a:hover {
+  color: var(--green-color);
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+
+.footer-section .icon {
+  display: grid;
+  grid-template-columns: 48px 48px 48px 48px;
+  gap: 10px;
+}
+
+.footer-section .icon .icon-item {
+  background-color: var(--green-color);
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 45px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: 1px solid var(--green-color);
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+
+.footer-section .icon .icon-item.micro-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-100);
+}
+
+.footer-section .icon .icon-item.micro-icon svg path {
+  fill: var(--green-color);
+}
+
+.footer-section .icon .icon-item.micro-icon:hover svg path {
+  fill: var(--white-100);
+  transition: 0.3s ease;
+}
+
+.footer-section .icon .icon-item.micro-icon:hover {
+  background-color: var(--green-color);
+  transition: 0.3s ease;
+}
+
+.footer-section .icon .icon-item svg {
+  height: 32px;
+  width: 32px;
+}
+
+.footer-section .icon .icon-item svg path {
+  fill: var(--white-100);
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+
+.footer-section .icon .icon-item:hover {
+  background-color: var(--white-100);
+  transition: 0.3s ease;
+}
+
+.footer-section .icon .icon-item:hover i {
+  color: var(--green-color);
+  transition: 0.3s ease;
+}
+
+.footer-section .icon .icon-item i {
+  color: var(--white-100);
+  font-size: 28px;
+  transition: 0.3s ease;
+}
+
+.footer-section .follow-us-desc {
+  font-size: 16px;
+  margin-top: 10px;
+  color: var(--gray-100);
+}
+
+/* ? ~~~~~~~~~~ COPYRIGHT-SECTION ~~~~~~~~~~ */
+
+.copyright-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.copyright-section .copyright-year {
+  font-size: 19px;
+  font-family: "Roboto", serif;
+  font-weight: 400;
+}
+
+.copyright-section .logo img {
+  width: 120px;
+}
+
+.copyright-section .privacy a {
+  text-decoration: none;
+  color: var(--black-100);
+  border-right: 2px solid var(--black-100);
+  font-size: 19px;
+  font-family: "Roboto", serif;
+  padding: 0px 10px;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+
+.copyright-section .privacy a:hover {
+  color: var(--green-color);
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+
+.copyright-section .privacy a:last-child {
+  border: none;
+}
+
+/* ! RESPONSIVE START FOR (FOOTER-SECTION) */
+
+@media screen and (max-width: 1200px) {
+  .footer-section h4 {
+    font-size: 22px;
+  }
+
+  .footer-section p {
+    font-size: 17px;
+    margin-top: 12px;
+  }
+
+  .footer-section .listed-item li a {
+    font-size: 18px;
+  }
+
+  .footer-section .input-wrapper {
+    height: 50px;
+  }
+
+  .footer-section .input-wrapper input {
+    font-size: 18px;
+  }
+
+  .footer-section .input-wrapper input::placeholder {
+    font-size: 18px;
+  }
+
+  .footer-section .input-wrapper .send-icon {
+    height: 38px;
+    width: 38px;
+  }
+
+  .footer-section .input-wrapper .send-icon i {
+    font-size: 20px;
+  }
+
+  .footer-section .icon .icon-item {
+    background-color: var(--green-color);
+    height: 38px;
+    width: 38px;
+    line-height: 38px;
+  }
+
+  .footer-section .icon .icon-item i {
+    font-size: 22px;
+  }
+
+  .footer-section .icon .icon-item svg {
+    height: 25px;
+    width: 25px;
+  }
+
+  .copyright-section .copyright-year {
+    font-size: 18px;
+  }
+
+  .copyright-section .logo img {
+    width: 100px;
+  }
+
+  .copyright-section .privacy a {
+    border-right: 1px solid var(--black-100);
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* ?~~~~~~ COPYRIGHT-RESPONSIVE ~~~~~~ */
+
+  .copyright-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-section {
+    padding: 30px 15px;
+  }
+
+  .footer-section p {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 3px;
+  }
+
+  .footer-section .listed-item li {
+    margin-top: 10px;
+  }
+
+  .footer-section .listed-item li a {
+    font-size: 16px;
+  }
+
+  .footer-section .input-wrapper {
+    height: 45px;
+  }
+
+  .footer-section .input-wrapper input {
+    font-size: 16px;
+  }
+
+  .footer-section .input-wrapper input::placeholder {
+    font-size: 16px;
+  }
+
+  .footer-section .input-wrapper .send-icon {
+    height: 33px;
+    width: 33px;
+  }
+
+  .footer-section .input-wrapper .send-icon i {
+    font-size: 20px;
+  }
+
+  .footer-section .icon {
+    grid-template-columns: 33px 33px;
+  }
+
+  .footer-section .icon .icon-item {
+    background-color: var(--green-color);
+    height: 33px;
+    width: 33px;
+    line-height: 33px;
+  }
+
+  .footer-section .icon .icon-item i {
+    font-size: 20px;
+  }
+
+  .footer-section .follow-us-desc {
+    font-size: 13px;
+  }
+
+  /* ?~~~~~~ COPYRIGHT-RESPONSIVE ~~~~~~ */
+
+  .copyright-section {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .copyright-section .copyright-year {
+    font-size: 16px;
+    order: 2;
+  }
+
+  .copyright-section .logo {
+    order: 1;
+  }
+
+  .copyright-section .privacy {
+    order: 3;
+  }
+
+  .copyright-section .logo img {
+    width: 80px;
+  }
+
+  .copyright-section .privacy a {
+    border-right: 1px solid var(--black-100);
+    font-size: 16px;
+  }
+}

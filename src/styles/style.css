@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", serif;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --green-color: #95c12b;
+  --orange-color: #ffbe5b;
+  --bg-gray: #f9f9f9;
+  --white-100: #ffffff;
+  --text-gray: #3e3e54;
+  --gray-100: #707070;
+  --gray-60: #3e3e5499;
+  --gray-40: #3e3e5466;
+  --black-100: #000000;
+  --black-50: #00000050;
+  --black-80: #00000080;
+  --border-color: #e0e0e0;
+}
+
+.green-btn {
+  background-color: var(--green-color);
+  color: var(--white-100);
+  transition: 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 35px;
+  border: 1px solid var(--green-color);
+}
+
+.green-btn:hover {
+  background-color: var(--white-100);
+  color: var(--green-color);
+  transition: 0.3s ease;
+}
+
+.black-btn {
+  background-color: var(--black-100);
+  color: var(--white-100);
+  transition: 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 35px;
+  border: 1px solid var(--black-100);
+}
+
+.black-btn a {
+  text-decoration: none;
+  color: var(--white-100);
+  transition: 0.3s ease;
+}
+
+.black-btn:hover {
+  background-color: var(--white-100);
+  color: var(--black-100);
+  transition: 0.3s ease;
+}
+
+.black-btn:hover a {
+  color: var(--black-100);
+  transition: 0.3s ease;
+}
+
+.black-btn-sm {
+  padding: 6px 20px;
+}
+
+.gray-btn {
+  padding: 7px 20px;
+  background-color: #f2f2f2;
+  border: none;
+  font-size: 16px;
+  color: var(--black-100);
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+.green-btn-sm {
+  padding: 5px 15px;
+}
+
+.tsp-btn {
+  padding: 5px 15px;
+  background-color: transparent;
+  border: none;
+  color: var(--black-100);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+.green-color {
+  color: var(--green-color);
+}
+
+
+@media screen and (min-width: 1240px) {
+  .container,
+  .nav,
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Hellp Section */
+
+.help-section {
+  position: relative;
+}
+
+.floating-bot {
+  position: fixed;
+  bottom: 70px;
+  right: 5%;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.floating-bot img {
+  width: 80px;
+}
+
+@media screen and (max-width: 576px) {
+  .floating-bot {
+    bottom: 50px;
+  }
+
+  .floating-bot img {
+    width: 65px;
+  }
+}
