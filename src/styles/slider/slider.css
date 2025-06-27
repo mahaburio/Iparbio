@@ -7,7 +7,6 @@
 .product-slider,
 .benefits-slider,
 .sellers-slider {
-  display: flex !important;
   gap: 10px;
   overflow-x: auto;
   white-space: nowrap;
@@ -18,8 +17,8 @@
 
 .slick-slider .slick-list,
 .slick-slider .slick-track {
-  display: flex !important;
-  align-items: stretch !important;
+  display: flex;
+  align-items: stretch;
 }
 
 .slick-list {
@@ -34,12 +33,12 @@
 }
 
 .slick-slide {
-  display: flex !important;
-  align-items: stretch !important;
+  display: flex;
+  align-items: stretch;
 }
 
 .slick-slide > div {
-  width: 100% !important;
+  width: 100%;
 }
 
 .product-slider::-webkit-scrollbar,
@@ -57,12 +56,20 @@
 }
 
 /* ! ~~~~~~~~~ PRODUCT_PAGE ~~ ~~~~~~ */
+
 .product_page .product-item {
   border-radius: 4px;
   border: 1px solid transparent;
-  height: 420px;
+  align-items: stretch;
   width: 100%;
+  height: 100%;
+  max-height: 430px;
 }
+
+.slick-slide > div{
+  height: 100% !important;
+}
+
 
 .product_page .product-item .product-header {
   height: 43%;

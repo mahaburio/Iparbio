@@ -8,6 +8,7 @@
   font-family: "Poppins", serif;
   scroll-behavior: smooth;
   scrollbar-width: thin;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -33,6 +34,37 @@ body {
   --black-50: #00000050;
   --black-80: #00000080;
   --border-color: #e0e0e0;
+}
+
+.subtotal-card {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--black-100);
+  padding: 12px 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  align-items: center;
+  border-radius: 8px;
+  gap: 20px;
+  z-index: 9999;
+  color: var(--white-100);
+}
+.subtotal-card.visible {
+  display: flex;
+}
+.subtotal-card .sb-tl {
+  font-weight: 600;
+}
+.subtotal-card .close-subtotal {
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--white-100);
+  font-weight: 600;
+}
+
+.subtotal-card a {
+  color: var(--green-color);
 }
 
 .green-btn {

@@ -11,70 +11,6 @@
   position: relative;
 }
 
-/* ? Subtotal Black card */
-.subtotal-card {
-  border-radius: 8px;
-  background-color: var(--black-100);
-  color: var(--white-100);
-  padding: 12px 15px;
-  font-size: 16px;
-  gap: 20px;
-  font-weight: 420;
-  position: absolute;
-  top: 105%;
-  right: 12px;
-  z-index: 999;
-}
-
-.subtotal-card a {
-  text-decoration: none;
-  color: var(--green-color);
-  position: relative;
-}
-
-.subtotal-card a::after {
-  content: "";
-  height: 1px;
-  top: 20px;
-  left: 0;
-  width: 0%;
-  position: absolute;
-  background-color: var(--green-color);
-  transition: 0.2s ease;
-}
-
-.subtotal-card a:hover::after {
-  width: 100%;
-}
-
-.subtotal-with-close {
-  gap: 20px;
-  top: 140%;
-  display: none;
-}
-
-.shoppage-new .subtotal-with-close {
-  gap: 20px;
-  top: 110%;
-  display: none;
-}
-
-@keyframes zoomin {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-}
-
-.subtotal-with-close.visible {
-  display: flex;
-  animation: zoomin 0.3s ease;
-}
-
-.subtotal-card .close-subtotal {
-  cursor: pointer;
-}
-
 .hero-section .left-content {
   display: flex;
   flex-direction: column;
@@ -226,12 +162,6 @@
 @media screen and (max-width: 576px) {
   .hero-section .hero-content {
     padding-top: 100px;
-  }
-
-  /* ? Subtotal Black card */
-  .subtotal-card {
-    font-size: 14px;
-    padding: 10px 10px;
   }
 
   .hero-section .title {

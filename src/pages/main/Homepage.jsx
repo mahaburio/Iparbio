@@ -124,6 +124,41 @@ const discountCardsData = [
 ];
 
 
+// For Product Grid Section
+const productData = [
+  {
+    name: 'NUTRITION',
+    image: '../svg/leaf.svg',
+    alt: 'Leaf icon',
+  },
+  {
+    name: 'SUNCELLA',
+    image: '../svg/sincella.svg',
+    alt: 'Sincella icon',
+  },
+  {
+    name: 'PERSONAL CARE',
+    image: '../svg/face.svg',
+    alt: 'Face icon',
+  },
+  {
+    name: 'NUTRITION',
+    image: '../svg/leaf.svg',
+    alt: 'Leaf icon',
+  },
+  {
+    name: 'SUNCELLA',
+    image: '../svg/sincella.svg',
+    alt: 'Sincella icon',
+  },
+  {
+    name: 'PERSONAL CARE',
+    image: '../svg/face.svg',
+    alt: 'Face icon',
+  }
+];
+
+
 function HomePage() {
 
   const [user] = useState({
@@ -146,12 +181,12 @@ function HomePage() {
       />
 
       {/* Products Grid */}
-      <ProductGridSection />
+      <ProductGridSection productData={productData} />
 
       <AboutSection />
 
       {/* Product Slider */}
-      <ProductSliderInitialize data={featuredProducts} />
+      <ProductSliderInitialize title={'Featured'} data={featuredProducts} />
 
       {/* Product Slider */}
       <ProductSliderInitialize sectionClass='featured-section benefits-section' title='Benefits' sliderId='benefitsSlider' prevBtnId='prevBenefitsBtn' nextBtnId='nextBenefitsBtn' descTitle productDetailsPrice={false} data={benefitsProducts} />

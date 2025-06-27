@@ -1,67 +1,25 @@
-import React from 'react'
+import React from 'react';
 import '../../styles/pages/homepage.css';
 
-export const ProductGridSection = () => {
+
+export const ProductGridSection = ({ productData }) => {
   return (
-    <>
-      <section className="product-grid">
-        <div className="container">
-          <div className="grid-item">
+    <section className="product-grid">
+      <div className="container">
+        {productData.map((item, index) => (
+          <div className="grid-item" key={index}>
             <div className="img">
-              <a href=""><img src="../svg/leaf.svg" alt="" /></a>
+              <img src={item.image} alt={item.alt} />
             </div>
             <div className="grid-details">
-              <div className="name">NUTRITION</div>
-              <div className="desc">Browse <span>our products</span></div>
+              <div className="name">{item.name}</div>
+              <div className="desc">
+                Browse <span>our products</span>
+              </div>
             </div>
           </div>
-          <div className="grid-item">
-            <div className="img">
-              <a href=""><img src="../svg/sincella.svg" alt="" /></a>
-            </div>
-            <div className="grid-details">
-              <div className="name">SUNCELLA</div>
-              <div className="desc">Browse <span>our products</span></div>
-            </div>
-          </div>
-          <div className="grid-item">
-            <div className="img">
-              <a href=""><img src="../svg/face.svg" alt="" /></a>
-            </div>
-            <div className="grid-details">
-              <div className="name">PERSONAL CARE</div>
-              <div className="desc">Browse <span>our products</span></div>
-            </div>
-          </div>
-          <div className="grid-item">
-            <div className="img">
-              <a href=""><img src="../svg/leaf.svg" alt="" /></a>
-            </div>
-            <div className="grid-details">
-              <div className="name">NUTRITION</div>
-              <div className="desc">Browse <span>our products</span></div>
-            </div>
-          </div>
-          <div className="grid-item">
-            <div className="img">
-              <a href=""><img src="../svg/sincella.svg" alt="" /></a>
-            </div>
-            <div className="grid-details">
-              <div className="name">SUNCELLA</div>
-              <div className="desc">Browse <span>our products</span></div>
-            </div>
-          </div>
-          <div className="grid-item">
-            <div className="img">
-              <a href=""><img src="../svg/face.svg" alt="" /></a>
-            </div>
-            <div className="grid-details">
-              <div className="name">PERSONAL CARE</div>
-              <div className="desc">Browse <span>our products</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  )
-}
+        ))}
+      </div>
+    </section>
+  );
+};
