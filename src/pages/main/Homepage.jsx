@@ -12,7 +12,7 @@ import CommunitySection from '../../components/common/Cta.jsx';
 import LogosSlider from '../../components/homepage/LogosSlider.jsx';
 import { ProductGridSection } from '../../components/homepage/ProductGridSection.jsx';
 import CheckoutCardsInitialize from '../../components/common/CheckoutCards.jsx';
-import {AboutSection} from '../../components/homepage/AboutSection.jsx';
+import { AboutSection } from '../../components/homepage/AboutSection.jsx';
 
 // Sliders
 import ProductSliderInitialize from '../../components/slider/ProductSlider.jsx';

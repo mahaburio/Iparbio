@@ -6,11 +6,25 @@ import Footer from '../../components/footer/footer.jsx';
 import MainWrapper from '../../components/common/Mainwrapper.jsx';
 import ProductSliderInitialize from "../../components/slider/ProductSlider.jsx";
 
-
 import { ProductHeroSection, CompanyDetailsSection, ProductDescSection, Faq, FormulationSection } from '../../components/index.js';
 
+// Hero Section
 
-import '../../styles/pages/shoppage.css'
+const productList = [
+  {
+    image: '../images/Pink-podium-cosmetic.webp',
+    itemNumber: "258",
+    title: "Balance",
+    description: "7 Day Rebalance & Detoxing (Shah Monzej*)",
+    newPrice: "23.50",
+    learnMoreLink: '#',
+    preferredPrice: "21.15",
+    instruction: "7-days formulated system for hormone balance and detoxification",
+    sizeOptions: true,
+  },
+
+];
+
 
 const featuredProducts = [
   {
@@ -18,7 +32,7 @@ const featuredProducts = [
     image: "../images/product-img-1.webp",
     details: "50B CFU & 8 Strains",
     price: "$50",
-    colors: ["#d5ccc3", "#c28270", "#b16c6d", "#c28170", "#b16d6d"],
+    colors: ["#d5ccc3", "#c28170", "#b16c6d", "#c28170", "#b16c6d"],
     pv: '20pv',
   },
 
@@ -34,7 +48,7 @@ const featuredProducts = [
     image: "../images/product-img-1.webp",
     details: "50B CFU & 8 Strains",
     price: "$80",
-    sizes: ["Solo 0.75 fl oz", "Doppio 1.5 fl oz", "Tripple 2.25 fl oz", "Tripple 2.25 fl oz","Tripple 2.25 fl oz"],
+    sizes: ["Solo 0.75 fl oz", "Doppio 1.5 fl oz", "Tripple 2.25 fl oz"],
 
   },
 
@@ -46,23 +60,6 @@ const featuredProducts = [
   },
 ]
 
-// Product Listt
-
-const productList = [
-  {
-    image: '../images/7-days-Photoroom.webp',
-    itemNumber: "258",
-    title: "Balance",
-    description: "7 Day Rebalance & Detoxing (Shah Monzej*)",
-    newPrice: "23.50",
-    learnMoreLink: '#',
-    preferredPrice: "21.15",
-    instruction: "7-days formulated system for hormone balance and detoxification",
-    capsuleInfo: "2711 Capsules / Bottle",
-  },
-
-
-];
 
 // For COmpany section (Section Two)
 
@@ -154,13 +151,12 @@ const faqData = [
 ];
 
 
-
-
-
 function ProductPage() {
   return (
     <MainWrapper className="product_page shopPage">
-      <Header subtotalCard />
+      <Header />
+
+
       {productList.map((product, idx) => (
         <ProductHeroSection key={idx} {...product} />
       ))}

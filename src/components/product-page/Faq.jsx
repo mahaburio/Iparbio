@@ -1,7 +1,9 @@
 
 import React, { useState, useRef, useEffect } from "react";
 
-export default function FaqSection({ faqData = [], showHeader, faqFooter='true' }) {
+
+
+export default function FaqSection({ faqData = [], showHeader, faqFooter = true, faqFooterImg = true }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const contentRefs = useRef([]);
 
@@ -71,11 +73,16 @@ export default function FaqSection({ faqData = [], showHeader, faqFooter='true' 
               </div>
             </div>
 
-            <div className="faq-footer text-center">
-              <div className="img d-flex justify-content-center">
-                <img className="w-75 m-auto" src="../images/science.webp" alt="" />
-              </div>
-            </div>
+            {faqFooterImg && (
+              <>
+
+                <div className="faq-footer text-center">
+                  <div className="img d-flex justify-content-center">
+                    <img className="w-75 m-auto" src="../images/science.webp" alt="" />
+                  </div>
+                </div>
+              </>
+            )}
           </>
         )}
       </div>

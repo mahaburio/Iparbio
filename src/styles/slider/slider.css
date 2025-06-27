@@ -2,8 +2,8 @@
 
 .featured-section {
   padding: 80px 0px;
+  padding-bottom: 40px;
 }
-
 
 .product-slider,
 .benefits-slider,
@@ -68,10 +68,9 @@
   max-height: 430px;
 }
 
-.slick-slide > div{
+.slick-slide > div {
   height: 100% !important;
 }
-
 
 .product_page .product-item .product-header {
   height: 43%;
@@ -103,27 +102,24 @@
 }
 
 @media screen and (max-width: 576px) {
-
-  .slider{
-  display: flex !important;
-  gap: 10px;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 20px 5px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-
+  .slider {
+    display: flex !important;
+    gap: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 
   .product_page .product-item {
     border-radius: 4px;
     border: 1px solid transparent;
-    height: 380px !important;
+    min-height: 400px;
   }
 
   .product_page .product-item .product-details {
-    padding: 10px 20px !important;
+    padding: 10px 10px !important;
   }
 }
 

@@ -1,16 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
 import { RiCloseLine } from "react-icons/ri";
 
-const ProductColorPicker = ({ colors = [] }) => {
+const ProductColorPicker = ({
+  colors = [],
+  onSelect,
+  maxVisible = 3,           // 👈 allow control from parent
+  hideMore = false,         // 👈 allow hiding the "more" button
+}) => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [showAllColors, setShowAllColors] = useState(false);
-  const popupRef = useRef(null); // Ref for modal
+  const popupRef = useRef(null);
 
-  // Split colors
-  const visibleColors = colors.slice(0, 3);
-  const remainingColors = colors.slice(3);
+  const visibleColors = colors.slice(0, maxVisible);
+  const remainingColors = colors.slice(maxVisible);
 
-  // Handle outside click
   useEffect(() => {
     function handleClickOutside(event) {
       if (popupRef.current && !popupRef.current.contains(event.target)) {
@@ -30,11 +33,11 @@ const ProductColorPicker = ({ colors = [] }) => {
   const handleColorClick = (color) => {
     setSelectedColor(color);
     setShowAllColors(false);
+    onSelect?.(color);
   };
 
   return (
     <div className="color-picker" style={{ position: "relative" }}>
-      {/* Visible Color Dots */}
       <div className="product-color">
         {visibleColors.map((color, index) => (
           <div
@@ -50,14 +53,12 @@ const ProductColorPicker = ({ colors = [] }) => {
           </div>
         ))}
 
-        {remainingColors.length > 0 && (
-          <div className="moreColor" onClick={() => setShowAllColors(true)}>
-            +
-          </div>
+        {/* Only show "more" if not hidden */}
+        {!hideMore && remainingColors.length > 0 && (
+          <div className="moreColor" onClick={() => setShowAllColors(true)}>+</div>
         )}
       </div>
 
-      {/* Popup */}
       {showAllColors && (
         <div className="all-colorPlate" ref={popupRef}>
           <div className="close-color" onClick={() => setShowAllColors(false)}>
@@ -83,5 +84,6 @@ const ProductColorPicker = ({ colors = [] }) => {
     </div>
   );
 };
+
 
 export default ProductColorPicker;

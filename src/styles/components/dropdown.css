@@ -40,8 +40,14 @@
 
 .dropdown-arrow {
   transition: transform 0.3s ease;
+
 }
 
 .dropdown-arrow.rotate {
   transform: rotate(180deg);
+}
+
+.product-item .dropdown-arrow{
+  border: 1px solid var(--green-color);
+  border-radius: 50%;
 }

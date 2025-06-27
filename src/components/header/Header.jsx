@@ -5,6 +5,9 @@ import { Header, Sidebar, CountryList } from '../index.js';
 
 import { useState, useEffect, useRef } from "react";
 
+// Icon
+import { FaShoppingCart } from "react-icons/fa";
+
 function HeaderIntialize({ showSearch = true, showDashboardMenu = true, pvBars = true, tabsMenuList = true, user, }) {
 
   const [showAccount, setShowAccount] = useState(false);
@@ -511,12 +514,8 @@ function HeaderIntialize({ showSearch = true, showDashboardMenu = true, pvBars =
             )}
 
             <a href="" className="shoping-cart">
+              <FaShoppingCart size={32} color='var(--black-100)' />
 
-              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="30" height="30">
-                <path d="M24,3H4.242L4.2,2.649A3,3,0,0,0,1.222,0H0V2H1.222a1,1,0,0,1,.993.883L3.8,16.351A3,3,0,0,0,6.778,19H20V17H6.778a1,1,0,0,1-.993-.884L5.654,15H21.836Z" />
-                <circle cx="7" cy="22" r="2" />
-                <circle cx="17" cy="22" r="2" />
-              </svg>
               <div className="total-prd">0</div>
             </a>
           </div>

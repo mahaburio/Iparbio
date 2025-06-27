@@ -36,6 +36,95 @@ body {
   --border-color: #e0e0e0;
 }
 
+.radio-input {
+  height: 14px;
+  width: 14px;
+  outline-offset: 4px;
+  outline: 2px solid var(--gray-40);
+  background-color: #dadada;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.checked {
+  background-color: var(--green-color);
+  transition: 0.2s ease;
+  outline-color: var(--green-color);
+}
+
+.custom-checkbox label {
+  font-size: 18px;
+  color: var(--gray-100);
+  cursor: pointer;
+  width: calc(100% - 20px);
+}
+
+.hidden-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+/* Optional styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.alert-input {
+  border-color: crimson !important;
+  background-color: #fff0f0;
+}
+
+.alert-label {
+  color: crimson !important;
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group input {
+  height: 40px !important;
+  width: 100%;
+  border: 1px solid var(--gray-40) !important;
+  border-radius: 6px !important;
+}
+
+.form-group input:focus {
+  border-color: var(--green-color) !important;
+  box-shadow: none !important;
+}
+
+.flatpickr-day.selected{
+  background-color: var(--green-color) !important;
+}
+
 .subtotal-card {
   position: fixed;
   top: 20px;
@@ -353,6 +442,11 @@ li {
 }
 
 @media screen and (max-width: 768px) {
+  .subtotal-card {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
   .heading-title h1 {
     font-size: 19px;
   }
@@ -439,6 +533,10 @@ li {
 
   .best-sellers-section .heading-title h1::after {
     width: 145px;
+  }
+
+  .subtotal-card {
+    font-size: 10px;
   }
 }
 
