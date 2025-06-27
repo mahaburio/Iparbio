@@ -189,7 +189,7 @@ function HomePage() {
       <ProductSliderInitialize title={'Featured'} data={featuredProducts} />
 
       {/* Product Slider */}
-      <ProductSliderInitialize sectionClass='featured-section benefits-section' title='Benefits' sliderId='benefitsSlider' prevBtnId='prevBenefitsBtn' nextBtnId='nextBenefitsBtn' descTitle productDetailsPrice={false} data={benefitsProducts} />
+      <ProductSliderInitialize sectionClass='featured-section benefits-section' title='Benefits' sliderId='benefitsSlider' btn={false} prevBtnId='prevBenefitsBtn' nextBtnId='nextBenefitsBtn' descTitle productDetailsPrice={false} data={benefitsProducts} />
 
       {/* Products Grid */}
       <LogosSlider />

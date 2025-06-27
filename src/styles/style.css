@@ -43,16 +43,29 @@ body {
   background: var(--black-100);
   padding: 12px 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: none;
+  opacity: 0;
   align-items: center;
   border-radius: 8px;
   gap: 20px;
   z-index: 9999;
+  transition: 0.3s ease;
   color: var(--white-100);
+  animation: fadeUp 0.3s ease;
 }
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateX(5px);
+  }
+}
+
 .subtotal-card.visible {
   display: flex;
+  opacity: 1;
+  transition: 0.3s ease;
 }
+
 .subtotal-card .sb-tl {
   font-weight: 600;
 }

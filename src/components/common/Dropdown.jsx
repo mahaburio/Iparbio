@@ -28,7 +28,10 @@ const Dropdown = ({ label = "Select", options = [], selected, onChange }) => {
     <div className="custom-dropdown" ref={dropdownRef}>
       <div className="dropdown-header" onClick={toggleDropdown}>
         <span>{selected || label}</span>
-        <RiArrowDownSLine />
+        <RiArrowDownSLine
+          size={23} color="var(--gray-100)"
+          className={`dropdown-arrow ${isOpen ? "rotate" : ""}`}
+        />
       </div>
 
       {isOpen && (

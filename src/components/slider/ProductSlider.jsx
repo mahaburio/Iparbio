@@ -22,6 +22,7 @@ const ProductSliderInitialize = ({
   productDetailsPrice = true,
   quantityPicker = false,
   productSizePicker = false,
+  btn=true,
   data = [],
 }) => {
 
@@ -87,14 +88,9 @@ const ProductSliderInitialize = ({
         settings: { slidesToShow: 2, slidesToScroll: 2 },
       },
       {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 1.5,       // Shows part of the next item (like free mode)
-        slidesToScroll: 1,
-        swipeToSlide: true,      // Enables smoother drag
-        centerMode: false,       // Optional: set to true if you want centering
+        breakpoint: 576, // 👈 This disables slick below 576px
+        settings: "unslick",
       },
-    },
     ],
   };
 
@@ -179,9 +175,12 @@ const ProductSliderInitialize = ({
                         </>
                       )}
 
-                      <div className="btn-sec text-center">
-                        <button className="green-btn mt-1" onClick={() => handleAddToCart(item.name, price, index)}>Add Order</button>
-                      </div>
+                      {btn && (
+                        <>
+                          <div className="btn-sec text-center">
+                            <button className="green-btn mt-1" onClick={() => handleAddToCart(item.name, price, index)}>Add Order</button>
+                          </div></>
+                      )}
                     </div>
                   </div>
                 </div>

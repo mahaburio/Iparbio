@@ -4,6 +4,7 @@
   padding: 80px 0px;
 }
 
+
 .product-slider,
 .benefits-slider,
 .sellers-slider {
@@ -30,6 +31,7 @@
   border: 1px solid transparent;
   width: 100%;
   max-width: 300px;
+  min-width: 200px;
 }
 
 .slick-slide {
@@ -101,6 +103,19 @@
 }
 
 @media screen and (max-width: 576px) {
+
+  .slider{
+  display: flex !important;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 20px 5px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+
+
   .product_page .product-item {
     border-radius: 4px;
     border: 1px solid transparent;
