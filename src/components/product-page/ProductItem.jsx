@@ -5,8 +5,8 @@ import Dropdown from "../common/Dropdown";
 
 import { useCart } from "../../context/CartContext";
 
-import '../../styles/pages/shoppage.css'
 import '../../styles/pages/productitem.css'
+import '../../styles/pages/shoppage.css'
 
 const ProductItem = ({
   item,

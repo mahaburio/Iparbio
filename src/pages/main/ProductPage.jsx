@@ -135,35 +135,27 @@ const faqData = [
   {
     title: "More Details",
     paragraphs: [
-      <p><b>The Cleansing+ Blend</b> merges potent botanical extracts from traditional medicine with modern nutritional science. Ingredients such as Senna Leaf and Aloe Vera work in synergy with Apple Cider Vinegar and Psyllium Husk to support the body's natural detoxification processes, ensuring a gentle yet effective cleanse.*</p>,
-      <p><b>The Digestive+ Blend</b> is a cutting-edge fusion of ancient knowledge and modern advancements. Anchored by the robust and stable probiotic strain Bacillus coagulans, this blend enhances gut health and digestive efficiency. Complemented by Papaya Extract and Fennel Seed, this blend optimizes nutrient absorption, maintains digestive balance, and supports the body's natural cleansing mechanisms.*
-      </p>,
-      <p>Modern scientific research increasingly validates what traditional healers have known for thousands of years: hormonal balance and overall wellness are closely connected to digestive health. This comprehensive <b>7-day system, built on millennia of traditional medicine and enhanced by modern science, is designed to help restore your body's natural balance while supporting optimal digestive function.*</b>
-      </p>
+
+      `Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quis, laudantium dolore exercitationem ratione optio distinctio tempora esse id! Cupiditate nihil optio quo eos ipsa, cum ipsum reiciendis voluptatem! Rerum porro debitis explicabo. Laborum molestias, ea accusamus porro mollitia inventore? Iste corrupti mollitia blanditiis repudiandae harum recusandae voluptate eos molestiae.`
+     
     ],
   },
   {
     title: "Ingredients",
     paragraphs: [
-      <p><b>The Cleansing+ Blend</b> merges potent botanical extracts from traditional medicine with modern nutritional science. Ingredients such as Senna Leaf and Aloe Vera work in synergy with Apple Cider Vinegar and Psyllium Husk to support the body's natural detoxification processes, ensuring a gentle yet effective cleanse.*</p>,
-      <p><b>The Digestive+ Blend</b> is a cutting-edge fusion of ancient knowledge and modern advancements. Anchored by the robust and stable probiotic strain Bacillus coagulans, this blend enhances gut health and digestive efficiency. Complemented by Papaya Extract and Fennel Seed, this blend optimizes nutrient absorption, maintains digestive balance, and supports the body's natural cleansing mechanisms.*
-      </p>,
+      `Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quis, laudantium dolore exercitationem ratione optio distinctio tempora esse id! Cupiditate nihil optio quo eos ipsa, cum ipsum reiciendis voluptatem! Rerum porro debitis explicabo. Laborum molestias, ea accusamus porro mollitia inventore? Iste corrupti mollitia blanditiis repudiandae harum recusandae voluptate eos molestiae.`
     ],
   },
   {
     title: "Usage",
     paragraphs: [
-      <p><b>The Cleansing+ Blend</b> merges potent botanical extracts from traditional medicine with modern nutritional science. Ingredients such as Senna Leaf and Aloe Vera work in synergy with Apple Cider Vinegar and Psyllium Husk to support the body's natural detoxification processes, ensuring a gentle yet effective cleanse.*</p>,
-      <p><b>The Digestive+ Blend</b> is a cutting-edge fusion of ancient knowledge and modern advancements. Anchored by the robust and stable probiotic strain Bacillus coagulans, this blend enhances gut health and digestive efficiency. Complemented by Papaya Extract and Fennel Seed, this blend optimizes nutrient absorption, maintains digestive balance, and supports the body's natural cleansing mechanisms.*
-      </p>,
+      `Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quis, laudantium dolore exercitationem ratione optio distinctio tempora esse id! Cupiditate nihil optio quo eos ipsa, cum ipsum reiciendis voluptatem! Rerum porro debitis explicabo. Laborum molestias, ea accusamus porro mollitia inventore? Iste corrupti mollitia blanditiis repudiandae harum recusandae voluptate eos molestiae.`
     ],
   },
   {
     title: "FAQs",
     paragraphs: [
-      <p><b>The Cleansing+ Blend</b> merges potent botanical extracts from traditional medicine with modern nutritional science. Ingredients such as Senna Leaf and Aloe Vera work in synergy with Apple Cider Vinegar and Psyllium Husk to support the body's natural detoxification processes, ensuring a gentle yet effective cleanse.*</p>,
-      <p><b>The Digestive+ Blend</b> is a cutting-edge fusion of ancient knowledge and modern advancements. Anchored by the robust and stable probiotic strain Bacillus coagulans, this blend enhances gut health and digestive efficiency. Complemented by Papaya Extract and Fennel Seed, this blend optimizes nutrient absorption, maintains digestive balance, and supports the body's natural cleansing mechanisms.*
-      </p>,
+      `Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quis, laudantium dolore exercitationem ratione optio distinctio tempora esse id! Cupiditate nihil optio quo eos ipsa, cum ipsum reiciendis voluptatem! Rerum porro debitis explicabo. Laborum molestias, ea accusamus porro mollitia inventore? Iste corrupti mollitia blanditiis repudiandae harum recusandae voluptate eos molestiae.`
     ],
   },
 ];
