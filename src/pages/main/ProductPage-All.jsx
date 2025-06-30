@@ -9,7 +9,7 @@ import { Help } from '../../components/common/Help.jsx';
 
 import SidebarAccordion from '../../components/common/CustomizeSec.jsx';
 
-
+import '../../styles/pages/productitem.css'
 import '../../styles/pages/shoppage.css';
 
 const allProducts = [
