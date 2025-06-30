@@ -125,7 +125,7 @@ header .input-wrapper i {
 header .logo {
   width: 170px;
   position: relative;
-  left: -100px;
+  left: 0px;
 }
 
 .navbar-section .nav .logo img {

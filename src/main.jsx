@@ -7,13 +7,17 @@ import 'remixicon/fonts/remixicon.css';  // Remix Icon font
 import App from './App.jsx';     // Your main app component
 
 
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import './styles/style.css';    // global styles
 
+import { CartProvider } from "./context/CartContext";
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <CartProvider>
+      <App />
+    </CartProvider>
   </StrictMode>,
 );

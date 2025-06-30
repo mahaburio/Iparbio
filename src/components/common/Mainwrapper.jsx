@@ -1,13 +1,23 @@
-import React from 'react';
-import '../../styles/style.css'
+import { useCart } from "../../context/CartContext";
+import SubtotalCard from "../common/SubtotalCard";
 
-function MainWrapper({ className = '', children }) {
+const MainWrapper = ({ children }) => {
+  const { subtotalVisible, subtotalProduct, subtotalAmount, hideSubtotal } = useCart();
+
   return (
-    <div className={`main-wrapper ${className}`}>
+    <>
+      {/* Main layout */}
       {children}
-    </div>
+
+      {/* Global SubtotalCard */}
+      <SubtotalCard
+        show={subtotalVisible}
+        productName={subtotalProduct}
+        totalPrice={subtotalAmount}
+        onClose={hideSubtotal}
+      />
+    </>
   );
-}
+};
 
 export default MainWrapper;
-

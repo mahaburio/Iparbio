@@ -1,0 +1,272 @@
+/* ! ~~~~~~~~~~~~~~~~~~~~~~~~~~ SIGN-IN PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ? **** HEADER-SECTION ***** */
+.signInPage .sign-in-header {
+  border-bottom: 1px solid var(--gray-40);
+}
+
+.signInPage .sign-in-header span {
+  font-size: 18px;
+  position: relative;
+  left: -10px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+/* ? **** MAIN-CONTENT-SECTION ***** */
+
+.signInPage .main-content-section {
+  padding: 100px 0px;
+  padding-bottom: 20px;
+}
+
+.signInPage .main-content-section .content {
+  max-width: 40%;
+  margin: 0 auto;
+}
+
+.signInPage .title-name {
+  font-size: 22px;
+  color: var(--green-color);
+  font-weight: 400;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--gray-40);
+}
+
+.signInPage .input-head span {
+  color: var(--gray-100);
+  font-size: 18px;
+}
+
+.signInPage input {
+  border: none;
+  outline: none;
+  color: var(--gray-100);
+  font-size: 18px;
+  width: 100%;
+  padding-left: 10px;
+  height: 45px !important;
+  border: 1px solid var(--gray-40);
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+.signInPage .desc-txt {
+  color: var(--gray-100);
+  font-size: 18px;
+}
+
+.signInPage .or {
+  position: relative;
+}
+
+.signInPage .or span {
+  font-size: 18px;
+  color: var(--gray-100);
+  font-weight: 500;
+  background-color: var(--white-100);
+  position: relative;
+  z-index: 1;
+  padding: 0px 3px;
+}
+
+.signInPage .or::after {
+  content: "";
+  width: 100%;
+  left: 0;
+  height: 0.5px;
+  background-color: var(--gray-40);
+  top: 12px;
+  position: absolute;
+}
+
+.social-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid var(--gray-40);
+  padding: 8px 12px;
+  margin-top: 15px;
+  gap: 10px;
+  border-radius: 6px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.social-wrapper span {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text-gray);
+}
+
+.not-acc {
+  font-size: 20px;
+  color: var(--gray-100);
+  font-weight: 300;
+}
+
+.not-acc a {
+  text-decoration: none;
+  color: var(--green-color);
+  font-weight: 400;
+  position: relative;
+}
+
+.not-acc .signUp::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 28px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--green-color);
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.not-acc .signUp:hover::after {
+  width: 0;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.foot-content {
+  margin-top: 100px;
+}
+
+.foot-content p {
+  margin: 0;
+  color: var(--gray-100);
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.foot-content p a {
+  text-decoration: none;
+  color: var(--green-color);
+}
+
+/* ! ~~~~~~~~~~~~~~~~~~ SIGN-IN-WITH-EMAIL PAGE ~~~~~~~~~~~~~~~~~~~ */
+
+.signInEmail label {
+  font-size: 20px;
+  color: var(--gray-100);
+}
+
+.signInEmail input {
+  width: 100%;
+  height: 45px;
+  border: 1px solid var(--gray-40);
+  border-radius: 6px;
+  outline: none;
+  padding: 10px;
+  color: var(--gray-100);
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .signInPage .main-content-section .content {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .signInPage .main-content-section .content {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .signInPage .main-content-section .content {
+    max-width: 100%;
+  }
+
+  .not-acc .signUp::after {
+    top: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .signInPage .main-content-section {
+    padding: 50px 0px;
+  }
+  .signInPage .sign-in-header .logo img {
+    width: 120px;
+  }
+
+  .signInPage .title-name {
+    font-size: 18px;
+    border-bottom-width: 1px;
+  }
+
+  .signInPage .sign-in-header span,
+  .signInPage .main-content-section .content p,
+  .foot-content p {
+    font-size: 14px;
+  }
+
+  .signInPage input {
+    font-size: 16px;
+  }
+
+  .signInPage .main-content-section .content span {
+    font-size: 16px;
+  }
+
+  .foot-content {
+    margin-top: 50px;
+  }
+
+  /* ! ~~~~~~~~~~~~~~~~~~ SIGN-IN-WITH-EMAIL PAGE ~~~~~~~~~~~~~~~~~~~ */
+
+  .signInEmail label {
+    font-size: 16px;
+  }
+
+  .signInEmail input {
+    font-size: 16px;
+  }
+}
+
+/* ! ~~~~~~~~~~~~~~~~~~~~~~~ WELCOME-EMAIL TEMPLATE ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.email-section {
+  background-color: var(--bg-gray);
+  margin: 60px 0px;
+  margin-bottom: 0;
+  padding: 50px;
+}
+
+.email-section p {
+  font-size: 20px;
+  color: var(--gray-100);
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 991px) {
+  .email-section p {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .email-section p {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .email-section {
+    padding: 40px 20px;
+  }
+  .email-section p {
+    font-size: 14px;
+  }
+}
