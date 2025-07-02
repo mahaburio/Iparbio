@@ -6,8 +6,6 @@ import { Header } from '../../components/index.js';
 import Footer from '../../components/footer/footer.jsx';
 import { Help } from '../../components/common/Help.jsx';
 
-import StepProgress from "../../components/common/StepProgressBar.jsx";
-
 import SelectMarketModal from '../../components/signup-page/SelectMarketModal.jsx';
 
 import {PhoneNumberInput, AddAddressLine} from '../../components/input/InputFields.jsx';
@@ -46,15 +44,15 @@ function SignupPage() {
     setIsModalOpen(false);
   };
 
-    const [currentStep] = useState(2);
 
+  
+ 
 
   return (
     <>
       <div className="signup_page signup-page-inf">
         <Header showDashboardMenu={false} />
 
-        <StepProgress currentStep={currentStep} />
 
 
         {/* Hero */}

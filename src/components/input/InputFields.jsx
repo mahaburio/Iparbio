@@ -10,9 +10,9 @@ export function PhoneNumberInput({ label }) {
   const [phone, setPhone] = useState('');
 
   return (
-    <div>
+    <div className="lb-in">
       {label && (
-        <> <label htmlFor="phone">Phone Number</label></>
+        <> <label htmlFor="phone">Phone Number*</label></>
       )}
       <PhoneInput
         country={'us'}
@@ -83,7 +83,6 @@ export function AddAddressLine({LabelShow}) {
             type="text"
             className="added-input mt-3"
             placeholder="Address Line 2"
-            required
             value={address2}
             onChange={(e) => setAddress2(e.target.value)}
           />

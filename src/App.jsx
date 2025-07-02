@@ -8,6 +8,9 @@ import ProductPageColor from './pages/main/ProductPage-Color';
 import ProductPageSize from './pages/main/ProductPage-Size';
 import ProductPageEgift from './pages/main/ProductPage-Egift';
 import ProductPageAll from './pages/main/ProductPage-All';
+import CartPage from './pages/main/CartPage';
+
+
 import CustomerSignin from './pages/main/CustomerSignin';
 import OrderConfirmation from './pages/main/OrderConfirmation';
 
@@ -16,6 +19,7 @@ import OrderConfirmation from './pages/main/OrderConfirmation';
 import SignupPage from './pages/signup/Signup';
 import SignupPageIBA from './pages/signup/SignupIBA';
 import SignupInfluencer from './pages/signup/SignupInfluencer';
+import SignupProcess from './pages/signup/SignupProcess';
 
 import SubscriptionShop from './pages/signup/SubscriptioShop';
 
@@ -67,6 +71,7 @@ function App() {
         <Route path="/product-size" element={<ProductPageSize />} />
         <Route path="/product-egift" element={<ProductPageEgift />} />
         <Route path="/product-all" element={<ProductPageAll />} />
+        <Route path="/cart" element={<CartPage />} />
 
         <Route path="/customer-signin" element={<CustomerSignin />} />
 
@@ -90,6 +95,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signup-iba" element={<SignupPageIBA />} />
         <Route path="/signup-influencer" element={<SignupInfluencer />} />
+        <Route path="/signup-process" element={<SignupProcess />} />
         <Route path="/subscription-shop" element={<SubscriptionShop />} />
 
         {/* Sign in Page Switch mode here */}

@@ -29,7 +29,7 @@
   background-color: var(--white-100);
 }
 
-.modal-overlay {
+.markerPopup {
   position: fixed;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@
   align-items: center;
 }
 
-.modal-content {
+.markerPopup .modal-content {
   background: #fff;
   padding: 20px;
   width: 90%;
@@ -266,6 +266,7 @@
   font-size: 20px;
   color: var(--green-color);
   cursor: pointer;
+  text-decoration: underline;
 }
 
 /* ? Input-section */
@@ -901,6 +902,7 @@ select {
   font-size: 16px;
 }
 
+
 @media screen and (max-width: 400px) {
   .signup_page_iba .id-box .input-wrapper {
     font-size: 16px;
@@ -1021,6 +1023,14 @@ select {
   outline: none;
 }
 
+.lb-in .react-tel-input {
+  width: 300px;
+  font-size: 18px;
+  outline: none;
+  border-radius: 6px;
+  color: var(--gray-100);
+}
+
 .input-item-pass input {
   width: 200px;
 }
@@ -1082,6 +1092,11 @@ select {
   appearance: none;
 }
 
+input:focus,
+select:focus {
+  border-color: var(--green-color) !important;
+}
+
 @media screen and (max-width: 991px) {
   .sign-up-IBA-shop .title-section .container,
   .sign-up-IBA-shop .signup-input-section .container {
@@ -1137,6 +1152,10 @@ select {
 
   .lb-in input,
   .lb-in select {
+    width: 100%;
+  }
+
+  .lb-in .react-tel-input {
     width: 100%;
   }
 
@@ -2960,19 +2979,6 @@ select {
   border-bottom: 1px solid #ddd;
 }
 
-.cart-item .savelistCircle {
-  height: 30px;
-  width: 30px;
-  padding: 0;
-  border-radius: 50%;
-  font-size: 22px;
-  overflow: hidden;
-  border: 1px solid var(--gray-40);
-  color: var(--gray-40);
-  margin-right: 20px;
-  background-color: transparent;
-}
-
 .all-cart-items .cart-item:last-child {
   border: none;
 }
@@ -3027,6 +3033,23 @@ select {
   text-align: center;
   line-height: 30px;
   margin-right: 20px;
+}
+
+.savelistCircle {
+  height: 34px;
+  width: 34px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 26px;
+  overflow: hidden;
+  border: 1px solid var(--green-color);
+  color: var(--gray-40);
+  margin-right: 20px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
 }
 
 .cart-item .savelist i .cart-item .quantity-container {

@@ -9,11 +9,7 @@ const AccordionGroup = ({ title, items = [], defaultOpen = false, screenWidth })
   }, [screenWidth, defaultOpen]);
 
   const toggleAccordion = () => {
-    if (screenWidth > 991) {
-      setIsOpen(!isOpen);
-    } else {
-      setIsOpen((prev) => !prev);
-    }
+    setIsOpen((prev) => !prev);
   };
 
   return (
@@ -50,35 +46,40 @@ const SidebarAccordion = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const sidebarRef = useRef(null);
 
-  // ✅ Listen for resize
+  // ✅ Update window width on resize
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // ✅ Listen to both `.allBtn` and `.categoriesBtn`
+  // ✅ Delegate click for both .allBtn and .categoriesBtn globally
   useEffect(() => {
-    const allBtns = document.querySelectorAll(".allBtn, .categoriesBtn");
     const handleShow = (e) => {
-      e.stopPropagation();
-      setIsOpen(true);
+      const target = e.target;
+      const isAllBtn = target.closest(".allBtn");
+      const isCategoriesBtn = target.closest(".categoriesBtn");
+
+      if (isAllBtn || isCategoriesBtn) {
+        e.stopPropagation();
+        setIsOpen(true);
+      }
     };
 
-    allBtns.forEach((btn) => btn.addEventListener("click", handleShow));
-    return () => {
-      allBtns.forEach((btn) => btn.removeEventListener("click", handleShow));
-    };
+    document.addEventListener("click", handleShow);
+    return () => document.removeEventListener("click", handleShow);
   }, []);
 
   // ✅ Close on outside click
   useEffect(() => {
     const handleOutsideClick = (e) => {
+      const isTrigger =
+        e.target.closest(".allBtn") || e.target.closest(".categoriesBtn");
+
       if (
         sidebarRef.current &&
         !sidebarRef.current.contains(e.target) &&
-        !e.target.classList.contains("allBtn") &&
-        !e.target.classList.contains("categoriesBtn")
+        !isTrigger
       ) {
         setIsOpen(false);
       }
@@ -88,7 +89,7 @@ const SidebarAccordion = () => {
     return () => document.removeEventListener("click", handleOutsideClick);
   }, []);
 
-  // ✅ Lock body scroll
+  // ✅ Lock/unlock body scroll
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
@@ -125,9 +126,9 @@ const SidebarAccordion = () => {
         title="Benefits"
         screenWidth={windowWidth}
         items={[
-          { label: "Mood", icon: "../images/mood.svg" },
-          { label: "Hormone, Sleep", icon: "../images/bed.svg" },
-          { label: "View all Products", icon: "../images/bed.svg" },
+          { label: "Mood", icon: "../svg/mood.svg" },
+          { label: "Hormone, Sleep", icon: "../svg/bed.svg" },
+          { label: "View all Products", icon: "../svg/bed.svg" },
         ]}
       />
 
@@ -135,11 +136,11 @@ const SidebarAccordion = () => {
         title="Category"
         screenWidth={windowWidth}
         items={[
-          { label: "Nutrtions", icon: "../images/nutrations.svg" },
-          { label: "Personal Care", icon: "../images/personal-care.svg" },
-          { label: "Women's Health", icon: "../images/w-health.svg" },
-          { label: "Eco-home", icon: "../images/w-health.svg" },
-          { label: "All", icon: "../images/w-health.svg" },
+          { label: "Nutrtions", icon: "../svg/nutrations.svg" },
+          { label: "Personal Care", icon: "../svg/personal-care.svg" },
+          { label: "Women's Health", icon: "../svg/w-health.svg" },
+          { label: "Eco-home", icon: "../svg/w-health.svg" },
+          { label: "All", icon: "../svg/w-health.svg" },
         ]}
       />
 
@@ -147,11 +148,11 @@ const SidebarAccordion = () => {
         title="Brand"
         screenWidth={windowWidth}
         items={[
-          { label: "Nutrivero", icon: "../images/nutrations.svg" },
-          { label: "Suncella", icon: "../images/personal-care.svg" },
-          { label: "HUNAI", icon: "../images/w-health.svg" },
-          { label: "Vertal Orbis", icon: "../images/w-health.svg" },
-          { label: "All", icon: "../images/w-health.svg" },
+          { label: "Nutrivero", icon: "../svg/nutrations.svg" },
+          { label: "Suncella", icon: "../svg/personal-care.svg" },
+          { label: "HUNAI", icon: "../svg/w-health.svg" },
+          { label: "Vertal Orbis", icon: "../svg/w-health.svg" },
+          { label: "All", icon: "../svg/w-health.svg" },
         ]}
       />
     </div>

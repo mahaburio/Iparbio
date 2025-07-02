@@ -14,7 +14,7 @@ function SignupPage() {
     <>
       <MainWrapper>
         <div className="signup_page signup_page_iba">
-          <Header showSearch={false} MeneBarSec={false} />
+        <Header showSearch={false} MeneBarSec={false} showDashboardMenu={false} />
 
           {/* Title Section */}
 

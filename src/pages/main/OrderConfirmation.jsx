@@ -7,26 +7,61 @@ import Footer from '../../components/footer/footer.jsx';
 import { Help } from '../../components/common/Help.jsx';
 
 import '../../styles/pages/signuppage.css'
+import{ CartSummary,  PromoCode } from "../../components/product-page/CartSummery.jsx";
+import CartItem from "../../components/product-page/CartItem.jsx";
 
 const OrderConfirmation = ({
   isCongratulations = false, // toggle between modes
   orderInfo,
   accountInfo,
-  cartItems,
-  summary,
+
 }) => {
-  // Handle promo code toggle (like your promo section in Congratulations)
-  const [showPromo, setShowPromo] = useState(false);
-  const [promoCode, setPromoCode] = useState("");
 
-  const togglePromo = () => setShowPromo((prev) => !prev);
 
+
+  const [cartItems] = useState([
+    {
+      id: 1,
+      name: "Welcome Kit",
+      price: "$180",
+      quantity: 2,
+      image: '../images/product-img-2.webp',
+      showControls: false,
+      editOptions: {
+        showColor: true,
+        showSize: false,
+      },
+    },
+    {
+      id: 2,
+      name: "Balance",
+      price: "$80",
+      quantity: 2,
+      image: '../images/product-img-2.webp',
+      showControls: false,
+      editOptions: {
+        showColor: false,
+        showSize: true,
+      },
+    },
+    {
+      id: 3,
+      name: "Lipstick",
+      price: "$80",
+      quantity: 2,
+      image: '../images/product-img-2.webp',
+      showControls: false,
+      editOptions: {
+        showColor: true,
+        showSize: true,
+      },
+    },
+
+  ]);
 
   return (
     <>
       <MainWrapper>
-
-
         <Header />
 
         <section className="congratulations-page">
@@ -112,100 +147,44 @@ const OrderConfirmation = ({
                 )}
               </div>
 
-              <div className="summary mt-5">
-                <div className="title d-flex align-items-center justify-content-between">
-                  <span>
-                    First order Summary ({summary?.totalItems} {summary?.totalItems > 1 ? "Items" : "Item"})
-                  </span>
-                  <span>{summary?.totalPrice}</span>
-                </div>
-                <div className="sm-desc mt-3 px-lg-3 px-md-3 px-sm-0 px-0">
-                  <div className="sb-total item">
-                    <span>Subtotal ({summary?.totalItems} items)</span>
-                    <span>{summary?.subtotal}</span>
-                  </div>
+              <div className="mt-5">
+                <CartSummary
 
-                  <div className="discount item">
-                    <span>Shipping</span>
-                    <span>{summary?.shipping}</span>
-                  </div>
-
-                  <div className="tax item">
-                    <span>Tax</span>
-                    <span>{summary?.tax}</span>
-                  </div>
-
-                  <div className="total-amount total-item item pt-2">
-                    <span>Total Order</span>
-                    <span>{summary?.totalOrder}</span>
-                  </div>
-
-                  <div className="volume item">
-                    <span>Total Volume</span>
-                    <span>{summary?.totalVolume}</span>
-                  </div>
-
+                  currency='USD'
+                  summaryItems={[
+                    { id: 1, title: 'Subtotal (8 items)', amount: 500.22 },
+                    { id: 2, title: 'Discount', amount: 0, /* hide: true  */ },
+                    { id: 4, title: 'Tax', amount: 0 },
+                    { id: 5, title: 'Total amount', amount: 700.00, isTotal: true },
+                  ]}
+                />
+                <div className="summary">
                   {/* Promo code section only in Congratulations */}
                   {isCongratulations && (
-                    <div className="promo-cd mt-2">
-                      <div
-                        className="promo-header d-flex align-items-center justify-content-between"
-                        onClick={togglePromo}
-                        style={{ cursor: "pointer" }}
-                      >
-                        <span className="pr-tt">Enter a e-gift card or promo code</span>
-                        <span className={`arrow ${showPromo ? "rotate" : ""}`}>
-                          <i className="ri-arrow-down-s-line"></i>
-                        </span>
-                      </div>
-
-                      <div
-                        id="promoBody"
-                        className={`promo-body d-flex gap-4 align-items-center mt-2 ${showPromo ? "activePromoBody" : ""
-                          }`}
-                      >
-                        <input
-                          type="text"
-                          value={promoCode}
-                          onChange={(e) => setPromoCode(e.target.value)}
-                          placeholder="Enter code"
-                        />
-                        <button
-                          className="black-btn"
-                          onClick={() => alert(`Apply code: ${promoCode}`)}
-                        >
-                          Apply
-                        </button>
-                      </div>
-                    </div>
+                    <PromoCode />
 
                   )}
 
                   <div className="all-cart-items mt-3">
-                    {cartItems?.map(({ id, name, price, quantity, image }) => (
-                      <div className="cart-item d-flex justify-content-between align-items-center" key={id}>
-                        <div className="left d-flex align-items-center gap-2">
-                          <div className="p-img">
-                            <img src={image} alt={name} />
-                          </div>
-                          <div className="cp-details">
-                            <div className="cp-nm">{name}</div>
-                            <div className="cp-pr">{price}</div>
-                          </div>
-                        </div>
-                        <div className="right">
-                          <div className="cross-item">
-                            <span>Quantity: {quantity}</span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                    {cartItems.map(item => (
+                    <CartItem
+                      key={item.id}
+                      name={item.name}
+                      price={item.price}
+                      image={item.image}
+                      quantity={item.quantity}
+                      itemCode={item.itemCode}
+                      showControls={item.showControls}
+                      editOptions={item.editOptions}
+
+                    />
+                  ))}
                   </div>
                 </div>
+              </div>
 
-                <div className={`btn-sec my-5 text-${isCongratulations ? "end" : "center"}`}>
-                  <button className="green-btn px-5">Done</button>
-                </div>
+              <div className={`btn-sec my-5 text-${isCongratulations ? "end" : "center"}`}>
+                <button className="green-btn px-5">Done</button>
               </div>
             </div>
           </div>

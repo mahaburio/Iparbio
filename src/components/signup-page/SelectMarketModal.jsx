@@ -63,7 +63,7 @@ const SelectMarketModal = ({ isOpen, onClose, onSelect }) => {
   return (
 
     <div id="selectMarketModal">
-      <div className="modal-overlay">
+      <div className="markerPopup">
         <div className="modal-content">
           <div className="header d-flex justify-content-between align-items-center">
             <h2>Select Market</h2>

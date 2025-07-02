@@ -197,7 +197,7 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto 3px auto 3px auto 3px auto 3px auto 3px auto;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(5, auto);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -269,7 +269,8 @@
   -webkit-transform: translate(-50%, 0%);
   -ms-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
-  padding: 8px 16px;
+  padding: 12px 16px;
+  padding-top: 25px;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -300,11 +301,11 @@
 .close-color {
   position: absolute;
   right: 8px;
-  top: 4px;
+  top: 0px;
   color: var(--green-color);
   cursor: pointer;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .colorsModal .modal-content {
@@ -336,6 +337,11 @@
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
+}
+
+.quantity .remove svg,
+.quantity .add svg{
+  stroke-width: 1.2;
 }
 
 .quantity .quantity-num {

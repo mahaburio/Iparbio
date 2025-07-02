@@ -1,13 +1,14 @@
 .step-progress {
   position: relative;
   width: 90%;
-  max-width: 1100px;
+  max-width: 1150px;
   height: 180px;
   margin: 0 auto;
   padding: 0 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 40px;
 }
 
 .step-bar {
@@ -82,24 +83,24 @@
 .step-point.step-complete .step-bullet,
 .step-point.step-active .step-bullet {
   background: var(--green-color);
-  box-shadow:0 0 0 1px var(--green-color);
+  
 }
 
 .step-point.step-active .step-bullet {
-  box-shadow:0 0 0 1px var(--green-color);
+  
 }
 
 .step-label {
   position: absolute;
-  top: 100%;
+  top: -60px;
   left: 50%;
-  margin-top: 30px;
   font-size: 20px;
   font-weight: 400;
   text-transform: capitalize;
   transform: translateX(-50%);
   color: var(--gray-40);
   transition: 0.3s ease;
+  white-space: nowrap;
 
 
 }

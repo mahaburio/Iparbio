@@ -88,7 +88,7 @@ const ProductItem = ({
 
             {btn && (
               <div className="btn-sec text-center">
-                <button className="green-btn mt-1" onClick={handleAddToCart}>
+                <button className="green-btn green-btn-sm mt-1" onClick={handleAddToCart}>
                   Add Order
                 </button>
               </div>

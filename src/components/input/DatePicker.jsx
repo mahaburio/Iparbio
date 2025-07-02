@@ -2,28 +2,40 @@ import React, { useEffect, useImperativeHandle, useRef, forwardRef } from "react
 import Flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
-const DatePicker = forwardRef(({ value, onChange, placeholder = "Select date", id, className = "" }, ref) => {
-const inputRef = useRef();
+import { FaCalendarDays } from "react-icons/fa6";
 
-useEffect(() => {
-const picker = Flatpickr(inputRef.current, {
-dateFormat: "Y-m-d",
-allowInput: true,
-defaultDate: value,
-onChange: ([date]) => onChange?.(date),
-});
+const DatePicker = forwardRef(({ value, onChange, placeholder = "Select date", CalendarIcon, id, className = "" }, ref) => {
+  const inputRef = useRef();
 
-return () => picker.destroy();
-}, [value, onChange]);
+  useEffect(() => {
+    const picker = Flatpickr(inputRef.current, {
+      dateFormat: "Y-m-d",
+      allowInput: true,
+      defaultDate: value,
+      onChange: ([date]) => onChange?.(date),
+    });
 
-// Expose the input and flatpickr instance to parent
-useImperativeHandle(ref, () => ({
-open: () => inputRef.current._flatpickr.open(),
-}));
+    return () => picker.destroy();
+  }, [value, onChange]);
 
-return (
-<input type="text" ref={inputRef} placeholder={placeholder} className={className} id={id} readOnly />
-);
+  // Expose the input and flatpickr instance to parent
+  useImperativeHandle(ref, () => ({
+    open: () => inputRef.current._flatpickr.open(),
+  }));
+
+  return (
+    <>
+      <div className="d-flex align-items-center gap-2">
+        <input type="text" ref={inputRef} placeholder={placeholder} className={className} id={id} readOnly />
+        {CalendarIcon && (
+          <span className="" onClick={() => inputRef.current._flatpickr.open()} >
+            <FaCalendarDays fontSize={26} color="var(--green-color)" style={{cursor: 'pointer'}} />
+          </span>
+        )}
+
+      </div>
+    </>
+  );
 });
 
 export default DatePicker;

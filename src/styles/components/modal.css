@@ -1,0 +1,94 @@
+/* In your styles */
+.custom-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-modal {
+  background: var(--white-100);
+  border-radius: 12px;
+  padding: 25px;
+  width: fit-content;
+  max-width: 700px;
+  position: relative;
+  animation: fade-in 0.2s ease forwards;
+}
+
+.medium-modal {
+  width: 550px;
+  padding: 40px 30px;
+}
+
+.large-modal {
+  width: 800px;
+}
+
+.fullscreen-modal {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+/* Animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.2s ease forwards;
+}
+
+.fade-out {
+  animation: fade-out 0.2s ease forwards;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 36px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-100);
+  z-index: 66;
+}
+
+
+@media screen and (max-width: 768px) {
+  .custom-modal{
+    width: 90%;
+  }
+}
+

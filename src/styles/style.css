@@ -134,6 +134,24 @@ body {
   color: var(--green-color);
 }
 
+.fixed-subtotal{
+   position: fixed;
+  top: 70px;
+  right: 20px;
+  background: var(--black-100);
+  padding: 12px 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  align-items: center;
+  border-radius: 8px;
+  gap: 20px;
+  z-index: 9999;
+  transition: 0.3s ease;
+  color: var(--white-100);
+  animation: fadeUp 0.3s ease;
+
+}
+
 .green-btn {
   background-color: var(--green-color);
   color: var(--white-100);
