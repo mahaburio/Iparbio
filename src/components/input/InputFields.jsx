@@ -3,31 +3,25 @@ import React, { useState } from "react";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-
-// Phone Number Input
-
-export function PhoneNumberInput({ label }) {
-  const [phone, setPhone] = useState('');
-
+// Controlled Phone Number Input
+export function PhoneNumberInput({ label, value, onChange }) {
   return (
     <div className="lb-in">
-      {label && (
-        <> <label htmlFor="phone">Phone Number*</label></>
-      )}
+      {label && <label htmlFor="phone">Phone Number*</label>}
       <PhoneInput
-        country={'us'}
-        value={phone}
-        onChange={setPhone}
+        country="us"
+        value={value}
+        onChange={onChange}
         inputStyle={{
-          width: '100%',
-          padding: '10px',
-          paddingLeft: '50px',
-          fontSize: '16px'
+          width: "100%",
+          padding: "10px",
+          paddingLeft: "50px",
+          fontSize: "16px",
         }}
       />
     </div>
   );
-};
+}
 
 
 // Text Input

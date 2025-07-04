@@ -16,6 +16,7 @@ import '../../styles/pages/signuppage.css'
 import CardsSection from "../../components/signup-page/CardsSection.jsx";
 
 
+
 function SignupPage() {
 
   // Form Submittet Logic
@@ -28,7 +29,6 @@ function SignupPage() {
 
     if (!agreeChecked) return;
   };
-
 
   // For SelectMarket Modal Logic
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,15 +45,16 @@ function SignupPage() {
   };
 
 
-  
- 
-
   return (
     <>
       <div className="signup_page signup-page-inf">
         <Header showDashboardMenu={false} />
 
 
+
+        <div className="container">
+
+        </div>
 
         {/* Hero */}
         <section className="hero-img-section">

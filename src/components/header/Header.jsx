@@ -12,7 +12,9 @@ import { useCart } from "../../context/CartContext";
 // Icon
 import { FaShoppingCart } from "react-icons/fa";
 
-function HeaderIntialize({ showSearch = true, showDashboardMenu = true, pvBars = true, tabsMenuList = true, user, AllSidebar = true, AllSidebarForMobile = true, MeneBarSec=true, }) {
+function HeaderIntialize({ logoSrc, showSearch = true, showDashboardMenu = true, pvBars = true, tabsMenuList = true, user, AllSidebar = true, AllSidebarForMobile = true, MeneBarSec = true, ReturnToCart=false }) {
+
+  const defaultLogo = "../svg/ipar-logo.svg"; // fallback logo
 
   const [showAccount, setShowAccount] = useState(false);
   const [showShopByMenu, setShowShopByMenu] = useState(false);
@@ -145,7 +147,7 @@ function HeaderIntialize({ showSearch = true, showDashboardMenu = true, pvBars =
 
           <div className="logo">
             <a href="/">
-              <img src="../svg/ipar-logo.svg" alt="Ipar-logo" />
+              <img src={logoSrc || defaultLogo} alt="Ipar-logo" />
             </a>
           </div>
 
@@ -321,7 +323,9 @@ function HeaderIntialize({ showSearch = true, showDashboardMenu = true, pvBars =
           <div className="menu-item">
             <div className="container-fluid navbar-menu">
               <ul className="nav-list m-0 p-0" id="collapseMenu">
-
+                {ReturnToCart && (
+                  <a className="returntocart" href=""><i className="ri-arrow-left-s-line"></i> Return to cart</a>
+                )}
                 {tabsMenuList && (
                   <div className="main-listed-wrapper">
                     <li>

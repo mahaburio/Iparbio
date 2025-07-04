@@ -69,8 +69,6 @@ const featuredProducts = [
 
 // Cart ITem 
 
-
-
 function CartList() {
 
   const [user] = useState({

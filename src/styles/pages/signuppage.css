@@ -1023,7 +1023,7 @@ select {
   outline: none;
 }
 
-.lb-in .react-tel-input {
+.sign-up-IBA-shop .lb-in .react-tel-input {
   width: 300px;
   font-size: 18px;
   outline: none;
@@ -1382,7 +1382,7 @@ select:focus {
 /* ? Payment Modal */
 
 .payment-modal .modal-body {
-  padding-bottom: 40px;
+  padding: 40px 30px;
 }
 
 .payment-static .modal-body {
@@ -1573,9 +1573,10 @@ select:focus {
     font-size: 16px;
   }
 
-  .payment-modal .modal-body {
-    padding-bottom: 40px;
-  }
+
+.payment-modal .modal-body {
+  padding: 30px 16px;
+}
 
   .intl-tel-input input {
     width: 100%;
@@ -3126,6 +3127,8 @@ input::-webkit-inner-spin-button {
   border-radius: 6px;
 }
 
+
+.volume,
 .summary .sm-desc .item {
   display: flex;
   align-items: center;
@@ -3830,6 +3833,7 @@ input::-webkit-inner-spin-button {
   top: 5px;
   transition: 0.2s ease;
 }
+
 
 .order-w-details .ck-tt .edit.activeHeaders {
   color: var(--green-color) !important;

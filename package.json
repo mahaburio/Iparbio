@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.2.6",
+    "@fontsource/roboto": "^5.2.6",
     "@tailwindcss/vite": "^4.1.11",
     "bootstrap": "^5.3.7",
     "flatpickr": "^4.6.13",

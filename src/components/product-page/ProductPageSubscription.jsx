@@ -67,7 +67,7 @@ const handlePageChange = (page) => {
   console.log("Selected page:", page);
 };
 
-function ProductPageSubscription({ navigation }) {
+function ProductPageSubscription({ navigation, GoCart = true }) {
   useEffect(() => {
     const gridBtn = document.querySelector(".grid");
     const listBtn = document.querySelector(".list-view");
@@ -171,11 +171,13 @@ function ProductPageSubscription({ navigation }) {
               </div>
               <Pagination totalPages={6} onPageChange={handlePageChange} />
 
-              <div className="btn-sec mt-5 text-lg-end text-md-end text-sm-end text-center">
-                <button className="black-btn">
-                  <a href="/cart">Go to Cart</a>
-                </button>
-              </div>
+              {GoCart && (
+                <div className="btn-sec mt-5 text-lg-end text-md-end text-sm-end text-center">
+                  <button className="black-btn">
+                    <a href="/cart">Go to Cart</a>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </section>

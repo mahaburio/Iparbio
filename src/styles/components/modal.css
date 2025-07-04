@@ -22,6 +22,11 @@
   animation: fade-in 0.2s ease forwards;
 }
 
+.modal-small {
+  width: 450px;
+  padding: 40px 12px;
+}
+
 .medium-modal {
   width: 550px;
   padding: 40px 30px;
@@ -85,10 +90,13 @@
   z-index: 66;
 }
 
-
 @media screen and (max-width: 768px) {
-  .custom-modal{
+  .custom-modal {
     width: 90%;
   }
-}
 
+  .modal-small {
+    width: 100%;
+    padding: 40px 12px;
+  }
+}

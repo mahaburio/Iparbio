@@ -1,3 +1,5 @@
+
+
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Homepage from './pages/main/Homepage';
 import JoinUsePage from './pages/main/JoinUs';
@@ -14,12 +16,15 @@ import CartPage from './pages/main/CartPage';
 import CustomerSignin from './pages/main/CustomerSignin';
 import OrderConfirmation from './pages/main/OrderConfirmation';
 
+import CheckoutReviews from './pages/signup/CheckoutReviews';
 
 // SIgnUp Pages
 import SignupPage from './pages/signup/Signup';
 import SignupPageIBA from './pages/signup/SignupIBA';
 import SignupInfluencer from './pages/signup/SignupInfluencer';
 import SignupProcess from './pages/signup/SignupProcess';
+
+import Checkout from './pages/signup/Checkout';
 
 import SubscriptionShop from './pages/signup/SubscriptioShop';
 
@@ -96,7 +101,10 @@ function App() {
         <Route path="/signup-iba" element={<SignupPageIBA />} />
         <Route path="/signup-influencer" element={<SignupInfluencer />} />
         <Route path="/signup-process" element={<SignupProcess />} />
-        <Route path="/subscription-shop" element={<SubscriptionShop />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout-review" element={<CheckoutReviews />} />
+
+
 
         {/* Sign in Page Switch mode here */}
 
