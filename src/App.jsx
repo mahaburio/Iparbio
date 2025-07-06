@@ -37,7 +37,12 @@ import PersonallyEnrolled from './pages/enrollment/PersonallyEnrolled';
 import AssociateCouncil from './pages/enrollment/AssociateCouncil';
 import EwalletLogin from './pages/enrollment/EwalletLogin';
 import Enhancement from './pages/enrollment/Enhancement';
-
+import { IparElite, IparEliteDoctor, IparEliteJourney } from './pages/enrollment/IparElite';
+import IparUserInfo from './pages/enrollment/IparUserInfo';
+import UplineLeaderPlacementPage from './pages/enrollment/UplineLeaderPlacement';
+import FormsAndDocuments from './pages/enrollment/FormsDocuments';
+import ResourceCenterLogin from './pages/enrollment/ResourceCenterLogin';
+import SubscriptionPc from './pages/subscription/SubscriptionPc';
 
 function App() {
 
@@ -111,8 +116,6 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkout-review" element={<CheckoutReviews />} />
 
-
-
         {/* Sign in Page Switch mode here */}
 
         <Route path="/signin" element={<SigninPage method="phone" />} />
@@ -128,6 +131,17 @@ function App() {
         <Route path='/associate-council' element={<AssociateCouncil />}></Route>
         <Route path='/ewallet-login' element={<EwalletLogin />}></Route>
         <Route path='/enhancement' element={<Enhancement />}></Route>
+        <Route path='/elite' element={<IparElite />}></Route>
+        <Route path='/elite-journey' element={<IparEliteJourney />}></Route>
+        <Route path='/elite-doctor' element={<IparEliteDoctor />}></Route>
+        <Route path='/ipar-user-info' element={<IparUserInfo />}></Route>
+        
+        <Route path='/upline' element={<UplineLeaderPlacementPage />}></Route>
+        <Route path='/forms' element={<FormsAndDocuments />}></Route>
+        <Route path='/resource-center-login' element={<ResourceCenterLogin />}></Route>
+        
+        
+        <Route path='/subscription' element={<SubscriptionPc />}></Route>
 
 
         {/* Optionally add a 404 Not Found route */}

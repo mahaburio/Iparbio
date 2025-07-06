@@ -12,7 +12,7 @@ import { useCart } from "../../context/CartContext";
 // Icon
 import { FaShoppingCart } from "react-icons/fa";
 
-function HeaderIntialize({ logoSrc, showSearch = true, showDashboardMenu = true, pvBars = true, tabsMenuList = true, user, AllSidebar = true, AllSidebarForMobile = true, MeneBarSec = true, ReturnToCart=false }) {
+function HeaderIntialize({ logoSrc, showSearch = true, showDashboardMenu = true, pvBars = true, tabsMenuList = true, user, AllSidebar = true, AllSidebarForMobile = true, MeneBarSec = true, ReturnToCart = false, Sponsor = false }) {
 
   const defaultLogo = "../svg/ipar-logo.svg"; // fallback logo
 
@@ -524,6 +524,15 @@ function HeaderIntialize({ logoSrc, showSearch = true, showDashboardMenu = true,
                         Unlock <span className="fw-semibold">GOLD</span> with 22.5 PV
                       </div>
                     </div>
+                  </div>
+                )}
+
+                {/* Sponsor For Dashboard Page */}
+
+                {Sponsor && (
+                  <div className="sponsor">
+                    <span>Sponsor </span>
+                    <a href="#">FAFA</a>
                   </div>
                 )}
 

@@ -6,7 +6,7 @@ export const CardItem = ({ item, isSelected, onToggleSelect }) => {
 
   const handleClick = () => {
     if (selectable) {
-      onToggleSelect(nameTitle);
+      onToggleSelect(); // toggles selection based on index passed from parent
     }
   };
 
@@ -37,5 +37,3 @@ export const CardItem = ({ item, isSelected, onToggleSelect }) => {
     </div>
   );
 };
-
-

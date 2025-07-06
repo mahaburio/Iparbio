@@ -14,14 +14,13 @@ const Enhancement = () => {
 
   const [selectedCards, setSelectedCards] = useState([]);
 
-  const toggleCardSelection = (title) => {
+  const toggleCardSelection = (id) => {
     setSelectedCards((prevSelected) =>
-      prevSelected.includes(title)
-        ? prevSelected.filter((t) => t !== title)
-        : [...prevSelected, title]
+      prevSelected.includes(id)
+        ? prevSelected.filter((i) => i !== id)
+        : [...prevSelected, id]
     );
   };
-
 
   // Traning Cards Items
   const TrainingCardsItem = [
@@ -257,14 +256,19 @@ const Enhancement = () => {
           <div className="container">
             <div className="main-head-title">Training</div>
             <div className="grid-cards mt-5">
-              {TrainingCardsItem.map((item, index) => (
-                <CardItem
-                  key={index}
-                  item={item}
-                  isSelected={selectedCards.includes(item.nameTitle)}
-                  onToggleSelect={toggleCardSelection}
-                />
-              ))}
+              {TrainingCardsItem.map((item, index) => {
+                const id = `training-${index}`;
+                return (
+                  <CardItem
+                    key={id}
+                    item={item}
+                    isSelected={selectedCards.includes(id)}
+                    onToggleSelect={() => toggleCardSelection(id)}
+                  />
+                );
+              })}
+
+
             </div>
           </div>
         </section>
@@ -274,14 +278,17 @@ const Enhancement = () => {
           <div className="container">
             <div className="main-head-title">Product and Wellness</div>
             <div className="grid-cards mt-5">
-              {WellnessCardsItem.map((item, index) => (
-                <CardItem
-                  key={index}
-                  item={item}
-                  isSelected={selectedCards.includes(item.nameTitle)}
-                  onToggleSelect={toggleCardSelection}
-                />
-              ))}
+              {WellnessCardsItem.map((item, index) => {
+                const id = `wellness-${index}`;
+                return (
+                  <CardItem
+                    key={id}
+                    item={item}
+                    isSelected={selectedCards.includes(id)}
+                    onToggleSelect={() => toggleCardSelection(id)}
+                  />
+                );
+              })}
             </div>
           </div>
         </section>
@@ -309,14 +316,17 @@ const Enhancement = () => {
           <div className="container">
             <div className="main-head-title">Ways to Earn</div>
             <div className="grid-cards mt-5">
-              {EarnsCardsItem.map((item, index) => (
-                <CardItem
-                  key={index}
-                  item={item}
-                  isSelected={selectedCards.includes(item.nameTitle)}
-                  onToggleSelect={toggleCardSelection}
-                />
-              ))}
+              {EarnsCardsItem.map((item, index) => {
+                const id = `earns-${index}`;
+                return (
+                  <CardItem
+                    key={id}
+                    item={item}
+                    isSelected={selectedCards.includes(id)}
+                    onToggleSelect={() => toggleCardSelection(id)}
+                  />
+                );
+              })}
             </div>
           </div>
         </section>
@@ -339,8 +349,6 @@ const Enhancement = () => {
             </div>
           </div>
         </section>
-
-
       </div>
       <Footer />
     </MainWrapper>
