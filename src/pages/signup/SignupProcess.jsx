@@ -6,7 +6,6 @@ import Footer from '../../components/footer/footer.jsx';
 import { Help } from '../../components/common/Help.jsx';
 import SelectMarketModal from '../../components/signup-page/SelectMarketModal.jsx';
 import { PhoneNumberInput } from '../../components/input/InputFields.jsx';
-import CheckboxInput from "../../components/input/CheckboxInput.jsx";
 import DatePicker from '../../components/input/DatePicker.jsx';
 
 
@@ -21,14 +20,30 @@ import CartItem from '../../components/product-page/CartItem.jsx';
 import UserCard from '../../components/signup-page/Checkout/UserDetails.jsx';
 import PaymentMethod from '../../components/signup-page/Checkout/PaymentMethod.jsx';
 import Reviews from '../../components/signup-page/Checkout/Reviews.jsx';
+import { VerifactionEmail } from '../../components/signup-page/Checkout/Verifaction.jsx';
 
 const SignupProcess = () => {
   const steps = ['Sign up', 'Create profile', 'Subscription', 'Checkout', 'Complete'];
   const [currentStep, setCurrentStep] = useState(1);
   const [completedStep, setCompletedStep] = useState(1);
+
+  const [step1Phase, setStep1Phase] = useState(1);
+
   const [step3Phase, setStep3Phase] = useState(1);
   const [step4Phase, setStep4Phase] = useState(1);
   const [selectedPlanIndex, setSelectedPlanIndex] = useState(null); // Track selected plan
+
+  const [showReviewPage, setShowReviewPage] = useState(false);
+  const [startStep, setStartStep] = useState(1); // Default is Contact
+
+
+  useEffect(() => {
+    if (currentStep !== 1) {
+      setStep1Phase(1);
+    }
+  }, [currentStep]);
+
+
 
 
   useEffect(() => {
@@ -233,161 +248,145 @@ const SignupProcess = () => {
   ];
 
 
-
-  // const [cartItems] = useState([
-  //   {
-  //     id: 1,
-  //     name: "Welcome Kit",
-  //     price: "$80",
-  //     quantity: 2,
-  //     image: '../images/product-img-2.webp',
-  //     itemCode: "105",
-  //     showControls: false,
-
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Balance",
-  //     price: "$80",
-  //     quantity: 2,
-  //     image: '../images/product-img-2.webp',
-  //     itemCode: "103/500ml",
-  //     showControls: false,
-
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Lipstick",
-  //     price: "$80",
-  //     quantity: 2,
-  //     image: '../images/product-img-2.webp',
-  //     itemCode: "262/No5",
-  //     showControls: false,
-
-  //   },
-  // ]);
-
-
-
   return (
     <MainWrapper>
-      <div className="signup_page sign-up-IBA-shop create-profile">
+      <div className="signup_page sign-up-IBA-shop create-profile checkout-page product_checkout">
         <Header showSearch={false} MeneBarSec={false} showDashboardMenu={false} />
         <StepProgress currentStep={currentStep} steps={steps} onStepClick={handleStepClick} maxStepReached={completedStep} />
 
         <div>
           {currentStep === 1 && (
-            <section className="SignupSteps">
-              <section className="title-section mt-5">
-                <div className="container">
-                  <div className="title-desc-green fw-medium">
-                    <i>Step 2: Create Account</i>
-                  </div>
-                  <div className="title-desc mt-4">
-                    Time to create your account! Fill in the necessary details to set up
-                    your account and move forward in the process.
-                  </div>
-                </div>
-              </section>
+            <>
+              {step1Phase === 1 && (
+                <>
+                  <VerifactionEmail />
 
-              <div className="signup-input-section">
-                <div className="container">
-                  <div className="country d-flex align-items-center gap-2">
-                    <span>*You're currently signing up in <span>{selectedCountry.code}</span></span>
-                    <div className="img">
-                      <img src={selectedCountry.flag} alt="" />
+                  <div className="container">
+                    <div className="btn-sec mt-5 text-end">
+                      <button
+                        className="black-btn"
+                        onClick={() => setStep1Phase(2)}
+                      >
+                        Continue
+                      </button>
                     </div>
                   </div>
-                  <p onClick={() => setIsModalOpen(true)}>Change Location (Select Market)</p>
-
-                  <form onSubmit={(e) => { e.preventDefault(); handleContinue(); }}>
-                    <div className="input-item d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
-                      <div className="lb-in">
-                        <label>Email*</label><br />
-                        <input name="email" value={formData.email} onChange={handleInputChange} type="email" required />
+                </>
+              )}
+              {step1Phase === 2 && (
+                <section className="SignupSteps">
+                  <section className="title-section mt-5">
+                    <div className="container">
+                      <div className="title-desc-green fw-medium">
+                        <i>Step 2: Create Account</i>
                       </div>
-                      <div className="tt-txt mt-lg-4 mt-md-4 mt-sm-1 mt-1 ms-lg-3 ms-md-3 ms-sm-0 ms-0 "><i>Verify Your Email Address*</i></div>
+                      <div className="title-desc mt-4">
+                        Time to create your account! Fill in the necessary details to set up
+                        your account and move forward in the process.
+                      </div>
                     </div>
+                  </section>
 
-                    <div className="input-item mt-3 d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
-                      <div className="lb-in d-flex d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
-                        <PhoneNumberInput label={true} value={formData.phone} onChange={(val) => setFormData(prev => ({ ...prev, phone: val }))} />
-
-                        <div className="tt-txt mt-lg-4 mt-md-4 mt-sm-1 mt-1 ms-lg-3 ms-md-3 ms-sm-0 ms-0">
-                          <i>Verify Your phone number*</i>
+                  <div className="signup-input-section">
+                    <div className="container">
+                      <div className="country d-flex align-items-center gap-2">
+                        <span>*You're currently signing up in <span>{selectedCountry.code}</span></span>
+                        <div className="img">
+                          <img src={selectedCountry.flag} alt="" />
                         </div>
                       </div>
+                      <p onClick={() => setIsModalOpen(true)}>Change Location (Select Market)</p>
 
+                      <form onSubmit={(e) => { e.preventDefault(); handleContinue(); }}>
+                        <div className="input-item d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
+                          <div className="lb-in">
+                            <label>Email*</label><br />
+                            <input name="email" value={formData.email} onChange={handleInputChange} type="email" required />
+                          </div>
+                          <div className="tt-txt mt-lg-4 mt-md-4 mt-sm-1 mt-1 ms-lg-3 ms-md-3 ms-sm-0 ms-0 "><i>Verify Your Email Address*</i></div>
+                        </div>
+
+                        <div className="input-item mt-3 d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
+                          <div className="lb-in lb-in-phone d-flex d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
+                            <PhoneNumberInput label={true} value={formData.phone} onChange={(val) => setFormData(prev => ({ ...prev, phone: val }))} />
+
+                            <div className="tt-txt mt-lg-4 mt-md-4 mt-sm-1 mt-1 ms-lg-3 ms-md-3 ms-sm-0 ms-0">
+                              <i>Verify Your phone number*</i>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div className="input-item-pass mt-3 d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
+                          <div className="lb-in">
+                            <label>Password*</label><br />
+                            <input name="password" value={formData.password} onChange={handleInputChange} type="password" required />
+                          </div>
+                          <div className="tt-txt-gr mt-lg-4 mt-md-4 mt-sm-1 mt-1 ms-lg-3 ms-md-3 ms-sm-0 ms-0">
+                            Your password should be at least 8 characters long, including a mix of letters (both uppercase and lowercase), numbers, and special characters (like !, @, #, etc.). This helps keep your account secure.
+                          </div>
+                        </div>
+
+                        <div className="input-name mt-3 d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
+                          <div className="lb-in">
+                            <label>First Name*</label><br />
+                            <input name="firstName" value={formData.firstName} onChange={handleInputChange} type="text" required />
+                          </div>
+                          <div className="lb-in">
+                            <label>Middle Name</label><br />
+                            <input name="middleName" value={formData.middleName} onChange={handleInputChange} type="text" />
+                          </div>
+                          <div className="lb-in">
+                            <label>Last Name*</label><br />
+                            <input name="lastName" value={formData.lastName} onChange={handleInputChange} type="text" required />
+                          </div>
+                        </div>
+
+                        <div className="input-gender mt-3 d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
+                          <div className="lb-in">
+                            <label>Gender</label><br />
+                            <select name="gender" value={formData.gender} onChange={handleInputChange}>
+                              <option value="">Select</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+
+                          <div className="lb-in">
+                            <label>Birth Date</label><br />
+                            <div className="date-im d-flex gap-2"></div>
+                            <DatePicker
+                              value={formData.birthDate}
+                              onChange={(val) => setFormData(prev => ({ ...prev, birthDate: val }))}
+                              id="birth-date"
+                              CalendarIcon={true}
+                              className="flatpickr-input" />
+
+                          </div>
+                        </div>
+
+                        <div className="input-tax-id mt-3 d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
+                          <div className="lb-in">
+                            <label>Social Security Number or Tax ID*</label><br />
+                            <input name="taxId" value={formData.taxId} onChange={handleInputChange} type="text" required />
+                          </div>
+                        </div>
+
+                        <div className="btn-sec d-flex justify-content-between align-items-center mt-5">
+                          <div className="pr-pl">
+                            * We care about your privacy. <a href="">Privacy Policy</a>
+                          </div>
+                          <button className="black-btn mt-4" onClick={handleContinue} type="submit">Continue</button>
+                        </div>
+                      </form>
+
+                      <SelectMarketModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSelect={handleSelectCountry} />
                     </div>
-
-                    <div className="input-item-pass mt-3 d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
-                      <div className="lb-in">
-                        <label>Password*</label><br />
-                        <input name="password" value={formData.password} onChange={handleInputChange} type="password" required />
-                      </div>
-                      <div className="tt-txt-gr mt-lg-4 mt-md-4 mt-sm-1 mt-1 ms-lg-3 ms-md-3 ms-sm-0 ms-0">
-                        Your password should be at least 8 characters long, including a mix of letters (both uppercase and lowercase), numbers, and special characters (like !, @, #, etc.). This helps keep your account secure.
-                      </div>
-                    </div>
-
-                    <div className="input-name mt-3 d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
-                      <div className="lb-in">
-                        <label>First Name*</label><br />
-                        <input name="firstName" value={formData.firstName} onChange={handleInputChange} type="text" required />
-                      </div>
-                      <div className="lb-in">
-                        <label>Middle Name</label><br />
-                        <input name="middleName" value={formData.middleName} onChange={handleInputChange} type="text" />
-                      </div>
-                      <div className="lb-in">
-                        <label>Last Name*</label><br />
-                        <input name="lastName" value={formData.lastName} onChange={handleInputChange} type="text" required />
-                      </div>
-                    </div>
-
-                    <div className="input-gender mt-3 d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
-                      <div className="lb-in">
-                        <label>Gender</label><br />
-                        <select name="gender" value={formData.gender} onChange={handleInputChange}>
-                          <option value="">Select</option>
-                          <option value="Male">Male</option>
-                          <option value="Female">Female</option>
-                          <option value="Other">Other</option>
-                        </select>
-                      </div>
-
-                      <div className="lb-in">
-                        <label>Birth Date</label><br />
-                        <div className="date-im d-flex gap-2"></div>
-                        <DatePicker
-                          value={formData.birthDate}
-                          onChange={(val) => setFormData(prev => ({ ...prev, birthDate: val }))}
-                          id="birth-date"
-                          CalendarIcon={true}
-                          className="flatpickr-input" />
-
-                      </div>
-                    </div>
-
-                    <div className="input-tax-id mt-3 d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start">
-                      <div className="lb-in">
-                        <label>Social Security Number or Tax ID*</label><br />
-                        <input name="taxId" value={formData.taxId} onChange={handleInputChange} type="text" required />
-                      </div>
-                    </div>
-
-                    <div className="btn-sec d-flex justify-content-between align-items-center mt-5">
-                      <div className="pr-pl">
-                        * We care about your privacy. <a href="">Privacy Policy</a>
-                      </div>
-                      <button className="black-btn mt-4" onClick={handleContinue} type="submit">Continue</button>
-                    </div>
-                  </form>
-
-                  <SelectMarketModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSelect={handleSelectCountry} />
-                </div>
-              </div>
-            </section>
+                  </div>
+                </section>
+              )}
+            </>
           )}
 
           {currentStep === 2 && (
@@ -451,7 +450,7 @@ const SignupProcess = () => {
                         className="black-btn"
                         onClick={() => setStep3Phase(2)}
                       >
-                        Go to Cart
+                        Next Step
                       </button>
                     </div>
                   </div>
@@ -591,7 +590,19 @@ const SignupProcess = () => {
                   <div className="container mt-5">
                     <div className="row">
                       <div className="col-lg-7 col-md-12 pe-lg-4 pe-md-4 pe-sm-auto pe-auto">
-                        <CheckoutWrapper />
+                        {!showReviewPage ? (
+                          <CheckoutWrapper
+                            onReviewClick={() => setShowReviewPage(true)}
+                            startStep={startStep}
+                          />
+                        ) : (
+                          <Reviews
+                            onBack={(step) => {
+                              setStartStep(step);
+                              setShowReviewPage(false);
+                            }}
+                          />
+                        )}
                       </div>
                       <div className="col-lg-5 col-md-12">
                         <div className='sm-desc mt-3 px-lg-3 px-md-3 px-sm-0 px-0'>
@@ -653,28 +664,30 @@ const SignupProcess = () => {
                       <PaymentMethod />
                     </div>
 
-
-                    <div class="btn-sec my-5 text-end">
-                      <button class="black-btn" onClick={() => setStep4Phase(4)}>Use this payment method</button>
+                    <div className="btn-sec my-5 text-end">
+                      <button
+                        className="black-btn"
+                        onClick={() => {
+                          setShowReviewPage(true);   // ✅ Show review
+                          setStartStep(4);           // ✅ Optional: track step 4
+                          setStep4Phase(2);          // ✅ Go back to checkout (step 2)
+                        }}
+                      >
+                        Use this payment method
+                      </button>
                     </div>
                   </div>
                 </section>
               )}
-
-              {step4Phase === 4 && (
-                <>
-                  <Reviews />
-                </>
-              )}
             </>
           )}
 
-          {currentStep === 5 && (
+          {/* {currentStep === 5 && (
             <section className="step-content container mt-5">
               <h2>Complete</h2>
               <p>Thank you for signing up!</p>
             </section>
-          )}
+          )} */}
         </div>
 
 
@@ -682,7 +695,7 @@ const SignupProcess = () => {
         <Help />
         <Footer footerOnlyDesc={true} footerDefault={false} />
       </div>
-    </MainWrapper>
+    </MainWrapper >
   );
 };
 

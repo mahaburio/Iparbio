@@ -1,7 +1,7 @@
 // AddPaymentContent.jsx
 import React from "react";
 
-const AddPaymentContent = () => {
+const AddPaymentContent = ({ onSave }) => {
   return (
     <div className="payment-modal">
       <div className="modal-body">
@@ -49,7 +49,7 @@ const AddPaymentContent = () => {
         </div>
 
         <div className="btn-sec mt-3 text-end">
-          <button className="green-btn mt-3">Save and Continue</button>
+          <button className="green-btn mt-3" onClick={onSave}>Save and Continue</button>
         </div>
       </div>
     </div>

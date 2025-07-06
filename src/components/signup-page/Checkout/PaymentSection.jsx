@@ -120,7 +120,6 @@ const PaymentSection = ({ active, onNext, onEdit, completed }) => {
         <AddPaymentContent />
       </Modal>
 
-
       {/* Address modal */}
       <Modal isOpen={isAddressModalOpen} onClose={() => setIsAddressModalOpen(false)}>
 

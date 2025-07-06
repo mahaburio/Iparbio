@@ -5,6 +5,7 @@ import CheckboxInput from "../../input/CheckboxInput";
 
 const ContactSection = ({ active, onNext, onEdit, completed, formData, setFormData }) => {
   const [errors, setErrors] = useState({});
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const validate = () => {
     let errs = {};
@@ -12,27 +13,29 @@ const ContactSection = ({ active, onNext, onEdit, completed, formData, setFormDa
     if (!formData.last) errs.last = true;
     if (!formData.phone) errs.phone = true;
     if (!formData.email) errs.email = true;
+    if (!formData.agree) errs.agree = true;
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
 
   const handleInputChange = (field, value) => {
-    setFormData({ ...formData, [field]: value });
-    setErrors({ ...errors, [field]: false });
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+    setErrors((prev) => ({
+      ...prev,
+      [field]: false,
+    }));
   };
-
-  // Form Submittet Logic
-  const [agreeChecked, setAgreeChecked] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) {
-      onNext();
-    }
-
     setFormSubmitted(true);
-    if (!agreeChecked) return;
+
+    if (!validate()) return;
+
+    onNext(); // Proceed to next step if valid
   };
 
   return (
@@ -68,7 +71,10 @@ const ContactSection = ({ active, onNext, onEdit, completed, formData, setFormDa
 
                   <div className="input-item input-item-phone d-flex gap-2">
                     <div className="phone-int-cnt d-flex flex-column">
-                      <PhoneNumberInput label={false} value={formData.phone} onChange={(value) => handleInputChange("phone", value)}
+                      <PhoneNumberInput
+                        label={false}
+                        value={formData.phone}
+                        onChange={(value) => handleInputChange("phone", value)}
                       />
                       <div className="dem-txt">
                         We'll text you a code to confirm your number
@@ -91,8 +97,8 @@ const ContactSection = ({ active, onNext, onEdit, completed, formData, setFormDa
                 <div className="agree-title mt-4 d-flex align-items-center gap-3">
                   <CheckboxInput
                     label="I would like to be contacted with deals, offers, and more."
-                    checked={agreeChecked}
-                    setChecked={setAgreeChecked}
+                    checked={formData.agree || false}
+                    setChecked={(val) => handleInputChange("agree", val)}
                     required={true}
                     formSubmitted={formSubmitted}
                   />
@@ -108,8 +114,8 @@ const ContactSection = ({ active, onNext, onEdit, completed, formData, setFormDa
             </form>
           </div>
         </div>
-      </SectionWrapper >
-    </div >
+      </SectionWrapper>
+    </div>
   );
 };
 

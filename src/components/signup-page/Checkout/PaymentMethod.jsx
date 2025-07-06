@@ -1,13 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Modal from "../../common/PopupModal";
 import AddPaymentContent from "../../common/AddPaymentContent";
 
-
-
 const PaymentMethod = () => {
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div>

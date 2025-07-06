@@ -1,6 +1,32 @@
 import React from 'react'
+import CompanyDetailsSection from '../product-page/SectionTwo';
+
+
 
 const SubscriptionPlan = ({ plans, selectedIndex, handleSelect }) => {
+
+  const companyDetailsDataTwo = [
+    {
+      img: "../svg/fda.svg",
+      alt: "Made in a FDA registered facility",
+      label: "Made in a FDA registered facility",
+    },
+    {
+      img: "../svg/gmp.svg",
+      alt: "Certified Good Manufacturing Practices",
+      label: "Certified Good Manufacturing Practices",
+    },
+    {
+      img: "../svg/haccp.svg",
+      alt: "Made in a Intertek Certified Facility",
+      label: "Made in a Intertek Certified Facility",
+    },
+    {
+      img: "../svg/vegan.svg",
+      alt: "VEGA",
+      label: "VEGA",
+    },
+  ];
 
   return (
     <div className='signup_page subscription-page subscription-package'>
@@ -96,6 +122,13 @@ const SubscriptionPlan = ({ plans, selectedIndex, handleSelect }) => {
             })}
           </div>
         </section>
+
+        {/* Company Details Section */}
+
+        <div className="mt-5">
+          <CompanyDetailsSection companyDetailsData={companyDetailsDataTwo} />
+        </div>
+
       </div>
     </div>
   )

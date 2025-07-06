@@ -1,0 +1,76 @@
+.dual-range-slider {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  justify-content: center;
+}
+
+.dual-sliders-control {
+  position: relative;
+  width: 100%;
+}
+
+.dual-slider-tooltip {
+  position: absolute;
+  top: -24px;
+  font-size: 12px;
+  translate: -50% 0;
+}
+
+.dual-range-track,
+.dual-range-thumb {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  border-radius: 20px;
+  pointer-events: none;
+  appearance: none;
+}
+
+.dual-range-thumb {
+  pointer-events: all;
+  background: none;
+  z-index: 2;
+}
+
+.dual-from {
+  z-index: 3;
+}
+.dual-to {
+  z-index: 4;
+}
+
+.dual-range-thumb::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #95c12b;
+  cursor: pointer;
+}
+.dual-range-thumb::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #95c12b;
+  cursor: pointer;
+}
+
+.dual-min-scale,
+.dual-max-scale {
+  position: absolute;
+  top: 15px;
+  font-size: 12px;
+}
+.dual-min-scale {
+  left: 0;
+}
+.dual-max-scale {
+  right: 0;
+}
+
+
+

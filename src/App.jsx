@@ -26,10 +26,17 @@ import SignupProcess from './pages/signup/SignupProcess';
 
 import Checkout from './pages/signup/Checkout';
 
-import SubscriptionShop from './pages/signup/SubscriptioShop';
 
 import SigninPage from './pages/signup/Signin';
 import WelcomeEmailPage from './pages/signup/WelcomeEmail';
+
+
+// Enrollment 
+
+import PersonallyEnrolled from './pages/enrollment/PersonallyEnrolled';
+import AssociateCouncil from './pages/enrollment/AssociateCouncil';
+import EwalletLogin from './pages/enrollment/EwalletLogin';
+import Enhancement from './pages/enrollment/Enhancement';
 
 
 function App() {
@@ -116,6 +123,11 @@ function App() {
         <Route path="/welcome-email" element={<WelcomeEmailPage userName='Mahabur' userId='58712' emailType='signup' /* emailtype='order' */ />} />
 
 
+        {/* Enrollment */}
+        <Route path='/personal-enrollment' element={<PersonallyEnrolled />}></Route>
+        <Route path='/associate-council' element={<AssociateCouncil />}></Route>
+        <Route path='/ewallet-login' element={<EwalletLogin />}></Route>
+        <Route path='/enhancement' element={<Enhancement />}></Route>
 
 
         {/* Optionally add a 404 Not Found route */}

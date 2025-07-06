@@ -12,6 +12,8 @@ import Reviews from '../../components/signup-page/Checkout/Reviews'
 const Checkout = () => {
   const [showReviewPage, setShowReviewPage] = useState(false);
   const [startStep, setStartStep] = useState(1); // Default is Contact
+const [reviewData, setReviewData] = useState(null);
+
 
   const [cartItems] = useState([
     {
@@ -78,15 +80,21 @@ const Checkout = () => {
 
                 {!showReviewPage ? (
                   <CheckoutWrapper
-                    onReviewClick={() => setShowReviewPage(true)}
                     startStep={startStep}
+                    onReviewClick={(data) => {
+                      setReviewData(data); // Store all step data
+                      setShowReviewPage(true); // Show <Reviews />
+                    }}
                   />
+
                 ) : (
                   <Reviews
+                    formData={reviewData} // ✅ pass the full collected data
                     onBack={(step) => {
                       setStartStep(step);
                       setShowReviewPage(false);
                     }}
+                  
                   />
                 )}
               </div>

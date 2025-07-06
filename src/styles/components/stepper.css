@@ -83,11 +83,6 @@
 .step-point.step-complete .step-bullet,
 .step-point.step-active .step-bullet {
   background: var(--green-color);
-  
-}
-
-.step-point.step-active .step-bullet {
-  
 }
 
 .step-label {
@@ -101,12 +96,50 @@
   color: var(--gray-40);
   transition: 0.3s ease;
   white-space: nowrap;
-
-
 }
 
 .step-point.step-complete .step-label,
-.step-point.step-active .step-label{
+.step-point.step-active .step-label {
   color: var(--green-color);
   transition: 0.3s ease;
+}
+
+@media screen and (max-width: 1200px) {
+  .step-bar {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .step-bar {
+    width: 76%;
+  }
+
+  .step-label {
+    font-size: 16px;
+    top: -45px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .step-label {
+    display: none;
+  }
+
+  .step-bar {
+    width: 70%;
+  }
+
+  .step-progress {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .step-progress {
+    width: 90%;
+    padding: 0 30px;
+  }
+
+
 }

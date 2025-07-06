@@ -902,7 +902,6 @@ select {
   font-size: 16px;
 }
 
-
 @media screen and (max-width: 400px) {
   .signup_page_iba .id-box .input-wrapper {
     font-size: 16px;
@@ -1023,13 +1022,26 @@ select {
   outline: none;
 }
 
-.sign-up-IBA-shop .lb-in .react-tel-input {
+.sign-up-IBA-shop .lb-in-phone .react-tel-input {
+  max-width: 300px;
   width: 300px;
   font-size: 18px;
   outline: none;
   border-radius: 6px;
   color: var(--gray-100);
 }
+
+
+.react-tel-input{
+  max-width: 300px;
+  width: 100%;
+  height: 40px;
+}
+
+.react-tel-input .form-control{
+  height: 100%;
+}
+
 
 .input-item-pass input {
   width: 200px;
@@ -1138,6 +1150,16 @@ select:focus {
     width: 100%;
   }
 
+  .sign-up-IBA-shop .lb-in-phone .react-tel-input{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .react-tel-input{
+    width: 100%;
+    max-width: 100%;
+  }
+
   .input-name {
     width: 100%;
     grid-template-columns: 1fr;
@@ -1196,11 +1218,11 @@ select:focus {
 }
 
 .verifaction-page .title-section .container {
-  width: 60%;
+  width: 60% !important;
 }
 
 .verifaction-page .title-section .title-desc {
-  width: 80%;
+  width: 80% !important;
 }
 
 .verifaction-page .verify-desc {
@@ -1216,7 +1238,6 @@ select:focus {
   font-size: 26px;
   font-weight: 600;
   color: var(--green-color);
-  display: none;
   transition: 0.5s ease;
 }
 
@@ -1231,10 +1252,6 @@ select:focus {
   background-color: var(--gray-100) !important;
   pointer-events: none !important;
   opacity: 0.5;
-}
-
-.update-text {
-  display: none;
 }
 
 .verifaction-modal .modal-body {
@@ -1356,6 +1373,10 @@ select:focus {
   0% {
     opacity: 0;
   }
+}
+
+.changeItemModal.activeItemModal {
+  display: block;
 }
 
 .close-modal {
@@ -1502,7 +1523,7 @@ select:focus {
 
 @media screen and (max-width: 991px) {
   .verifaction-page .title-section .container {
-    width: 80%;
+    width: 80% !important;
   }
 
   .md-head-tl {
@@ -1547,7 +1568,7 @@ select:focus {
 
 @media screen and (max-width: 768px) {
   .verifaction-page .title-section .container {
-    width: 100%;
+    width: 100% !important;
   }
 
   .verifaction-page .title-section .title-desc {
@@ -1573,10 +1594,9 @@ select:focus {
     font-size: 16px;
   }
 
-
-.payment-modal .modal-body {
-  padding: 30px 16px;
-}
+  .payment-modal .modal-body {
+    padding: 30px 16px;
+  }
 
   .intl-tel-input input {
     width: 100%;
@@ -3127,7 +3147,6 @@ input::-webkit-inner-spin-button {
   border-radius: 6px;
 }
 
-
 .volume,
 .summary .sm-desc .item {
   display: flex;
@@ -3833,7 +3852,6 @@ input::-webkit-inner-spin-button {
   top: 5px;
   transition: 0.2s ease;
 }
-
 
 .order-w-details .ck-tt .edit.activeHeaders {
   color: var(--green-color) !important;
