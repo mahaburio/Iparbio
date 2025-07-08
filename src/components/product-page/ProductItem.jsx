@@ -12,6 +12,8 @@ const ProductItem = ({
   quantityPicker = false,
   productSizePicker = false,
   btn = true,
+  subscriptionSetup = false,
+  btnSubscribe = false
 }) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("");
@@ -19,10 +21,10 @@ const ProductItem = ({
   const price = parseFloat(item.price?.replace("$", "") || 0);
 
   const { showSubtotal, increaseCartCount } = useCart();
-
+  
   const handleAddToCart = () => {
     showSubtotal(`${item.name} x${quantity}`, price * quantity);
-    increaseCartCount(quantity);
+    increaseCartCount(quantity, item.pv); // ✅ pass PV string
   };
 
   const [isSelected, setIsSelected] = useState(false);
@@ -76,6 +78,20 @@ const ProductItem = ({
                 </div>
               </div>
             )}
+
+            {subscriptionSetup && item.subscriptionTime?.length > 0 && (
+              <div className="product-size mt-2">
+                <div className="size-box d-flex align-items-center justify-content-between">
+                  <div className="dropdown-label">Delivery every</div>
+                  <Dropdown
+                    label="Select"
+                    options={item.subscriptionTime}
+                    selected={selectedSize}
+                    onChange={setSelectedSize}
+                  />
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="det-btm">
@@ -90,6 +106,14 @@ const ProductItem = ({
               <div className="btn-sec text-center">
                 <button className="green-btn green-btn-sm mt-1" onClick={handleAddToCart}>
                   Add Order
+                </button>
+              </div>
+            )}
+
+            {btnSubscribe && (
+              <div className="btn-sec text-center">
+                <button className="green-btn green-btn-sm mt-1" onClick={handleAddToCart}>
+                  Subscribe
                 </button>
               </div>
             )}

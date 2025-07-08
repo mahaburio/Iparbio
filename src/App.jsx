@@ -43,6 +43,12 @@ import UplineLeaderPlacementPage from './pages/enrollment/UplineLeaderPlacement'
 import FormsAndDocuments from './pages/enrollment/FormsDocuments';
 import ResourceCenterLogin from './pages/enrollment/ResourceCenterLogin';
 import SubscriptionPc from './pages/subscription/SubscriptionPc';
+import { RankUpReportDeca, RankUpReportMonth } from './pages/enrollment/RankUpMonth';
+import SubscriptionOrder from './pages/subscription/SubscriptionOrder';
+import SubscriptionProductAll from './pages/subscription/SubscriptionProductAll';
+import SubscriptionCart from './pages/subscription/SubscriptionCart';
+import { SubscriptionOrderHistory } from './pages/subscription/SubscriptionOrderHistory';
+
 
 function App() {
 
@@ -140,8 +146,15 @@ function App() {
         <Route path='/forms' element={<FormsAndDocuments />}></Route>
         <Route path='/resource-center-login' element={<ResourceCenterLogin />}></Route>
         
+        <Route path='/rankup-report-deca' element={<RankUpReportDeca />}></Route>
+        <Route path='/rankup-report-month' element={<RankUpReportMonth />}></Route>
+        
         
         <Route path='/subscription' element={<SubscriptionPc />}></Route>
+        <Route path='/subscription-order' element={<SubscriptionOrder />}></Route>
+        <Route path='/subscription-product-all' element={<SubscriptionProductAll />}></Route>
+        <Route path='/subscription-cart' element={<SubscriptionCart />}></Route>
+        <Route path='/order-history' element={<SubscriptionOrderHistory />}></Route>
 
 
         {/* Optionally add a 404 Not Found route */}

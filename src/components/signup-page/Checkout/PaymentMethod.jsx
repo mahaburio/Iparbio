@@ -67,7 +67,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
           </div>
 
           <div
-            className="add-credit mt-3 ps-3"
+            className="add-credit mt-3 ps-3 green-title"
             onClick={() => setIsModalOpen(true)}
           >
             <span>

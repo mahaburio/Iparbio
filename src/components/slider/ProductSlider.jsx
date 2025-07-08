@@ -18,6 +18,8 @@ const ProductSliderInitialize = ({
   quantityPicker = false,
   productSizePicker = false,
   btn = true,
+  btnSubscribe = false,
+  subscriptionSetup = false,
   data = [],
 }) => {
   const sliderRef = useRef(null);
@@ -105,6 +107,8 @@ const ProductSliderInitialize = ({
                 quantityPicker={quantityPicker}
                 productSizePicker={productSizePicker}
                 btn={btn}
+                btnSubscribe={btnSubscribe}
+                subscriptionSetup={subscriptionSetup}
               />
             ))}
           </Slider>

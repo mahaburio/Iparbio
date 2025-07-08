@@ -7,7 +7,7 @@ import ProductSliderInitialize from "../../components/slider/ProductSlider.jsx";
 
 import CartItem from '../../components/product-page/CartItem.jsx';
 
-import {CartSummary} from "../../components/product-page/CartSummery.jsx";
+import { CartSummary } from "../../components/product-page/CartSummery.jsx";
 
 import '../../styles/pages/signuppage.css'
 
@@ -18,6 +18,7 @@ const featuredProducts = [
     details: "50B CFU & 8 Strains",
     price: "$50",
     pv: '20pv',
+    subscriptionTime: ["1 Month", "2 Months", "6 Months"],
   },
 
   {
@@ -25,7 +26,7 @@ const featuredProducts = [
     image: "../images/product-img-1.webp",
     details: "50B CFU & 8 Strains",
     price: "$80",
-    sizes: ['Solo 0.2', 'Darz 0.5']
+    subscriptionTime: ["1 Month", "2 Months", "6 Months"],
   },
 
   {
@@ -34,7 +35,6 @@ const featuredProducts = [
     details: "50B CFU & 8 Strains",
     price: "$80",
     colors: ["#d5ccc3", "#c28170", "#b16c6d", "#c28170", "#b16c6d"],
-
   },
 
   {
@@ -42,6 +42,7 @@ const featuredProducts = [
     image: "../images/product-img-1.webp",
     details: "50B CFU & 8 Strains",
     price: "$850",
+    subscriptionTime: ["1 Month", "2 Months", "6 Months"],
   },
 
   {
@@ -64,14 +65,7 @@ const featuredProducts = [
 
 // Cart ITem 
 
-function CartList() {
-
-  const [user] = useState({
-    isLoggedIn: true,
-    name: "Alex Merry",
-    image: "/images/new-shop.webp"
-  });
-
+function SubscriptionCart() {
 
   const [cartItems, setCartItems] = useState([
     {
@@ -100,33 +94,7 @@ function CartList() {
         showSize: true,
       },
     },
-    {
-      id: 3,
-      name: "Lipstick",
-      price: "$80",
-      quantity: 2,
-      image: '../images/product-img-2.webp',
-      itemCode: "262/No5",
-      showControls: false,
-      editOptions: {
-        showColor: true,
-        showSize: true,
-      },
-    },
 
-    {
-      id: 4,
-      name: "Lipstick",
-      price: "$200",
-      quantity: 1,
-      image: '../images/product-img-1.webp',
-      itemCode: "103/500ml",
-      showControls: true,
-      editOptions: {
-        showColor: false,
-        showSize: true,
-      },
-    },
   ]);
 
   const handleDelete = (id) => {
@@ -145,7 +113,7 @@ function CartList() {
     <MainWrapper>
 
       <div className=" product_cart product_page shopPage">
-        <Header user={user} />
+        <Header />
 
 
         <section className="order-cart-section">
@@ -169,20 +137,21 @@ function CartList() {
                       showControls={item.showControls}
                       onDelete={() => handleDelete(item.id)}
                       editOptions={item.editOptions}
-                      onQuantityChange={(qty) => handleQuantityChange(item.id, qty)
-                      }
+                      onQuantityChange={(qty) => handleQuantityChange(item.id, qty)}
+                      subscribeControls={true}
+                      updateItem={false}
                     />
                   ))}
                 </div>
               </div>
               <div className="col-lg-5 col-md-12">
                 <CartSummary
-                // Country Currency Code here
-                title="Cart Summary"
+                  // Country Currency Code here
+                  title="Cart Summary"
                   currency="USD"
                   summaryItems={[
                     { id: 1, title: 'Subtotal (8 items)', amount: 500.22 },
-                    { id: 2, title: 'Discount', amount: 0, /* hide: true  */},
+                    { id: 2, title: 'Discount', amount: 0, /* hide: true  */ },
                     { id: 3, title: 'Free Shipping Applied', amount: 0 },
                     { id: 4, title: 'Tax', amount: 0 },
                     { id: 5, title: 'Total amount', amount: 700.00, isTotal: true },
@@ -197,7 +166,7 @@ function CartList() {
           </div>
         </section>
 
-        <ProductSliderInitialize title='You may also like' data={featuredProducts} quantityPicker productSizePicker={true} />
+        <ProductSliderInitialize title='You may also like' data={featuredProducts} quantityPicker productSizePicker={false} subscriptionSetup={true} btn={false} btnSubscribe={true} />
 
         <Help />
         <Footer footerDefault={false} footerOnlyDesc={true} />
@@ -207,5 +176,5 @@ function CartList() {
   );
 }
 
-export default CartList;
+export default SubscriptionCart;
 

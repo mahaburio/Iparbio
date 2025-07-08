@@ -45,6 +45,24 @@ body {
   cursor: pointer;
 }
 
+
+.green-title {
+  color: var(--green-color) !important;
+}
+
+.gray {
+  color: var(--gray-100) !important;
+}
+
+.black {
+  color: var(--black-100) !important;
+}
+
+.bg-gray {
+  background-color: var(--bg-gray) !important;
+}
+
+
 .checked {
   background-color: var(--green-color) !important;
   transition: 0.2s ease;
@@ -233,6 +251,9 @@ li {
 .green-color {
   color: var(--green-color);
 }
+
+
+
 
 /* todo =================== COMMON-CLASS ===================== */
 
@@ -567,4 +588,204 @@ li {
     max-width: 1200px;
     margin: 0 auto;
   }
+}
+
+
+
+
+/* todo ~~~~~~~~~~~~~  ACTIVATION HEADER ~~~~~~~~~~~~~ */
+
+.activation-section {
+  padding-top: 80px;
+}
+
+.activation-menus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 3px solid #ddd;
+  position: relative;
+  
+}
+
+.activation-menus::after {
+  content: "";
+  height: 3px;
+  width: 50%;
+  background-color: var(--green-color);
+  bottom: -2px;
+  left: var(--after-left);
+  position: absolute;
+  -webkit-transition: left 0.3s ease;
+  -o-transition: left 0.3s ease;
+  transition: left 0.3s ease;
+}
+
+.activation-menus .act-menu {
+  width: 50%;
+  padding: 10px 0px;
+  font-size: 18px;
+  color: var(--gray-100);
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.activation-menus .act-menu.active {
+  color: var(--green-color);
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+/* TODO ~~~~~~~~~~~~~~~~ SUBSCRIPTION BLACK CARD ~~~~~~~~~~~~~~~ */
+
+.subscription-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: var(--black-100);
+  padding: 15px;
+  color: var(--white-100);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.subscription-card .arrowIcon {
+  font-size: 26px;
+  cursor: pointer;
+  height: 25px;
+  line-height: 25px;
+}
+
+@media screen and (max-width: 576px) {
+  .activation-menus .act-menu {
+    font-size: 16px;
+  }
+
+  .subscription-card {
+    font-size: 14px;
+    gap: 5px;
+    padding: 15px 10px;
+  }
+  .subscription-card span {
+    font-size: 12px;
+  }
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-content {
+  text-align: center;
+  position: relative;
+}
+
+.progress-ring {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+circle.track {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 12;
+}
+
+circle.progress {
+  fill: none;
+  stroke: black;
+  stroke-width: 12;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transition: stroke 0.3s;
+}
+
+#preloader .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: none;
+}
+
+#preloader .logo img {
+  width: 70px;
+  height: 70px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.percent-text {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pulse {
+  animation: pulseAnim 1s infinite ease-in-out;
+}
+
+@keyframes pulseAnim {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+.activation-menus-v3::after {
+  content: "";
+  height: 3px;
+  width: 33.33% ;
+  background-color: var(--green-color);
+  bottom: -2px;
+  left: var(--after-left);
+  position: absolute;
+  transition: left 0.3s ease;
+}
+
+.activation-menus-v3 .act-menu {
+  width: 33.33%;
+  padding: 10px 0px;
+  font-size: 16px;
+  color: var(--gray-100);
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.activation-menus-v3 .act-menu.active {
+  color: var(--green-color) !important;
+  transition: 0.3s ease;
 }

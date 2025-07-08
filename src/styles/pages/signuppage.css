@@ -3200,14 +3200,13 @@ input::-webkit-inner-spin-button {
 }
 
 .product_cart_modal .dropdown-list {
-  display: none;
   list-style-type: none;
   margin: 0;
   padding: 0;
   background-color: var(--white-100);
   border: 1px solid #ddd;
   position: absolute;
-  width: 150px;
+  width: 170px;
   z-index: 10;
 }
 
@@ -3221,9 +3220,6 @@ input::-webkit-inner-spin-button {
   color: var(--text-gray);
 }
 
-.product_cart_modal .dropdown-list.show {
-  display: block !important;
-}
 
 #paymentMethodSection {
   display: none;
@@ -3257,43 +3253,6 @@ input::-webkit-inner-spin-button {
   width: 50%;
 }
 
-.order_history .activation-section {
-  background-color: transparent;
-  padding-top: 0;
-}
-
-.order_history .activation-menus {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 3px solid #ddd;
-  position: relative;
-  --after-left: 0%;
-}
-
-.order_history .activation-menus-v3::after {
-  content: "";
-  height: 3px;
-  width: 33.33%;
-  background-color: var(--green-color);
-  bottom: -2px;
-  left: var(--after-left);
-  position: absolute;
-  transition: left 0.3s ease;
-}
-
-.order_history .activation-menus-v3 .act-menu {
-  width: 33.33%;
-  padding: 10px 0px;
-  font-size: 16px;
-  color: var(--gray-100);
-  font-weight: 550;
-  cursor: pointer;
-}
-
-.order_history .activation-menus-v3 .act-menu.active {
-  color: var(--green-color) !important;
-  transition: 0.3s ease;
-}
 
 .order-list-history .list-itm {
   display: flex;
@@ -3310,7 +3269,6 @@ input::-webkit-inner-spin-button {
 
 .cancelled-orders .order-list-history .list-itm .all-cart-items,
 .orders-section .order-list-history .list-itm .all-cart-items {
-  display: none;
   position: absolute;
   background-color: var(--white-100);
   width: 100%;

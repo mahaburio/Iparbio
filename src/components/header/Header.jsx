@@ -510,6 +510,16 @@ function HeaderIntialize({ logoSrc, showSearch = true, showDashboardMenu = true,
                 )}
               </ul>
               <div className="right-items">
+
+                {/* Sponsor For Dashboard Page */}
+
+                {Sponsor && (
+                  <div className="sponsor">
+                    <span>Sponsor </span>
+                    <a href="#">FAFA</a>
+                  </div>
+                )}
+
                 {pvBars && (
                   <div className="rangeline-mobile mt-3 d-flex align-items-center gap-2">
                     <div className="left">
@@ -524,15 +534,6 @@ function HeaderIntialize({ logoSrc, showSearch = true, showDashboardMenu = true,
                         Unlock <span className="fw-semibold">GOLD</span> with 22.5 PV
                       </div>
                     </div>
-                  </div>
-                )}
-
-                {/* Sponsor For Dashboard Page */}
-
-                {Sponsor && (
-                  <div className="sponsor">
-                    <span>Sponsor </span>
-                    <a href="#">FAFA</a>
                   </div>
                 )}
 

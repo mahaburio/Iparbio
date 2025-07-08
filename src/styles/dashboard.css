@@ -6352,7 +6352,6 @@ td {
   border-radius: 8px;
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: none;
   z-index: 666;
 }
 
