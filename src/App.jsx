@@ -59,6 +59,7 @@ import EnrollmentNetwork from './pages/dashboard/PerformanceReport';
 import VolumeReport from './pages/dashboard/VolumeReport';
 import PaymentStatement from './pages/dashboard/PaymentStatement';
 import WebsiteSetting from './pages/dashboard/WebsiteSetting';
+import ManageProfiles from './pages/dashboard/ManageProfiles';
 
 
 function App() {
@@ -180,6 +181,7 @@ function App() {
         <Route path='/volume-report' element={<VolumeReport />}></Route>
         <Route path='/payment-statement' element={<PaymentStatement />}></Route>
         <Route path='/website-setting' element={<WebsiteSetting />}></Route>
+        <Route path='/manage-profiles' element={<ManageProfiles />}></Route>
 
 
 

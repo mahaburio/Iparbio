@@ -4896,8 +4896,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: 0.3s ease;
 }
 
-
-
 .share-details .all-cart-items {
   position: relative;
   margin-bottom: 60px;
@@ -5013,11 +5011,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .setting-description {
   padding-left: 20px;
   animation: fadeUp 0.3s ease;
-
 }
 
 @keyframes fadeUp {
-  0%{
+  0% {
     opacity: 0;
     transform: translateY(10px);
   }
@@ -5110,14 +5107,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 70%;
 }
 
-.contact-info .lb-in{
+.contact-info .lb-in {
   width: 70%;
 }
 
 .contact-info .react-tel-input {
   width: 100%;
   max-width: 100%;
-
 }
 
 .contact-info .intl-tel-input input {
@@ -5133,11 +5129,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 5px;
   border-radius: 6px;
 }
-.top-picks .savelistCircle{
+.top-picks .savelistCircle {
   display: none;
 }
 
-.top-picks .qnt{
+.top-picks .qnt {
   display: none;
 }
 
@@ -5373,15 +5369,12 @@ input.alertInput {
   }
 }
 
-
 #timeline .timeline-post .reaction-count .left .reaction-img:nth-child(4),
 #timeline .timeline-post .reaction-count .left .reaction-img:nth-child(5) {
   display: none;
 }
 
 /* ? Upload Image Modal */
-
-
 
 .uploadFile .modal-dialog {
   max-width: 550px;
@@ -5393,19 +5386,19 @@ input.alertInput {
   color: var(--gray-100);
 }
 
-.uploadFile .modal-content{
+.uploadFile .modal-content {
   width: 500px;
 }
 
-.css-r64h58-MuiSlider-rail{
+.css-r64h58-MuiSlider-rail {
   background-color: var(--gray-100) !important;
 }
 
-.css-13vpke-MuiSlider-root{
+.css-13vpke-MuiSlider-root {
   color: var(--green-color) !important;
 }
 
-.css-1xcmt9q-MuiSlider-thumb{
+.css-1xcmt9q-MuiSlider-thumb {
   background-color: var(--green-color) !important;
 }
 
@@ -5509,9 +5502,31 @@ input.alertInput {
   cursor: pointer;
 }
 
+#productItems {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#productItems .edit-tool {
+  display: none;
+}
+
+#addProductsModal .modal-body .all-cart-items{
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#addProductsModal .input-wrapper{
+  height: 40px;
+  padding: 0px 10px;
+}
+
 .website-page header {
   position: relative;
 }
+
+
 
 /* ? MY story */
 
@@ -5741,14 +5756,18 @@ input.alertInput {
   opacity: 1;
 }
 
-.statement-calendar .flatpickr-current-month .numInputWrapper span.arrowUp:after{
-  border-bottom-color: var(--black-100) ;
-
+.statement-calendar
+  .flatpickr-current-month
+  .numInputWrapper
+  span.arrowUp:after {
+  border-bottom-color: var(--black-100);
 }
 
-.statement-calendar .flatpickr-current-month .numInputWrapper span.arrowDown:after{
-  border-top-color: var(--black-100) ;
-
+.statement-calendar
+  .flatpickr-current-month
+  .numInputWrapper
+  span.arrowDown:after {
+  border-top-color: var(--black-100);
 }
 
 .flatpickr-current-month
@@ -7157,6 +7176,12 @@ td {
 
   .contact-info .intl-tel-input {
     width: 100%;
+  }
+
+  .contact-info .lb-in{
+
+    width: 100%;
+    max-width: 100%;
   }
 
   /* ? Story Section */

@@ -21,8 +21,9 @@ const CartItem = ({
   editOptions = { showColor: true, showSize: true },
   subscribeControls = false,
   updateItem = true,
-  addButton = false,
-  ForAddProduct = false
+  ForAddProduct = false,
+  onAdd,
+
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -86,6 +87,7 @@ const CartItem = ({
                 color="var(--green-color)"
                 onClick={handleEdit}
                 style={{ cursor: 'pointer' }}
+                className="edit-tool"
               />
               <QuantityPicker initial={quantity} onChange={onQuantityChange} defaultSaved={true} saveListClass="savelistCircle" />
               <div className="cross-item d-flex align-items-center" onClick={onDelete}>
@@ -95,30 +97,8 @@ const CartItem = ({
 
             </>
           ) : (
-
-            <>
-              <span className="qnt">Quantity: {quantity}</span>
-
-              {ForAddProduct && (
-                <>
-                  <QuantityPicker initial={quantity} onChange={onQuantityChange} defaultSaved={true} saveListClass="savelistCircle" />
-                  <div className="cross-item d-flex align-items-center" onClick={onDelete}>
-                    <BsTrash3 fontSize={24} color="var(--green-color)" />
-                  </div>
-
-                  {addButton && (
-                    <>
-                      <div className="btn-sec">
-                        <button className="green-btn green-btn-sm addButton">Add</button>
-                      </div>
-                    </>
-                  )}
-                </>
-              )}
-
-            </>
+            <span className="qnt">Quantity: {quantity}</span>
           )}
-
 
         </div>
 
@@ -133,7 +113,7 @@ const CartItem = ({
               </div>
 
               <div className="btn-sec">
-                <button className="green-btn green-btn-sm">Add</button>
+                <button className="green-btn green-btn-sm" onClick={onAdd}>Add</button>
               </div>
             </>
           </div>

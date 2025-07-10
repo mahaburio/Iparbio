@@ -11,13 +11,13 @@ const WriteMyStoryModal = ({ isOpen, onClose, initialValue = "", onSave }) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} className="writeMyStory medium-modal">
-      <div class="modal-body">
+      <div className="modal-body">
         <textarea value={storyText}
           onChange={(e) => setStoryText(e.target.value)}
           rows={6}
           className="form-control" placeholder="Write your Ipar story here. Be clear, engaging, and customer-focused. Think about what your visitors would want to know about you or Ipar. How can you connect with their needs and interests? (&gt;500 ) "></textarea>
-        <div class="btn-sec text-end mt-3">
-          <button class="green-btn" id="saveBtn" onClick={handleSave}>Save</button>
+        <div className="btn-sec text-end mt-3">
+          <button className="green-btn" id="saveBtn" onClick={handleSave}>Save</button>
         </div>
 
 

@@ -17,13 +17,12 @@ const tabs = [
   { key: "googleTags", label: "Google Tags" },
 ];
 
+
 const WebsiteInfoSection = () => {
   const [activeTab, setActiveTab] = useState("business");
 
   const [showModal, setShowModal] = useState(false);
-  const [profileImage, setProfileImage] = useState("../assets/person.png");
-
-
+  const [profileImage, setProfileImage] = useState("");
 
   const handleFileUpload = (file) => {
     const imageUrl = URL.createObjectURL(file);
@@ -31,6 +30,24 @@ const WebsiteInfoSection = () => {
     setShowModal(false);
   };
 
+
+  // Swithces
+
+  const [switchStates, setSwitchStates] = useState({
+    showEmail: false,
+    showPhone: true,
+    showFacebook: false,
+    showInstagram: false,
+    showTwitter: true,
+    showEnrollment: true,
+  });
+
+  const handleSwitchChange = (key) => {
+    setSwitchStates((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
 
   // Enrollment
 
@@ -76,7 +93,11 @@ const WebsiteInfoSection = () => {
 
               <div className="profile-sec d-flex align-items-center gap-3">
                 <div className="img">
-                  <img id="profileImage" src={profileImage} alt="Profile" />
+                  <img
+                    id="profileImage"
+                    src={profileImage || "images/user.webp"}
+                    alt="Profile"
+                  />
                 </div>
                 <div className="edit" onClick={() => setShowModal(true)}>
                   Edit Photo
@@ -102,7 +123,6 @@ const WebsiteInfoSection = () => {
                   Save
                 </button>
               </div>
-
             </div>
 
             <UploadImageModal
@@ -113,51 +133,58 @@ const WebsiteInfoSection = () => {
 
           </>
 
-
         );
 
       case "contact":
         return (
-          <div class="contact-info setting-desc-itm ">
-            <div class="head-tt">Contact Information</div>
-            <p class="mt-3 head-dsc">
+          <div className="contact-info setting-desc-itm ">
+            <div className="head-tt">Contact Information</div>
+            <p className="mt-3 head-dsc">
               Displaying your contact information is optional, but it
               helps potential customers and team members reach out with
               questions—being accessible is key to growing your Ipar
               business!
             </p>
 
-            <div class="email mt-4">
-              <label class="name-label" for="d-name">Email</label><br />
-              <div class="inp-sec">
+            <div className="email mt-4">
+              <label className="name-label" for="d-name">Email</label><br />
+              <div className="inp-sec">
                 <input type="text" placeholder="example@gmail.com" />
-                <div class="toggle d-flex align-items-center gap-2">
-                  <label class="switch">
-                    <input type="checkbox" />
-                    <span class="slider round"></span>
+                <div className="toggle d-flex align-items-center gap-2">
+                  <label className="switch">
+                    <input
+                      type="checkbox"
+                      checked={switchStates.showEmail}
+                      onChange={() => handleSwitchChange("showEmail")}
+                    />
+                    <span className="slider round"></span>
                   </label>
-                  <span class="cms-txt">Show My Number</span>
+                  <span className="cms-txt">Show My Number</span>
                 </div>
               </div>
             </div>
 
-            <div class="phone mt-3">
-              <label class="name-label" for="d-name">Phone Number</label><br />
-              <div class="inp-sec">
+            <div className="phone mt-3">
+              <label className="name-label" for="d-name">Phone Number</label><br />
+              <div className="inp-sec">
                 <PhoneNumberInput />
-                <div class="toggle d-flex align-items-center gap-2">
-                  <label class="switch">
-                    <input type="checkbox" checked id="" />
-                    <span class="slider round"></span>
+                <div className="toggle d-flex align-items-center gap-2">
+                  <label className="switch">
+                    <input
+                      type="checkbox"
+                      checked={switchStates.showPhone}
+                      onChange={() => handleSwitchChange("showPhone")}
+                    />
+                    <span className="slider round"></span>
                   </label>
-                  <span class="cms-txt">Show My Number</span>
+                  <span className="cms-txt">Show My Number</span>
                 </div>
               </div>
             </div>
 
-            <div class="btn-sec text-end mt-5">
-              <button class="tsp-btn">Cancel</button>
-              <button class="black-btn black-btn-sm nextBtn px-4">
+            <div className="btn-sec text-end mt-5">
+              <button className="tsp-btn">Cancel</button>
+              <button className="black-btn black-btn-sm nextBtn px-4">
                 Save
               </button>
             </div>
@@ -231,51 +258,63 @@ const WebsiteInfoSection = () => {
 
       case "socials":
         return (
-          <div class="connect-socials setting-desc-itm ">
-            <div class="head-tt">Connect My Socials</div>
-            <p class="mt-3 head-dsc">
+          <div className="connect-socials setting-desc-itm ">
+            <div className="head-tt">Connect My Socials</div>
+            <p className="mt-3 head-dsc">
               Link your social media accounts to your website so visitors
               can easily learn more about you and stay connected.
             </p>
 
-            <div class="social-items mt-5 mb-5">
-              <div class="fb scl-itm">
-                <a href="" class="icon"><i class="ri-facebook-fill"></i></a>
+            <div className="social-items mt-5 mb-5">
+              <div className="fb scl-itm">
+                <a href="" className="icon"><i className="ri-facebook-fill"></i></a>
                 <input type="text" placeholder="DILA'S IPAR RHOP" />
-                <div class="toggle d-flex align-items-center gap-2">
-                  <label class="switch">
-                    <input type="checkbox" id="" />
-                    <span class="slider round"></span>
+                <div className="toggle d-flex align-items-center gap-2">
+                  <label className="switch">
+                    <input
+                      type="checkbox"
+                      checked={switchStates.showFacebook}
+                      onChange={() => handleSwitchChange("showFacebook")}
+                    />
+                    <span className="slider round"></span>
                   </label>
-                  <span class="cms-txt">Show</span>
+                  <span className="cms-txt">Show</span>
                 </div>
               </div>
-              <div class="ins scl-itm mt-3">
-                <a href="" class="icon"><i class="ri-instagram-line"></i></a>
+              <div className="ins scl-itm mt-3">
+                <a href="" className="icon"><i className="ri-instagram-line"></i></a>
                 <input type="text" placeholder="DILA'S IPAR RHOP" />
-                <div class="toggle d-flex align-items-center gap-2">
-                  <label class="switch">
-                    <input type="checkbox" id="" />
-                    <span class="slider round"></span>
+                <div className="toggle d-flex align-items-center gap-2">
+                  <label className="switch">
+                    <input
+                      type="checkbox"
+                      checked={switchStates.showInstagram}
+                      onChange={() => handleSwitchChange("showInstagram")}
+                    />
+                    <span className="slider round"></span>
                   </label>
-                  <span class="cms-txt">Show</span>
+                  <span className="cms-txt">Show</span>
                 </div>
               </div>
-              <div class="twt scl-itm mt-3">
-                <a href="" class="icon"><i class="ri-twitter-x-line"></i></a>
+              <div className="twt scl-itm mt-3">
+                <a href="" className="icon"><i className="ri-twitter-x-line"></i></a>
                 <input type="text" placeholder="DILA'S IPAR RHOP" />
-                <div class="toggle d-flex align-items-center gap-2">
-                  <label class="switch">
-                    <input type="checkbox" checked id="" />
-                    <span class="slider round"></span>
+                <div className="toggle d-flex align-items-center gap-2">
+                  <label className="switch">
+                    <input
+                      type="checkbox"
+                      checked={switchStates.showTwitter}
+                      onChange={() => handleSwitchChange("showTwitter")}
+                    />
+                    <span className="slider round"></span>
                   </label>
-                  <span class="cms-txt">Show</span>
+                  <span className="cms-txt">Show</span>
                 </div>
               </div>
             </div>
-            <div class="btn-sec text-end mt-5">
-              <button class="tsp-btn">Cancel</button>
-              <button class="black-btn black-btn-sm nextBtn px-4">
+            <div className="btn-sec text-end mt-5">
+              <button className="tsp-btn">Cancel</button>
+              <button className="black-btn black-btn-sm nextBtn px-4">
                 Save
               </button>
             </div>
@@ -296,7 +335,11 @@ const WebsiteInfoSection = () => {
             <div className="enrollment-switch mt-5 mb-5 d-flex align-items-center justify-content-lg-center justify-content-md-center justify-content-sm-start justify-content-start">
               <div className="toggle d-flex align-items-center gap-2">
                 <label className="switch">
-                  <input type="checkbox" id="" />
+                  <input
+                    type="checkbox"
+                    checked={switchStates.showEnrollment}
+                    onChange={() => handleSwitchChange("showEnrollment")}
+                  />
                   <span className="slider round"></span>
                 </label>
                 <span className="cms-txt">Display Link To Enrollment</span>
@@ -310,13 +353,13 @@ const WebsiteInfoSection = () => {
             </div>
 
             <Modal isOpen={showSuccessModal} onClose={() => setSuccessShowModal(false)}>
-              <div class="modal-content">
-                <div class="modal-header">
+              <div className="modal-content">
+                <div className="modal-header">
                   <h5>Success</h5>
                 </div>
-                <div class="modal-body pt-4">
-                  <p class="gray">Your changes have been saved successfully.</p>
-                  <p class="gray">
+                <div className="modal-body pt-4">
+                  <p className="gray">Your changes have been saved successfully.</p>
+                  <p className="gray">
                     View your changes here <a href="" className="green-title">http://dila.iparhealth.com</a>
                   </p>
                 </div>

@@ -15,6 +15,8 @@ const TopPicks = () => {
     { id: 2, name: 'Balance', price: '$80', quantity: 2, image: '../images/product-img-2.webp', itemCode: '103/500ml' },
     { id: 3, name: 'Lipstick', price: '$80', quantity: 2, image: '../images/product-img-2.webp', itemCode: '262/No5' },
     { id: 4, name: 'Lipstick', price: '$200', quantity: 1, image: '../images/product-img-1.webp', itemCode: '103/500ml' },
+    { id: 5, name: 'Lipstick', price: '$80', quantity: 2, image: '../images/product-img-2.webp', itemCode: '262/No5' },
+    { id: 6, name: 'Lipstick', price: '$200', quantity: 1, image: '../images/product-img-1.webp', itemCode: '103/500ml' },
   ];
 
   const handleAddProduct = (item) => {
@@ -22,6 +24,13 @@ const TopPicks = () => {
       setSelectedProducts([...selectedProducts, item]);
     }
   };
+
+
+  const handleRemoveProduct = (id) => {
+  setSelectedProducts((prev) => prev.filter((item) => item.id !== id));
+};
+
+const [isGridView, setIsGridView] = useState(false);
 
   return (
     <div className="top-picks setting-desc-itm ">
@@ -79,7 +88,7 @@ const TopPicks = () => {
                   quantity={item.quantity}
                   itemCode={item.itemCode}
                   showControls={true}
-
+                  onDelete={() => handleRemoveProduct(item.id)} 
                 />
               ))}
             </div>
@@ -92,48 +101,58 @@ const TopPicks = () => {
         </div>
       </div>
 
-      <Modal id="addProductsModal" isOpen={showModal} onClose={() => setShowModal(false)}>
-        <div className="modal-header">
-          <h5>Add product</h5>
-        </div>
-        <div className="modal-body">
-          <p>
-            Quickly browse and discover your favorite Ipar products. Just type
-            in a product name, keyword, or item number to get started!
-          </p>
-
-          <div className="d-flex align-items-center justify-content-between gap-2">
-            <div className="search-product">
-              <div className="input-wrapper">
-                <input type="search" placeholder="Search..." />
-                <i className="ri-search-line"></i>
-              </div>
-            </div>
-            <div className="grid-flex d-flex align-items-center gap-2">
-              <div className="grid">
-                <i className="ri-grid-fill"></i>
-              </div>
-              <div className="list-view active">
-                <i className="ri-list-check"></i>
-              </div>
-            </div>
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)} className='large-modal'>
+        <div id="addProductsModal">
+          <div className="modal-header">
+            <h5>Add product</h5>
           </div>
+          <div className="modal-body pt-4">
+            <p>
+              Quickly browse and discover your favorite Ipar products. Just type
+              in a product name, keyword, or item number to get started!
+            </p>
 
-          <div className="all-cart-items py-1 mt-3">
-            {allCartItems.map((item) => (
-              <CartItem
-                key={item.id}
-                name={item.name}
-                price={item.price}
-                image={item.image}
-                quantity={item.quantity}
-                itemCode={item.itemCode}
-                showControls={false}
-                addButton
-                onAdd={() => handleAddProduct(item)}
-                ForAddProduct={true}
-              />
-            ))}
+            <div className="d-flex align-items-center justify-content-between gap-2">
+              <div className="search-product">
+                <div className="input-wrapper">
+                  <input type="search" placeholder="Search..." />
+                  <i className="ri-search-line"></i>
+                </div>
+              </div>
+              <div className="grid-flex d-flex align-items-center gap-2">
+                <div
+                  className={`grid ${isGridView ? 'active' : ''}`}
+                  onClick={() => setIsGridView(true)}
+                >
+                  <i className="ri-grid-fill"></i>
+                </div>
+                <div
+                  className={`list-view ${!isGridView ? 'active' : ''}`}
+                  onClick={() => setIsGridView(false)}
+                >
+                  <i className="ri-list-check"></i>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div className={`all-cart-items py-1 mt-3 ${isGridView ? 'gridActiveView' : ''}`}>
+              {allCartItems.map((item) => (
+                <CartItem
+                  key={item.id}
+                  name={item.name}
+                  price={item.price}
+                  image={item.image}
+                  quantity={item.quantity}
+                  itemCode={item.itemCode}
+                  showControls={false}
+                  onAdd={() => handleAddProduct(item)}
+                  ForAddProduct={true}
+                  onDelete={() => handleRemoveProduct(item.id)} 
+                />
+              ))}
+            </div>
           </div>
         </div>
       </Modal>

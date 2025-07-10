@@ -113,7 +113,7 @@ export function StateSelect({ value, onChange, required = false }) {
     <div className="form-group">
 
       <select
-        className="form-control stateSelect"
+        className="stateSelect"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required={required}

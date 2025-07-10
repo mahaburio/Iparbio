@@ -762,3 +762,8 @@ circle.progress {
   color: var(--green-color) !important;
   transition: 0.3s ease;
 }
+
+.stateSelect{
+  height: 40px;
+  padding: 5px 8px;
+}
