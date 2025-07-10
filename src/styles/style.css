@@ -731,38 +731,11 @@ circle.progress {
   height: 70px;
 }
 
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
 
 .percent-text {
   margin-top: 20px;
   font-size: 20px;
   font-weight: bold;
-}
-
-.pulse {
-  animation: pulseAnim 1s infinite ease-in-out;
-}
-
-@keyframes pulseAnim {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.7;
-  }
 }
 
 .activation-menus-v3::after {

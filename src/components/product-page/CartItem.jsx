@@ -20,7 +20,9 @@ const CartItem = ({
   onQuantityChange,
   editOptions = { showColor: true, showSize: true },
   subscribeControls = false,
-  updateItem = true
+  updateItem = true,
+  addButton = false,
+  ForAddProduct = false
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -89,12 +91,55 @@ const CartItem = ({
               <div className="cross-item d-flex align-items-center" onClick={onDelete}>
                 <BsTrash3 fontSize={24} color="var(--green-color)" />
               </div>
+
+
             </>
           ) : (
-            <span>Quantity: {quantity}</span>
+
+            <>
+              <span className="qnt">Quantity: {quantity}</span>
+
+              {ForAddProduct && (
+                <>
+                  <QuantityPicker initial={quantity} onChange={onQuantityChange} defaultSaved={true} saveListClass="savelistCircle" />
+                  <div className="cross-item d-flex align-items-center" onClick={onDelete}>
+                    <BsTrash3 fontSize={24} color="var(--green-color)" />
+                  </div>
+
+                  {addButton && (
+                    <>
+                      <div className="btn-sec">
+                        <button className="green-btn green-btn-sm addButton">Add</button>
+                      </div>
+                    </>
+                  )}
+                </>
+              )}
+
+            </>
           )}
+
+
         </div>
+
+
+        {ForAddProduct && (
+          <div className="right d-flex align-items-center gap-3 ">
+            <>
+              <QuantityPicker initial={quantity} onChange={onQuantityChange} defaultSaved={true} saveListClass="savelistCircle" />
+
+              <div className="cross-item d-flex align-items-center" onClick={onDelete}>
+                <BsTrash3 fontSize={24} color="var(--green-color)" />
+              </div>
+
+              <div className="btn-sec">
+                <button className="green-btn green-btn-sm">Add</button>
+              </div>
+            </>
+          </div>
+        )}
       </div>
+
 
       {/* Modal for editing product details */}
       <Modal isOpen={isModalOpen} onClose={handleClose} className="medium-modal">
@@ -127,25 +172,25 @@ const CartItem = ({
           <>
             <div className="product_cart_modal">
               <div className="subscribe d-flex align-items-center gap-2 flex-wrap">
-              <b>Subscribe: </b> Arrives every
-              <div className="dropdown-container" ref={dropdownRef}>
-                <span
-                  className="dropdown-btn green-title"
-                  onClick={() => setIsOpen(!isOpen)}
-                >
-                  {selectedValue}
-                </span>
-                {isOpen && (
-                  <ul className="dropdown-list">
-                    {["1 Month Common", "2 Months", "3 Months", "4 Months"].map((val) => (
-                      <li key={val} onClick={() => handleSelect(val)}>
-                        {val}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <b>Subscribe: </b> Arrives every
+                <div className="dropdown-container" ref={dropdownRef}>
+                  <span
+                    className="dropdown-btn green-title"
+                    onClick={() => setIsOpen(!isOpen)}
+                  >
+                    {selectedValue}
+                  </span>
+                  {isOpen && (
+                    <ul className="dropdown-list">
+                      {["1 Month Common", "2 Months", "3 Months", "4 Months"].map((val) => (
+                        <li key={val} onClick={() => handleSelect(val)}>
+                          {val}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
-            </div>
             </div>
 
             <div className="auto-delivery mt-2">

@@ -48,6 +48,17 @@ import SubscriptionOrder from './pages/subscription/SubscriptionOrder';
 import SubscriptionProductAll from './pages/subscription/SubscriptionProductAll';
 import SubscriptionCart from './pages/subscription/SubscriptionCart';
 import { SubscriptionOrderHistory } from './pages/subscription/SubscriptionOrderHistory';
+import BusinessReport from './pages/dashboard/BusinessReport';
+import Performance from './pages/dashboard/Performance';
+import Qualification from './pages/dashboard/Qualification';
+import MonthlyReport from './pages/dashboard/MonthlyReport';
+import EnrollmentReport from './pages/dashboard/EnrollmentReport';
+import OrderHistoryReport from './pages/dashboard/OrderHistoryReport';
+import Coupons from './pages/dashboard/Coupons';
+import EnrollmentNetwork from './pages/dashboard/PerformanceReport';
+import VolumeReport from './pages/dashboard/VolumeReport';
+import PaymentStatement from './pages/dashboard/PaymentStatement';
+import WebsiteSetting from './pages/dashboard/WebsiteSetting';
 
 
 function App() {
@@ -155,6 +166,21 @@ function App() {
         <Route path='/subscription-product-all' element={<SubscriptionProductAll />}></Route>
         <Route path='/subscription-cart' element={<SubscriptionCart />}></Route>
         <Route path='/order-history' element={<SubscriptionOrderHistory />}></Route>
+
+        {/* ALl Report */}
+
+        <Route path='/business-report' element={<BusinessReport />}></Route>
+        <Route path='/performance' element={<Performance />}></Route>
+        <Route path='/qualification' element={<Qualification />}></Route>
+        <Route path='/monthly-report' element={<MonthlyReport />}></Route>
+        <Route path='/enrollment-report' element={<EnrollmentReport />}></Route>
+        <Route path='/order-history-report' element={<OrderHistoryReport />}></Route>
+        <Route path='/coupons' element={<Coupons />}></Route>
+        <Route path='/performance-report' element={<EnrollmentNetwork />}></Route>
+        <Route path='/volume-report' element={<VolumeReport />}></Route>
+        <Route path='/payment-statement' element={<PaymentStatement />}></Route>
+        <Route path='/website-setting' element={<WebsiteSetting />}></Route>
+
 
 
         {/* Optionally add a 404 Not Found route */}
