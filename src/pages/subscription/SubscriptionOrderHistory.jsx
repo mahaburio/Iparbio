@@ -4,7 +4,6 @@ import { Header } from '../../components'
 import OrderTabs from '../../components/subscription/OrderHistory'
 import Pagination from '../../components/common/Pagination'
 import Footer from '../../components/footer/footer'
-import '../../styles/pages/shopPage.css'
 import CheckoutCardsInitialize from '../../components/common/CheckoutCards'
 import ProductSliderInitialize from '../../components/slider/ProductSlider'
 
