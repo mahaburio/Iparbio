@@ -179,7 +179,7 @@ const Enhancement = () => {
   // Video Section
   const videoItems = [
     {
-      type: "mp4",
+      type: "video",
       // src: "assets/13099483_1080_1920_60fps.mp4",
       title: "Ipar Compensation Plan Video",
     },
@@ -199,6 +199,12 @@ const Enhancement = () => {
       title: "Ipar Compensation Plan Video",
     },
   ];
+
+  const normalizeType = (item) => {
+    if (item.type === 'mp4') return 'video';
+    return item.type;
+  };
+
 
   // Advocay Link
 
@@ -302,7 +308,7 @@ const Enhancement = () => {
               {videoItems.map((item, idx) => (
                 <LibraryVideoCard
                   key={idx}
-                  type={item.type}
+                    type={normalizeType(item)}
                   src={item.src}
                   title={item.title}
                 />

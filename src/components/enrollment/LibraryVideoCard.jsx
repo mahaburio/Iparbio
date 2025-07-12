@@ -6,28 +6,40 @@ const LibraryVideoCard = ({ type, src, title }) => {
       <div className="img-vd-sec">
         {type === "youtube" ? (
           <iframe
-            width="100%"
-            height="200"
             src={src}
             title={title}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
-        ) : (
+        ) : type === "video" ? (
           <video
             src={src}
             controls
             autoPlay
             loop
             muted
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: "200px", objectFit: "cover" }}
           />
-        )}
+        ) : type === "image" ? (
+          <img
+            src={src}
+            alt={title}
+            style={{ width: "100%", height: "200px", objectFit: "cover" }}
+          />
+        ) : null}
       </div>
       <div className="video-dsc p-2">
         <div className="video-ht">{title}</div>
-        <div className="type">{type === "youtube" ? "YouTube Embed" : "Video mp4"}</div>
+        <div className="type">
+          {type === "youtube"
+            ? "YouTube Embed"
+            : type === "video"
+            ? "Video mp4"
+            : type === "image"
+            ? "Image"
+            : ""}
+        </div>
       </div>
     </div>
   );

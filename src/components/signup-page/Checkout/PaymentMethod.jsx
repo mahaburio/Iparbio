@@ -2,20 +2,24 @@ import React, { useState } from "react";
 import Modal from "../../common/PopupModal";
 import AddPaymentContent from "../../common/AddPaymentContent";
 
-const PaymentMethod = () => {
+const PaymentMethod = ({HeaderTitle = true}) => {
 
-const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div>
       <div className="order-w-details">
         <div className="payment-mt mt-3">
-          <h3 className="ck-tt d-flex justify-content-between align-items-center pe-lg-5 pe-md-4 pe-sm-3 pe-2">
-            <span>payment method</span>
-            <span className="av-bl">
-              Your available balance: <strong>$ 200</strong>
-            </span>
-          </h3>
+          {HeaderTitle && (
+            <>
+              <h3 className="ck-tt d-flex justify-content-between align-items-center pe-lg-5 pe-md-4 pe-sm-3 pe-2">
+                <span>payment method</span>
+                <span className="av-bl">
+                  Your available balance: <strong>$ 200</strong>
+                </span>
+              </h3>
+            </>
+          )}
 
           <div className="ck-ct gf-ct py-2 pb-3 px-2">
             <div className="gf-cd-ct d-flex flex-lg-row flex-md-row flex-sm-column flex-column align-items-lg-center align-items-md-center align-items-sm-start align-items-start gap-3">

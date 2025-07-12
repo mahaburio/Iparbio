@@ -5945,6 +5945,7 @@ input.alertInput {
 
 .transfer-hub.show {
   max-height: 100px;
+  transition: 0.3s ease;
 }
 
 .toggle-arrow {
@@ -6240,6 +6241,12 @@ input.alertInput {
   color: var(--gray-100);
 }
 
+.recipientModal .modal-body .disableItem {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
 .recipientModal .modal-body .header {
   color: var(--gray-100);
 }
@@ -6314,7 +6321,8 @@ input.alertInput {
   color: var(--black-100);
   outline: none;
   border: none;
-  padding: 8px;
+  padding: 8px ;
+  padding-left: 12px;
 }
 
 .cashoutModal .cashout-input-wrapper .input-date {
@@ -6679,9 +6687,16 @@ td {
   width: 50%;
 }
 
-.addRemovePhoneN .inp-sec .intl-tel-input {
-  width: 50%;
+.addRemovePhoneN .inp-sec .lb-in {
+  width: 300px;
+
 }
+
+.addRemovePhoneN .inp-sec .react-tel-input {
+  width: 300px;
+
+}
+
 
 .addRemovePhoneN .inp-sec .dts .remove {
   cursor: pointer;
@@ -7228,6 +7243,12 @@ td {
   .forms-details li {
     font-size: 14px;
   }
+
+
+  .addRemovePhoneN .inp-sec .dts {
+  width: 100%;
+  flex-wrap: wrap;
+}
 }
 
 @media screen and (max-width: 450px) {

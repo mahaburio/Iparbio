@@ -60,6 +60,10 @@ import VolumeReport from './pages/dashboard/VolumeReport';
 import PaymentStatement from './pages/dashboard/PaymentStatement';
 import WebsiteSetting from './pages/dashboard/WebsiteSetting';
 import ManageProfiles from './pages/dashboard/ManageProfiles';
+import EWallet from './pages/dashboard/EWallet';
+import Resources  from './pages/dashboard/Resources';
+import ResourcesFaq from './pages/dashboard/ResourceFaq';
+import ResourcesContacts from './pages/dashboard/ResourceContacts';
 
 
 function App() {
@@ -182,6 +186,11 @@ function App() {
         <Route path='/payment-statement' element={<PaymentStatement />}></Route>
         <Route path='/website-setting' element={<WebsiteSetting />}></Route>
         <Route path='/manage-profiles' element={<ManageProfiles />}></Route>
+        <Route path='/ewallet' element={<EWallet />}></Route>
+        <Route path='/resources' element={<Resources />}></Route>
+        
+        <Route path='/resources-faq' element={<ResourcesFaq />}></Route>
+        <Route path='/resources-contact' element={<ResourcesContacts />}></Route>
 
 
 

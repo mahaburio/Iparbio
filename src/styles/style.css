@@ -45,6 +45,9 @@ body {
   cursor: pointer;
 }
 
+.flatpickr-calendar.open{
+  z-index: 999999999 !important;
+}
 
 .green-title {
   color: var(--green-color) !important;
@@ -251,8 +254,6 @@ li {
 .green-color {
   color: var(--green-color);
 }
-
-
 
 
 /* todo =================== COMMON-CLASS ===================== */

@@ -1190,9 +1190,6 @@
   display: flex;
 }
 
-.mediaProfileModal .modal-body {
-  padding: 0;
-}
 
 .media-profile .pro-details {
   background-color: #ebebee;
@@ -1203,6 +1200,8 @@
 .media-profile .pro-details .user-dt {
   text-align: center;
 }
+
+
 
 .media-profile .pro-details .pro-img {
   height: 100px;
@@ -1245,13 +1244,14 @@
 .media-profile .right-details .all-input select {
   color: var(--text-gray);
   width: 100%;
+  line-height: normal;
 }
 
 .media-profile .right-details .all-input .lb-in label {
   margin-bottom: 3px;
   color: var(--black-100);
 }
-
+/* 
 .media-profile .right-details .all-input .lb-in select {
   display: block;
   width: 100%;
@@ -1264,7 +1264,7 @@
   background-position-x: 95%;
   background-position-y: 50%;
   color: var(--text-gray);
-}
+} */
 
 .all-input .address {
   grid-column: 1 / span 3;
@@ -1839,10 +1839,6 @@
 
 #addNewContact {
   cursor: pointer;
-}
-
-.newContactSec {
-  display: none;
 }
 
 .contactsViewModal .modal-dialog {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import CountryList from './CountryList';
 
 import { IoMdNotificationsOutline } from "react-icons/io";
@@ -12,7 +12,7 @@ import { IoIosLogOut } from "react-icons/io";
 import '../../styles/header/header.css';
 import '../../styles/header/dashboard-header.css';
 
-const HeaderDashboard = ({NotifySection = true}) => {
+const HeaderDashboard = ({ NotifySection = true, isEwalletPage = false, isResourcePage = false, navResources = false, onMediaProfileClick }) => {
   const Detail = ({ label, value }) => (
     <div className="d-flex align-items-center gap-3 mt-1">
       <div className="tt">{label}:</div>
@@ -81,7 +81,9 @@ const HeaderDashboard = ({NotifySection = true}) => {
         </div>
 
         {/* 🟦 Account Offcanvas */}
-        <div className="offcanvas offcanvas-end" id="accountDetails">
+        <div className="offcanvas offcanvas-end" tabIndex="-1" id="accountDetails" aria-hidden="true">
+          {/* Offcanvas content */}
+
           <div className="offcanvas-header d-flex justify-content-start">
             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" />
           </div>
@@ -98,19 +100,79 @@ const HeaderDashboard = ({NotifySection = true}) => {
                 </div>
               </div>
 
-              <div className="account-items mt-4">
-                {accountLinks.map((item, idx) => (
-                  <div key={idx} className="acc-item d-flex align-items-center gap-2">
-                    <div className="icon">{item.icon}</div>
-                    <span>{item.label}</span>
+              {/* ✅ Only Media Profile + Logout for Resource Page */}
+              {isResourcePage && (
+                <>
+                  <div className="account-items mt-4">
+                    <div className="mt-3 btn-sec">
+                      <button className="black-btn black-btn-sm" onClick={() => {
+
+                        onMediaProfileClick?.();
+                      }} >
+                        Media Profile
+                      </button>
+                    </div>
                   </div>
-                ))}
-              </div>
+
+                  <div className="account-items onlyLogout mt-4">
+                    {accountLinks
+                      .filter((item) => item.label === "Log out")
+                      .map((item, idx) => (
+                        <div key={idx} className="acc-item d-flex align-items-center gap-2">
+                          <div className="icon">{item.icon}</div>
+                          <span>{item.label}</span>
+                        </div>
+                      ))}
+                  </div>
+                </>
+              )}
+
+              {/* ✅ Only Log out (for Logout-Only Page) */}
+              {isEwalletPage && !isResourcePage && (
+                <div className="account-items onlyLogout mt-4">
+                  {accountLinks
+                    .filter((item) => item.label === "Log out")
+                    .map((item, idx) => (
+                      <div key={idx} className="acc-item d-flex align-items-center gap-2">
+                        <div className="icon">{item.icon}</div>
+                        <span>{item.label}</span>
+                      </div>
+                    ))}
+                </div>
+              )}
+
+              {/* ✅ Regular view (default) */}
+              {!isEwalletPage && !isResourcePage && (
+                <>
+                  <div className="account-items mt-4">
+                    {accountLinks
+                      .filter((item) => item.label !== "Log out")
+                      .map((item, idx) => (
+                        <div key={idx} className="acc-item d-flex align-items-center gap-2">
+                          <div className="icon">{item.icon}</div>
+                          <span>{item.label}</span>
+                        </div>
+                      ))}
+                  </div>
+
+                  <div className="account-items onlyLogout mt-4">
+                    {accountLinks
+                      .filter((item) => item.label === "Log out")
+                      .map((item, idx) => (
+                        <div key={idx} className="acc-item d-flex align-items-center gap-2">
+                          <div className="icon">{item.icon}</div>
+                          <span>{item.label}</span>
+                        </div>
+                      ))}
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
 
-        {/* 🟥 Country Offcanvas */}
+
+        {/*  Country Offcanvas */}
         <div className="offcanvas offcanvas-end" id="countryList">
           <div className="offcanvas-header justify-content-center">
             <h4 className="offcanvas-title text-center">
@@ -123,8 +185,19 @@ const HeaderDashboard = ({NotifySection = true}) => {
         </div>
 
         {/* Menubar Section */}
-        <div className="menubar-sec">
+        <div className="menubar-sec menubar-sec-v2">
           <div className="container d-flex align-items-center justify-content-between">
+            {navResources && (
+              <>
+                <div class="left">
+                  <a class="nexus d-flex align-items-center" href=""><i class="ri-arrow-left-s-line"></i> Ipar Nexus</a>
+                  <a href="./library.html">Library</a>
+                  <a href="./resources_contacts.html">Contacts</a>
+                  <a href="">Upload</a>
+                  <a class="" href="./resource_faq">FAQs</a>
+                </div>
+              </>
+            )}
             <div />
 
             {NotifySection && (
