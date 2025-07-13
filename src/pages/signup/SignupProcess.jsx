@@ -248,6 +248,64 @@ const SignupProcess = () => {
   ];
 
 
+
+  const ProductAll = [
+    {
+      name: "Women’s Probiotic",
+      image: "../images/product-img-1.webp",
+      details: "50B CFU & 8 Strains",
+      price: "$50",
+      colors: ["#d5ccc3", "#c28270", "#b16c6d", "#c28170", "#b16d6d"],
+      pv: '20pv',
+    },
+    {
+      name: "Nutriation",
+      image: "../images/product-img-1.webp",
+      details: "50B CFU & 8 Strains",
+      price: "$80",
+    },
+    {
+      name: "Women’s Probiotic",
+      image: "../images/product-img-1.webp",
+      details: "50B CFU & 8 Strains",
+      price: "$80",
+      sizes: ["Solo 0.75 fl oz", "Doppio 1.5 fl oz", "Tripple 2.25 fl oz"],
+    },
+    {
+      name: "Women’s Probiotic",
+      image: "../images/product-img-1.webp",
+      details: "50B CFU & 8 Strains",
+      price: "$80",
+    },
+    {
+      name: "Women’s Probiotic",
+      image: "../images/product-img-1.webp",
+      details: "50B CFU & 8 Strains",
+      price: "$50",
+      colors: ["#d5ccc3", "#c28270", "#b16c6d", "#c28170", "#b16d6d"],
+      pv: '20pv',
+    },
+    {
+      name: "Nutriation",
+      image: "../images/product-img-1.webp",
+      details: "50B CFU & 8 Strains",
+      price: "$80",
+    },
+    {
+      name: "Women’s Probiotic",
+      image: "../images/product-img-1.webp",
+      details: "50B CFU & 8 Strains",
+      price: "$80",
+      sizes: ["Solo 0.75 fl oz", "Doppio 1.5 fl oz", "Tripple 2.25 fl oz"],
+    },
+    {
+      name: "Women’s Probiotic",
+      image: "../images/product-img-1.webp",
+      details: "50B CFU & 8 Strains",
+      price: "$80",
+    }
+  ];
+
   return (
     <MainWrapper>
       <div className="signup_page sign-up-IBA-shop create-profile checkout-page product_checkout">
@@ -443,7 +501,7 @@ const SignupProcess = () => {
               {/* Step 3 Phase 1: ProductPageSubscription */}
               {step3Phase === 1 && (
                 <div className="subscription-step">
-                  <ProductPageSubscription navigation={false} GoCart={false} />
+                  <ProductPageSubscription products={ProductAll} navigation={false} GoCart={false} />
                   <div className="container">
                     <div className="btn-sec mt-5 text-end">
                       <button

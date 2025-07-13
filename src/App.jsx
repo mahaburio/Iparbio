@@ -67,6 +67,7 @@ import ResourcesContacts from './pages/dashboard/ResourceContacts';
 import Library from './components/dashboard/Library';
 import EnrollmentNetworkView from './pages/enrollment/EnrollmentNetworkView';
 import PerformanceReport from './pages/dashboard/PerformanceReport';
+import Membership from './pages/dashboard/Membership';
 
 
 function App() {
@@ -196,6 +197,7 @@ function App() {
         <Route path='/resources-contact' element={<ResourcesContacts />}></Route>
         <Route path='/library' element={<Library />}></Route>
         <Route path='/enrollment-network' element={<EnrollmentNetworkView />}></Route>
+        <Route path='/membership' element={<Membership />}></Route>
 
 
 

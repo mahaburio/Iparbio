@@ -1677,11 +1677,12 @@ select:focus {
 .create-profile .add-address-sec .address-box input {
   width: 100%;
   display: block;
-  padding: 12px;
+  padding: 5px 10px;
   border-radius: 6px;
   border: 1px solid var(--gray-40);
   font-size: 18px;
   outline: none;
+  height: 40px;
 }
 
 .create-profile .add-address-sec .zone-details {
@@ -1705,11 +1706,12 @@ select:focus {
 .create-profile .add-address-sec .zone-details input,
 .create-profile .add-address-sec .zone-details select {
   width: 100%;
-  padding: 12px;
+  padding: 5px 12px;
   border-radius: 6px;
   border: 1px solid var(--gray-40);
   font-size: 18px;
   outline: none;
+  height: 40px;
 }
 
 /* ! Very Importatnt */
@@ -3721,7 +3723,7 @@ input::-webkit-inner-spin-button {
 }
 
 .order-w-details .contact-in .input-container input {
-  height: 45px;
+  height: 40px;
   width: 100%;
   border: 1px solid var(--gray-40);
   font-size: 18px;
