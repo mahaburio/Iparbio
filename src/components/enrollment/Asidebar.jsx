@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import FilterPanel from "./TeamManagerList/AccordionFilters";
 
+import { NavLink } from 'react-router-dom';
+
 const AsideBar = () => {
   const asideRef = useRef(null);
   const forCollapseRef = useRef(null);
@@ -63,29 +65,57 @@ const AsideBar = () => {
             </div>
 
             <ul className="team-link-list mt-3 p-0">
+
+
               <li>
-                <a href="../dashboard/enrollment_network.html">Enrollment Network Viewer</a>
+
+                <NavLink to="/enrollment-network" className={({ isActive }) => isActive ? 'activeTeamManager' : ''}>
+                  Enrollment Network Viewer
+                </NavLink>
               </li>
+
+
               <li>
-                <a href="../dashboard/personally_enrolled.html">Personally Enrolled Team</a>
+                <NavLink to="/performance-report" className={({ isActive }) => isActive ? 'activeTeamManager' : ''}>
+                  Personally Enrolled Team
+                </NavLink>
               </li>
+
               <li>
-                <a href="../dashboard/volume_report.html">Volume Report</a>
+                <NavLink to="/volume-report" className={({ isActive }) => isActive ? 'activeTeamManager' : ''}>
+                  Volume Report
+                </NavLink>
               </li>
+
+
               <li>
-                <a href="../dashboard/enrollment_report.html">Enrolment Report</a>
+                <NavLink to="/enrollment-report" className={({ isActive }) => isActive ? 'activeTeamManager' : ''}>
+                  Enrolment Report
+                </NavLink>
               </li>
+
               <li>
-                <a href="../dashboard/order_history_report.html">Order History Report</a>
+                <NavLink to="/order-history-report" className={({ isActive }) => isActive ? 'activeTeamManager' : ''}>
+                  Order History Report
+                </NavLink>
               </li>
+
               <li>
-                <a href="../dashboard/subscription_order.html">Unprocessed Subscription Order</a>
+                <NavLink to="/subscription-order" className={({ isActive }) => isActive ? 'activeTeamManager' : ''}>
+                  Unprocessed Subscription Order
+                </NavLink>
               </li>
+
               <li>
-                <a href="../dashboard/monthly_report.html">Monthly Report (4 Cycles)</a>
+                <NavLink to="/monthly-report" className={({ isActive }) => isActive ? 'activeTeamManager' : ''}>
+                  UMonthly Report (4 Cycles)
+                </NavLink>
               </li>
+
               <li>
-                <a href="../dashboard/buisness_report.html">Business Center Report</a>
+                <NavLink to="/business-report" className={({ isActive }) => isActive ? 'activeTeamManager' : ''}>
+                  Business Center Report
+                </NavLink>
               </li>
             </ul>
 

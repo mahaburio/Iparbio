@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import HeaderDashboard from '../../components/header/HeaderDashboard';
 import { PhoneNumberInput } from '../../components/input/InputFields';
 import Modal from '../../components/common/PopupModal';
@@ -26,15 +26,33 @@ const ResourcesContacts = () => {
     phone: '',
   });
 
+
+  const [isAccordionOpen, setIsAccordionOpen] = useState(true);
+  const contentRef = useRef(null);
+
   const handleGroupSelect = (group) => {
     setSelectedGroup(group);
   };
+
+  const toggleAccordion = () => {
+    setIsAccordionOpen((prev) => !prev);
+  };
+
+
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.style.maxHeight = isAccordionOpen
+        ? `${contentRef.current.scrollHeight}px`
+        : '0px';
+    }
+  }, [isAccordionOpen]);
 
   const handleInputChange = (e) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
+
   };
 
   const handleSaveContact = (e) => {
@@ -123,20 +141,36 @@ const ResourcesContacts = () => {
 
       <section className="resource-wrapper mt-5">
         <div className="container divider">
-          <div className="aside-nav">
+          <div className="resource-aside-nav">
             <div className="resourceNav">
               <div className="forCollapse">
                 <i className="ri-arrow-left-double-line"></i>
               </div>
               <div className="reourceItems">
                 <div className="res-item" style={{ border: 'none' }}>
-                  <div className="itm-head d-flex align-items-center justify-content-between">
+                  <div
+                    className="itm-head d-flex align-items-center justify-content-between"
+                    onClick={toggleAccordion}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <span>Group</span>
+                    <span
+                      className={`arrowIcon fs-4 ${isAccordionOpen ? 'rotate' : ''}`}
+                    >
+                      <i className="ri-arrow-down-s-line"></i>
+                    </span>
                   </div>
-                  <div className="res-it-body resourceNavBodyActive px-2">
+                  <div
+                    ref={contentRef}
+                    className="res-it-body resourceNavBodyActive px-2"
+                  >
                     <div className="type-of-group">
                       {groupOptions.map((group) => (
-                        <div className="tp-it" key={group} onClick={() => handleGroupSelect(group)}>
+                        <div
+                          className="tp-it"
+                          key={group}
+                          onClick={() => handleGroupSelect(group)}
+                        >
                           <div className="radio-checkmark">
                             <div
                               className={`radio-input ${selectedGroup === group ? 'activeLabelInput' : ''

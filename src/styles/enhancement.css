@@ -978,7 +978,7 @@
   margin-top: 20px;
 }
 
-.resource-wrapper .aside-nav {
+.resource-wrapper .resource-aside-nav {
   width: 260px;
 }
 
@@ -1943,7 +1943,7 @@
     right: -40px;
   }
 
-  .resource-wrapper .aside-nav {
+  .resource-wrapper .resource-aside-nav {
     position: fixed;
     z-index: 999999;
     width: 260px;
@@ -1959,7 +1959,7 @@
     overflow-y: auto;
   }
 
-  .resource-wrapper .aside-nav.collapsed {
+  .resource-wrapper .resource-aside-nav.collapsed {
     left: 0;
   }
 

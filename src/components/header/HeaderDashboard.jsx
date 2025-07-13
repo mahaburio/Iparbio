@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import CountryList from './CountryList';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 import { IoMdNotificationsOutline } from "react-icons/io";
 
-import { FaBell } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
 import { CiViewList, CiGlobe } from "react-icons/ci";
 import { BsExclamationTriangle } from "react-icons/bs";
@@ -57,10 +57,13 @@ const HeaderDashboard = ({ NotifySection = true, isEwalletPage = false, isResour
 
 
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [ setSelectedImage] = useState(null);
+  const [setSelectedImage] = useState(null);
 
-  const location = useLocation();
-  const currentPath = location.pathname;
+  // const location = useLocation();
+  // const currentPath = location.pathname;
+
+
+
 
 
   return (
@@ -204,19 +207,13 @@ const HeaderDashboard = ({ NotifySection = true, isEwalletPage = false, isResour
                   <i className="ri-arrow-left-s-line"></i> Ipar Nexus
                 </a>
 
-                <a
-                  href="/library"
-                  className={currentPath === '/library' ? 'activeBar' : ''}
-                >
+                <NavLink to="/library" className={({ isActive }) => isActive ? 'activeBar' : ''}>
                   Library
-                </a>
+                </NavLink>
 
-                <a
-                  href="/resources-contact"
-                  className={currentPath === '/resources-contact' ? 'activeBar' : ''}
-                >
+                <NavLink to="/resources-contact" className={({ isActive }) => isActive ? 'activeBar' : ''}>
                   Contacts
-                </a>
+                </NavLink>
 
                 <a href="#" onClick={(e) => {
                   e.preventDefault();
@@ -224,12 +221,9 @@ const HeaderDashboard = ({ NotifySection = true, isEwalletPage = false, isResour
                 }}>
                   Upload
                 </a>
-                <a
-                  href="/resources-faq"
-                  className={currentPath === '/resources-faq' ? 'activeBar' : ''}
-                >
+                <NavLink to="/resources-faq" className={({ isActive }) => isActive ? 'activeBar' : ''}>
                   FAQs
-                </a>
+                </NavLink>
               </div>
             )}
 

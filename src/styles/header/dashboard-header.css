@@ -55,8 +55,8 @@
 
 .pulse {
   position: absolute;
-  top: -7px;
-  right: -6px;
+  top: -3px;
+  right: -4px;
   height: 24px;
   width: 24px;
   z-index: 10;
@@ -68,8 +68,8 @@
 
 .marker {
   position: absolute;
-  top: 1px;
-  right: 3px;
+  top: 5px;
+  right: 4px;
   height: 8px;
   width: 8px;
   border-radius: 50%;

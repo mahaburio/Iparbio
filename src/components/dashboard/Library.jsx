@@ -455,7 +455,7 @@ const Library = () => {
                 <Modal isOpen={true} onClose={() => setExpandItem(null)} className="xl-modal">
                   <div className="expandDetails p-3">
                     <div className="modal-body">
-                      <div className="title-header d-flex justify-content-between align-items-center">
+                      <div className="title-header d-flex  align-items-center">
                         <div className="title-name">
                           <div className='fs-6 fw-medium'>{expandItem.title}</div>
                           <div>Type: {expandItem.label}</div>

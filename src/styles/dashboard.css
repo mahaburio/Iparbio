@@ -2697,6 +2697,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: 0.3s ease;
   position: relative;
   left: 60px;
+  margin-top: 30px;
 }
 
 .all-content {
@@ -2951,7 +2952,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .team-manager-body li {
-  padding: 10px 15px;
+  
   background-color: var(--gray-f3);
   color: var(--text-gray);
   margin-top: 10px;
@@ -2965,9 +2966,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-weight: 500;
   display: block;
   white-space: nowrap;
+  padding: 10px 15px;
+  border-radius: 25px;
 }
 
-.team-manager-body li.activeTeamManager {
+.team-manager-body li a.activeTeamManager {
   background-color: #82c91e42;
 }
 
@@ -3962,7 +3965,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .orgchart {
-  background-image: none;
+  background-image: none !important;
 }
 
 .orgchart .node {
@@ -4048,7 +4051,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   top: -11px;
   left: 0;
   width: 100%;
-  border-top: 2px solid #339af0;
+  border-top: 2px solid #339af0 !important;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -4269,6 +4272,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .node-bottom .center {
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .node-bottom .center .make-top {
@@ -6422,6 +6428,10 @@ td {
 }
 
 /* ? Dropdown container start here */
+
+
+
+
 .select-box {
   position: relative;
   width: 220px;
@@ -6473,6 +6483,8 @@ td {
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 666;
+    height: 300px;
+  overflow-y: auto;
 }
 
 .options-list.show {
