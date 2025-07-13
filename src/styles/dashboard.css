@@ -6472,7 +6472,7 @@ td {
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
-.options-list {
+.select-box .options-list {
   position: absolute;
   top: 100%;
   left: 0;
@@ -6483,7 +6483,7 @@ td {
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 666;
-    height: 300px;
+    height: auto;
   overflow-y: auto;
 }
 
