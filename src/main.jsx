@@ -30,7 +30,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 // Style
-import './styles/style.css';    // global styles
+
+import './styles/style.css'; 
 
 
 import { CartProvider } from "./context/CartContext";

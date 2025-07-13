@@ -4567,6 +4567,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: none;
 }
 
+.edit-str-itm .str-details .options-list{
+  max-height: 300px;
+}
+
 .edit-str-itm .options-list.show {
   height: 500px;
   overflow-y: auto;
@@ -5390,10 +5394,6 @@ input.alertInput {
 .uploadFile .modal-body p {
   font-size: 14px;
   color: var(--gray-100);
-}
-
-.uploadFile .modal-content {
-  width: 500px;
 }
 
 .css-r64h58-MuiSlider-rail {

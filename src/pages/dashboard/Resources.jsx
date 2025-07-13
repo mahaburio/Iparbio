@@ -3,7 +3,7 @@ import HeaderDashboard from '../../components/header/HeaderDashboard';
 import MediaProfileModal from './MediaProfileModal';
 import EliteHero from '../../components/enrollment/EliteHero';
 import LibraryVideoCard from '../../components/enrollment/LibraryVideoCard';
-
+import '../../styles/enhancement.css'
 const Resources = () => {
   const [showModal, setShowModal] = useState(false);
 
