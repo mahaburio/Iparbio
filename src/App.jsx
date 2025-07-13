@@ -64,6 +64,9 @@ import EWallet from './pages/dashboard/EWallet';
 import Resources  from './pages/dashboard/Resources';
 import ResourcesFaq from './pages/dashboard/ResourceFaq';
 import ResourcesContacts from './pages/dashboard/ResourceContacts';
+import Library from './components/dashboard/Library';
+import EnrollmentNetworkView from './pages/enrollment/EnrollmentNetworkView';
+import PerformanceReport from './pages/dashboard/PerformanceReport';
 
 
 function App() {
@@ -181,7 +184,7 @@ function App() {
         <Route path='/enrollment-report' element={<EnrollmentReport />}></Route>
         <Route path='/order-history-report' element={<OrderHistoryReport />}></Route>
         <Route path='/coupons' element={<Coupons />}></Route>
-        <Route path='/performance-report' element={<EnrollmentNetwork />}></Route>
+        <Route path='/performance-report' element={<PerformanceReport />}></Route>
         <Route path='/volume-report' element={<VolumeReport />}></Route>
         <Route path='/payment-statement' element={<PaymentStatement />}></Route>
         <Route path='/website-setting' element={<WebsiteSetting />}></Route>
@@ -191,6 +194,8 @@ function App() {
         
         <Route path='/resources-faq' element={<ResourcesFaq />}></Route>
         <Route path='/resources-contact' element={<ResourcesContacts />}></Route>
+        <Route path='/library' element={<Library />}></Route>
+        <Route path='/enrollment-network' element={<EnrollmentNetworkView />}></Route>
 
 
 

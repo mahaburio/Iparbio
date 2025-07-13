@@ -255,6 +255,9 @@ li {
   color: var(--green-color);
 }
 
+a{
+  text-decoration: none;
+}
 
 /* todo =================== COMMON-CLASS ===================== */
 

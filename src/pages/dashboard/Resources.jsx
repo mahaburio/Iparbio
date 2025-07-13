@@ -192,7 +192,6 @@ const Resources = () => {
         image="images/portrait-of-business-2.webp"
         searchBar={true} />
 
-
       {/* Product About Section */}
 
       <section className="product-about">

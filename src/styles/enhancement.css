@@ -975,6 +975,7 @@
   display: flex;
   gap: 20px;
   width: 100%;
+  margin-top: 20px;
 }
 
 .resource-wrapper .aside-nav {
@@ -1019,12 +1020,9 @@
 .res-it-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.2s ease-in-out;
 }
 
-.res-it-body.resourceNavBodyActive {
-  max-height: 450px;
-}
 
 .reourceItems {
   max-height: 100vh;
@@ -1063,7 +1061,7 @@
 }
 
 .resource-wrapper .listItems {
-  display: none;
+  /* display: none; */
 }
 
 .resource-wrapper .activeListView.listItems {
@@ -1110,6 +1108,26 @@
   transition: 0.3s ease;
 }
 
+
+.library-grid.listMode {
+  display: flex;
+  flex-direction: column;
+}
+.listItemRow {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.library-grid-icon .grid,
+.library-grid-icon .list-view {
+  cursor: pointer;
+  padding: 8px;
+}
+.library-grid-icon .active {
+  color: #000;
+  font-weight: bold;
+}
+
 /* Todo ~~~~~~~ EXPAND DETAILS ~~~~~~ */
 
 .expandDetails .img-vd-sec {
@@ -1138,7 +1156,7 @@
 .expandDetails .title-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
 }
 
 .expandDetails .title-header > div {
@@ -1314,7 +1332,7 @@
 .grid-flex {
   display: flex;
   align-items: center;
-  gap: 10px;
+
 }
 
 .mylibrary-grid-icon {
@@ -1380,6 +1398,7 @@
   border-bottom: 3px solid #ddd;
   position: relative;
   --after-left: 0%;
+  width: 50%;
 }
 
 .myLibraryModal .activation-menus::after {
@@ -1408,7 +1427,7 @@
 }
 
 .myLibraryModal .modal-body {
-  padding: 20px 50px;
+  padding: 20px 20px;
 }
 
 .myLibraryModal .id {
@@ -1438,6 +1457,12 @@
   color: var(--gray-100);
   padding-top: 5px;
   cursor: pointer;
+  white-space: nowrap;
+
+}
+
+.myLibraryModal .add-favorite.activeSavelist{
+  color: var(--green-color);
 }
 
 .myLibraryModal .add-favorite i {
@@ -1507,10 +1532,14 @@
   object-position: bottom;
 }
 
+.myLibraryModal .main-title-details .right{
+  width: 50%;
+}
+
 .myLibraryModal .main-title-details .title-dsc {
   color: var(--gray-100);
-  width: 55%;
   height: 100%;
+  overflow-wrap: anywhere;
 }
 
 .myLibraryModal .main-title-details .title-dsc .desc-sec {
@@ -1532,7 +1561,7 @@
 
 .myLibraryModal .line-btm .line {
   height: 1px;
-  width: 60%;
+  width: 55%;
   background-color: var(--gray-40);
 }
 

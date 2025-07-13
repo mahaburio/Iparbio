@@ -1,11 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { RiArrowDownSLine, RiSearchLine } from 'react-icons/ri';
+import React, { useState } from 'react';
+import SearchDropdown from '../dashboard/SearchBar';
 
 const EliteHero = ({ title, description, image, searchBar = false }) => {
-
   const [selectedOption, setSelectedOption] = useState('All');
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const [searchText, setSearchText] = useState('');
 
   const options = [
     'All',
@@ -18,27 +16,6 @@ const EliteHero = ({ title, description, image, searchBar = false }) => {
     'e Card'
   ];
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
-
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setDropdownOpen(false);
-  };
-
-  const handleClickOutside = (e) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-      setDropdownOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-
   return (
     <section className="hero-section">
       <div className="container">
@@ -47,37 +24,14 @@ const EliteHero = ({ title, description, image, searchBar = false }) => {
             <div className="hero-content pt-5">
               {searchBar && (
 
-                <div className="mb-5">
-                  <div className="search-wrapper ">
-                    <div className="select-box" ref={dropdownRef}>
-                      <div className="select-btn" onClick={toggleDropdown}>
-                        <span className="select-text" id="selected-value">{selectedOption}</span>
-                        <div className="arrowIcon" id="arrow-icon">
-                          <RiArrowDownSLine />
-                        </div>
-                      </div>
+                <SearchDropdown
+                  options={options}
+                  selectedOption={selectedOption}
+                  onOptionChange={setSelectedOption}
+                  searchValue={searchText}
+                  onSearchChange={setSearchText}
+                />
 
-                      {dropdownOpen && (
-                        <div className="options-list" id="options-menu">
-                          {options.map((option, index) => (
-                            <div
-                              key={index}
-                              className="option-item"
-                              onClick={() => handleOptionClick(option)}
-                            >
-                              {option}
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="input-wrap d-flex align-items-center">
-                      <input type="search" placeholder="Search..." />
-                      <RiSearchLine />
-                    </div>
-                  </div>
-                </div>
               )}
               <h1>{title}</h1>
               <p className="mt-4">{description}</p>

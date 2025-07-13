@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import CountryList from './CountryList';
+import { useLocation } from 'react-router-dom';
+
 
 import { IoMdNotificationsOutline } from "react-icons/io";
 
@@ -11,6 +13,7 @@ import { IoIosLogOut } from "react-icons/io";
 
 import '../../styles/header/header.css';
 import '../../styles/header/dashboard-header.css';
+import UploadImageModal from "../common/UploadImageModal";
 
 const HeaderDashboard = ({ NotifySection = true, isEwalletPage = false, isResourcePage = false, navResources = false, onMediaProfileClick }) => {
   const Detail = ({ label, value }) => (
@@ -51,6 +54,14 @@ const HeaderDashboard = ({ NotifySection = true, isEwalletPage = false, isResour
     },
     { label: "Log out", icon: <IoIosLogOut /> },
   ];
+
+
+  const [showUploadModal, setShowUploadModal] = useState(false);
+  const [ setSelectedImage] = useState(null);
+
+  const location = useLocation();
+  const currentPath = location.pathname;
+
 
   return (
     <div className="dashboard">
@@ -188,16 +199,40 @@ const HeaderDashboard = ({ NotifySection = true, isEwalletPage = false, isResour
         <div className="menubar-sec menubar-sec-v2">
           <div className="container d-flex align-items-center justify-content-between">
             {navResources && (
-              <>
-                <div class="left">
-                  <a class="nexus d-flex align-items-center" href=""><i class="ri-arrow-left-s-line"></i> Ipar Nexus</a>
-                  <a href="./library.html">Library</a>
-                  <a href="./resources_contacts.html">Contacts</a>
-                  <a href="">Upload</a>
-                  <a class="" href="./resource_faq">FAQs</a>
-                </div>
-              </>
+              <div className="left">
+                <a className="nexus d-flex align-items-center" href="">
+                  <i className="ri-arrow-left-s-line"></i> Ipar Nexus
+                </a>
+
+                <a
+                  href="/library"
+                  className={currentPath === '/library' ? 'activeBar' : ''}
+                >
+                  Library
+                </a>
+
+                <a
+                  href="/resources-contact"
+                  className={currentPath === '/resources-contact' ? 'activeBar' : ''}
+                >
+                  Contacts
+                </a>
+
+                <a href="#" onClick={(e) => {
+                  e.preventDefault();
+                  setShowUploadModal(true);
+                }}>
+                  Upload
+                </a>
+                <a
+                  href="/resources-faq"
+                  className={currentPath === '/resources-faq' ? 'activeBar' : ''}
+                >
+                  FAQs
+                </a>
+              </div>
             )}
+
             <div />
 
             {NotifySection && (
@@ -220,6 +255,14 @@ const HeaderDashboard = ({ NotifySection = true, isEwalletPage = false, isResour
             )}
           </div>
         </div>
+
+        {showUploadModal && (
+          <UploadImageModal
+            isOpen={showUploadModal}
+            onClose={() => setShowUploadModal(false)}
+            onFileSelect={(img) => setSelectedImage(img)}
+          />
+        )}
       </header>
     </div>
   );

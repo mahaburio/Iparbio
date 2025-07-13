@@ -46,7 +46,7 @@ const UploadImageModal = ({ isOpen, onClose, onFileSelect }) => {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} className="uploadFile">
+    <Modal isOpen={isOpen} onClose={onClose} className="uploadFile ">
       <div className="modal-header ">
         <h5>Image Upload</h5>
       </div>

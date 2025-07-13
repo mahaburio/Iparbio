@@ -5376,7 +5376,7 @@ input.alertInput {
 
 /* ? Upload Image Modal */
 
-.uploadFile .modal-dialog {
+.uploadFile {
   max-width: 550px;
   width: 550px;
 }

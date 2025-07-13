@@ -18,6 +18,7 @@
   padding: 25px;
   width: 75%;
   max-width: 900px;
+  overflow: hidden;
   animation: fade-in 0.2s ease forwards;
 }
 
@@ -37,10 +38,20 @@
   max-width: 800px;
 }
 
-.xxl-modal {
+.xl-modal {
   width: 75%;
   max-width: 75%;
   height: auto;
+  max-height: 95%;
+  overflow-y: auto;
+}
+
+.xxl-modal {
+  width: 75%;
+  max-width: 75%;
+  height: 95%;
+  max-height: 95%;
+  overflow-y: auto;
 }
 
 .fullscreen-modal {
@@ -101,7 +112,6 @@
   color: var(--gray-100);
   z-index: 66;
 }
-
 
 @media screen and (max-width: 768px) {
   .custom-modal {

@@ -16,7 +16,7 @@ import CycleBonusItem from '../../components/dashboard/CycleBonusItem'
 import VolumePersonal from '../../components/dashboard/VolumePersonal'
 
 
-const EnrollmentNetwork = () => {
+const PerformanceReport = () => {
 
 
   const handleOptionClick = (option) => {
@@ -276,4 +276,4 @@ const EnrollmentNetwork = () => {
 }
 
 
-export default EnrollmentNetwork
+export default PerformanceReport
