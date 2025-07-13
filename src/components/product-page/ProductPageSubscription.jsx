@@ -10,6 +10,8 @@ function ProductPageSubscription({
   GoCart = true,
   ProductTitle = true,
   products = [],
+  btn = true,
+  btnSubscribe = false
 
 }) {
   useEffect(() => {
@@ -104,8 +106,8 @@ function ProductPageSubscription({
                       quantityPicker={true}
                       productSizePicker={false}
                       subscriptionSetup = {true}
-                      btn={false}
-                      btnSubscribe = {true}
+                      btn={btn}
+                      btnSubscribe = {btnSubscribe}
                     />
                   ))}
                 </div>

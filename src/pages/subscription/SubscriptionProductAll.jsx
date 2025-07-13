@@ -173,6 +173,8 @@ const SubscriptionProductAll = () => {
                   ProductTitle={false}
                   products={SubscriptionProducts}
                   GoCart={false}
+                  btn={false}
+                  btnSubscribe={true}
                 />
 
                 <div className="container">

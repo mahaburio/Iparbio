@@ -72,7 +72,7 @@ const ProductAll = [
       <div className="product_page shopPage">
         <Header AllSidebar={false} AllSidebarForMobile={false} />
 
-        <ProductPageSubscription navigation={true}  products={ProductAll} />
+        <ProductPageSubscription navigation={true} btn={true} btnSubscribe={false} products={ProductAll} />
         <Help />
         <Footer footerDefault={true} />
       </div>

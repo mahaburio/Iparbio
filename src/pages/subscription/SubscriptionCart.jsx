@@ -8,6 +8,7 @@ import { CartSummary } from "../../components/product-page/CartSummery.jsx";
 import '../../styles/pages/signuppage.css'
 import { Header } from "../../components/index.js";
 import MainWrapper from "../../components/common/Mainwrapper.jsx";
+import Footer from "../../components/footer/footer.jsx";
 
 const featuredProducts = [
   {
@@ -167,8 +168,10 @@ function SubscriptionCart() {
           </section>
 
           <ProductSliderInitialize title='You may also like' data={featuredProducts} quantityPicker productSizePicker={false} subscriptionSetup={true} btn={false} btnSubscribe={true} />
-
+                
         </div>
+
+        <Footer footerOnlyDesc={true} footerDefault={false} />
 
       </MainWrapper>
     </>

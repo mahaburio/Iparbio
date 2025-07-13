@@ -69,7 +69,7 @@ const SubscriptionOrder = () => {
     <MainWrapper>
       <div className='signup_page ipar_elite'>
         <HeaderIntialize pvBars={false} Sponsor={true} />
-         <ProductPageSubscription navigation={true} products={ProductAll} />
+         <ProductPageSubscription navigation={true} btn={false} btnSubscribe={true} products={ProductAll} />
         <Footer footerOnlyDesc={true} footerDefault={false} />
       </div>
     </MainWrapper>
