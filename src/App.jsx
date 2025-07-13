@@ -47,7 +47,7 @@ import { RankUpReportDeca, RankUpReportMonth } from './pages/enrollment/RankUpMo
 import SubscriptionOrder from './pages/subscription/SubscriptionOrder';
 import SubscriptionProductAll from './pages/subscription/SubscriptionProductAll';
 import SubscriptionCart from './pages/subscription/SubscriptionCart';
-import { SubscriptionOrderHistory } from './pages/subscription/SubscriptionOrderHistory';
+import SubscriptionOrderHistory from './pages/subscription/SubscriptionOrderHistory';
 import BusinessReport from './pages/dashboard/BusinessReport';
 import Performance from './pages/dashboard/Performance';
 import Qualification from './pages/dashboard/Qualification';
@@ -174,7 +174,7 @@ function App() {
         <Route path='/subscription-order' element={<SubscriptionOrder />}></Route>
         <Route path='/subscription-product-all' element={<SubscriptionProductAll />}></Route>
         <Route path='/subscription-cart' element={<SubscriptionCart />}></Route>
-        <Route path='/order-history' element={<SubscriptionOrderHistory />}></Route>
+        <Route path='/subscription-order-history' element={<SubscriptionOrderHistory />}></Route>
 
         {/* ALl Report */}
 

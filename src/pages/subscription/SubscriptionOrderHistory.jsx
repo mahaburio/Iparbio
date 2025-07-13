@@ -8,7 +8,7 @@ import CheckoutCardsInitialize from '../../components/common/CheckoutCards'
 import ProductSliderInitialize from '../../components/slider/ProductSlider'
 
 
-export const SubscriptionOrderHistory = () => {
+const SubscriptionOrderHistory = () => {
 
 
   const featuredProducts = [
@@ -102,3 +102,5 @@ export const SubscriptionOrderHistory = () => {
     </div>
   )
 }
+
+export default SubscriptionOrderHistory

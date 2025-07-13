@@ -6,6 +6,8 @@ import CartItem from '../../components/product-page/CartItem.jsx';
 import { CartSummary } from "../../components/product-page/CartSummery.jsx";
 
 import '../../styles/pages/signuppage.css'
+import { Header } from "../../components/index.js";
+import MainWrapper from "../../components/common/Mainwrapper.jsx";
 
 const featuredProducts = [
   {
@@ -106,64 +108,70 @@ function SubscriptionCart() {
   };
 
   return (
+    <>
 
 
-    <div className=" product_cart product_page shopPage">
+      <MainWrapper>
+        <Header />
+        <div className=" product_cart product_page shopPage">
 
 
-      <section className="order-cart-section">
-        <div className="container mt-5">
-          <div className="review-txt">Review order:</div>
-        </div>
-        <div className="container mt-4 cart-container">
-          <div className="row">
-            <div className="col-lg-7 col-md-12 pe-4">
-              <h3>Your Cart (6 items)</h3>
+          <section className="order-cart-section">
+            <div className="container mt-5">
+              <div className="review-txt">Review order:</div>
+            </div>
+            <div className="container mt-4 cart-container">
+              <div className="row">
+                <div className="col-lg-7 col-md-12 pe-4">
+                  <h3>Your Cart (6 items)</h3>
 
-              <div className="all-cart-items">
-                {cartItems.map(item => (
-                  <CartItem
-                    key={item.id}
-                    name={item.name}
-                    price={item.price}
-                    image={item.image}
-                    quantity={item.quantity}
-                    itemCode={item.itemCode}
-                    showControls={item.showControls}
-                    onDelete={() => handleDelete(item.id)}
-                    editOptions={item.editOptions}
-                    onQuantityChange={(qty) => handleQuantityChange(item.id, qty)}
-                    subscribeControls={true}
-                    updateItem={false}
+                  <div className="all-cart-items">
+                    {cartItems.map(item => (
+                      <CartItem
+                        key={item.id}
+                        name={item.name}
+                        price={item.price}
+                        image={item.image}
+                        quantity={item.quantity}
+                        itemCode={item.itemCode}
+                        showControls={item.showControls}
+                        onDelete={() => handleDelete(item.id)}
+                        editOptions={item.editOptions}
+                        onQuantityChange={(qty) => handleQuantityChange(item.id, qty)}
+                        subscribeControls={true}
+                        updateItem={false}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <div className="col-lg-5 col-md-12">
+                  <CartSummary
+                    // Country Currency Code here
+                    title="Cart Summary"
+                    currency="USD"
+                    summaryItems={[
+                      { id: 1, title: 'Subtotal (8 items)', amount: 500.22 },
+                      { id: 2, title: 'Discount', amount: 0, /* hide: true  */ },
+                      { id: 3, title: 'Free Shipping Applied', amount: 0 },
+                      { id: 4, title: 'Tax', amount: 0 },
+                      { id: 5, title: 'Total amount', amount: 700.00, isTotal: true },
+                    ]}
                   />
-                ))}
+                </div>
+
+              </div>
+              <div className="btn-sec my-5 text-end">
+                <button className="black-btn mt-3"><a href="../html/customer-sign-in.html">Checkout</a></button>
               </div>
             </div>
-            <div className="col-lg-5 col-md-12">
-              <CartSummary
-                // Country Currency Code here
-                title="Cart Summary"
-                currency="USD"
-                summaryItems={[
-                  { id: 1, title: 'Subtotal (8 items)', amount: 500.22 },
-                  { id: 2, title: 'Discount', amount: 0, /* hide: true  */ },
-                  { id: 3, title: 'Free Shipping Applied', amount: 0 },
-                  { id: 4, title: 'Tax', amount: 0 },
-                  { id: 5, title: 'Total amount', amount: 700.00, isTotal: true },
-                ]}
-              />
-            </div>
+          </section>
 
-          </div>
-          <div className="btn-sec my-5 text-end">
-            <button className="black-btn mt-3"><a href="../html/customer-sign-in.html">Checkout</a></button>
-          </div>
+          <ProductSliderInitialize title='You may also like' data={featuredProducts} quantityPicker productSizePicker={false} subscriptionSetup={true} btn={false} btnSubscribe={true} />
+
         </div>
-      </section>
 
-      <ProductSliderInitialize title='You may also like' data={featuredProducts} quantityPicker productSizePicker={false} subscriptionSetup={true} btn={false} btnSubscribe={true} />
-
-    </div>
+      </MainWrapper>
+    </>
   );
 }
 

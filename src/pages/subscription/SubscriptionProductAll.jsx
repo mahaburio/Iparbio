@@ -100,7 +100,7 @@ const SubscriptionProductAll = () => {
   return (
     <MainWrapper>
       <div>
-        <HeaderIntialize Sponsor={true} />
+        <HeaderIntialize  AllSidebar = {false} AllSidebarForMobile = {false}  Sponsor={true} />
 
         <div className="shopPage subscription_all">
           <section className="activation-section">
