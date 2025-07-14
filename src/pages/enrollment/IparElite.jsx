@@ -405,9 +405,6 @@ export const IparEliteJourney = () => {
   )
 }
 
-
-
-
 export const IparEliteDoctor = () => {
 
 

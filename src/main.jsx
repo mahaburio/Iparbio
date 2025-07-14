@@ -30,7 +30,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 // Style
-
+import './styles/about.css'
 import './styles/style.css'; 
 
 

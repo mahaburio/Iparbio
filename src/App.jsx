@@ -70,6 +70,11 @@ import Membership from './pages/dashboard/Membership';
 import Share from './pages/dashboard/Share';
 import Invite from './pages/main/Invite';
 import MyDashboard from './pages/dashboard/MyDashboard';
+import AboutUs from './pages/about/AboutUs';
+import Community from './pages/about/Community';
+import ContactUs from './pages/about/ContactUs';
+
+// About
 
 
 function App() {
@@ -201,6 +206,11 @@ function App() {
         <Route path='/membership' element={<Membership />}></Route>
         <Route path='/share' element={<Share />}></Route>
         <Route path='/invite' element={<Invite />}></Route>
+
+        {/* ABout */}
+        <Route path='/about-us' element={<AboutUs />}></Route>
+        <Route path='/community' element={<Community />}></Route>
+        <Route path='/contact-us' element={<ContactUs />}></Route>
 
         {/* Optionally add a 404 Not Found route */}
         <Route path="*" element={<h2>Page Not Found</h2>} />

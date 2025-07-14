@@ -197,7 +197,7 @@ export default function ProductHeroSection({
                     <div className="details-type delivery-date mt-3">
                       <div className="type-nm">Delivery Date:</div>
                       <div className="dts-rt">
-                        <div className="date-im d-flex gap-2">
+                        <div className="date-im d-flex gap-2 align-items-center">
                           <DatePicker
                             ref={datePickerRef}
                             value={deliveryDate}
