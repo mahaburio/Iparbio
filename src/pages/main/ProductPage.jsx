@@ -34,8 +34,6 @@ const featuredProducts = [
     price: "$80",
     colors: ["#d5ccc3", "#c28170", "#b16c6d", "#c28170", "#b16c6d", "#c28170", "#b16c6d", "#c28170", "#b16c6d"],
 
-
-
   },
 
   {

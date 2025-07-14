@@ -2952,7 +2952,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .team-manager-body li {
-  
   background-color: var(--gray-f3);
   color: var(--text-gray);
   margin-top: 10px;
@@ -4567,7 +4566,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: none;
 }
 
-.edit-str-itm .str-details .options-list{
+.edit-str-itm .str-details .options-list {
   max-height: 300px;
 }
 
@@ -4719,9 +4718,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-weight: 600;
 }
 
-.tip-cards {
-}
-
 .tip-cards .tip-card-itm {
   border: 1px solid var(--gray-40);
   padding: 15px;
@@ -4748,7 +4744,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .share-details .head-title {
   font-size: 18px;
   color: var(--green-color);
-  border-bottom: 3px solid #ddd;
   font-weight: 500;
   padding-bottom: 8px;
   display: -webkit-box;
@@ -4868,6 +4863,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   overflow-y: auto;
 }
 
+.share-details .qnt {
+  display: none;
+}
+
 .sharing-before .list-items .list-itm .delete {
   font-size: 22px;
   color: var(--green-color);
@@ -4910,13 +4909,29 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: relative;
   margin-bottom: 60px;
   border: none;
+}
+
+.share-details .all-cart-items .allcartAddedHere {
   max-height: 500px;
   overflow-y: auto;
+}
+
+
+.share-details .all-cart-items .allcartAddedHere .edit-tool{
+  display: none;
+}
+
+
+.cart-item.hide {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .all-cart-items .cart-item:first-child {
   border-top: 3px solid #ddd;
 }
+
 
 /* ? Subtotal Black card */
 .share-details .all-cart-items .subtotal {
@@ -4957,6 +4972,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: var(--green-color);
   border: 2px solid var(--green-color);
   border-radius: 50%;
+}
+
+.share-details .cartListBox{
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 /* ! ~~~~~~~~~~~~~~~~ WEBSITE SETTING PAGE ~~~~~~~~~~~~~~~ */
@@ -5518,12 +5538,12 @@ input.alertInput {
   display: none;
 }
 
-#addProductsModal .modal-body .all-cart-items{
+#addProductsModal .modal-body .all-cart-items {
   max-height: 300px;
   overflow-y: auto;
 }
 
-#addProductsModal .input-wrapper{
+#addProductsModal .input-wrapper {
   height: 40px;
   padding: 0px 10px;
 }
@@ -5531,8 +5551,6 @@ input.alertInput {
 .website-page header {
   position: relative;
 }
-
-
 
 /* ? MY story */
 
@@ -6252,7 +6270,6 @@ input.alertInput {
   pointer-events: none;
 }
 
-
 .recipientModal .modal-body .header {
   color: var(--gray-100);
 }
@@ -6327,7 +6344,7 @@ input.alertInput {
   color: var(--black-100);
   outline: none;
   border: none;
-  padding: 8px ;
+  padding: 8px;
   padding-left: 12px;
 }
 
@@ -6429,9 +6446,6 @@ td {
 
 /* ? Dropdown container start here */
 
-
-
-
 .select-box {
   position: relative;
   width: 220px;
@@ -6483,7 +6497,7 @@ td {
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 666;
-    height: auto;
+  height: auto;
   overflow-y: auto;
 }
 
@@ -6701,14 +6715,11 @@ td {
 
 .addRemovePhoneN .inp-sec .lb-in {
   width: 300px;
-
 }
 
 .addRemovePhoneN .inp-sec .react-tel-input {
   width: 300px;
-
 }
-
 
 .addRemovePhoneN .inp-sec .dts .remove {
   cursor: pointer;
@@ -7205,8 +7216,7 @@ td {
     width: 100%;
   }
 
-  .contact-info .lb-in{
-
+  .contact-info .lb-in {
     width: 100%;
     max-width: 100%;
   }
@@ -7256,11 +7266,10 @@ td {
     font-size: 14px;
   }
 
-
   .addRemovePhoneN .inp-sec .dts {
-  width: 100%;
-  flex-wrap: wrap;
-}
+    width: 100%;
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 450px) {

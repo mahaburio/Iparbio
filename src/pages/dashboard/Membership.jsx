@@ -3,6 +3,7 @@ import HeaderDashboard from "../../components/header/HeaderDashboard";
 import SideNav from "../../components/enrollment/Sidenav/SideNav";
 import CardGridItem from "../../components/dashboard/CardGridItem";
 import Footer from "../../components/footer/footer";
+import TreeViewAndReport from "../../components/dashboard/TreeViewAndReport";
 
 const businessCenters = ["BC1-401", "BC2-401", "BC3-401", "BC4-401", "BC5-401"];
 const dropdownOptions = ["9851", "5894", "1545", "9854", "9710"];
@@ -26,16 +27,7 @@ const Membership = () => {
   if (key === "membership") {
     return (
       <div className="custom-membership-section mt-4">
-        <h5 className="mb-3">Membership Section</h5>
-        <p>
-          You can place any content here, such as instructional text, statistics,
-          charts, or forms for your membership setup.
-        </p>
-        <ul>
-          <li>Benefit 1: Direct discounts</li>
-          <li>Benefit 2: Early access</li>
-          <li>Benefit 3: Personalized dashboard</li>
-        </ul>
+        <TreeViewAndReport />
       </div>
     );
   }
@@ -199,3 +191,7 @@ const Membership = () => {
 };
 
 export default Membership;
+
+
+
+

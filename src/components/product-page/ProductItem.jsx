@@ -13,7 +13,8 @@ const ProductItem = ({
   productSizePicker = false,
   btn = true,
   subscriptionSetup = false,
-  btnSubscribe = false
+  btnSubscribe = false,
+  btnCopyLink = false
 }) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("");
@@ -114,6 +115,14 @@ const ProductItem = ({
               <div className="btn-sec text-center">
                 <button className="green-btn green-btn-sm mt-1" onClick={handleAddToCart}>
                   Subscribe
+                </button>
+              </div>
+            )}
+
+            {btnCopyLink && (
+              <div className="btn-sec text-center">
+                <button className="green-btn green-btn-sm mt-1" onClick={handleAddToCart}>
+                  Copylink
                 </button>
               </div>
             )}

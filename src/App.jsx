@@ -55,7 +55,6 @@ import MonthlyReport from './pages/dashboard/MonthlyReport';
 import EnrollmentReport from './pages/dashboard/EnrollmentReport';
 import OrderHistoryReport from './pages/dashboard/OrderHistoryReport';
 import Coupons from './pages/dashboard/Coupons';
-import EnrollmentNetwork from './pages/dashboard/PerformanceReport';
 import VolumeReport from './pages/dashboard/VolumeReport';
 import PaymentStatement from './pages/dashboard/PaymentStatement';
 import WebsiteSetting from './pages/dashboard/WebsiteSetting';
@@ -68,6 +67,9 @@ import Library from './components/dashboard/Library';
 import EnrollmentNetworkView from './pages/enrollment/EnrollmentNetworkView';
 import PerformanceReport from './pages/dashboard/PerformanceReport';
 import Membership from './pages/dashboard/Membership';
+import Share from './pages/dashboard/Share';
+import Invite from './pages/main/Invite';
+import MyDashboard from './pages/dashboard/MyDashboard';
 
 
 function App() {
@@ -161,22 +163,20 @@ function App() {
         <Route path='/elite-journey' element={<IparEliteJourney />}></Route>
         <Route path='/elite-doctor' element={<IparEliteDoctor />}></Route>
         <Route path='/ipar-user-info' element={<IparUserInfo />}></Route>
-        
         <Route path='/upline' element={<UplineLeaderPlacementPage />}></Route>
         <Route path='/forms' element={<FormsAndDocuments />}></Route>
         <Route path='/resource-center-login' element={<ResourceCenterLogin />}></Route>
-        
         <Route path='/rankup-report-deca' element={<RankUpReportDeca />}></Route>
         <Route path='/rankup-report-month' element={<RankUpReportMonth />}></Route>
         
-        
+        {/* Subscription */}
         <Route path='/subscription' element={<SubscriptionPc />}></Route>
         <Route path='/subscription-order' element={<SubscriptionOrder />}></Route>
         <Route path='/subscription-product-all' element={<SubscriptionProductAll />}></Route>
         <Route path='/subscription-cart' element={<SubscriptionCart />}></Route>
         <Route path='/subscription-order-history' element={<SubscriptionOrderHistory />}></Route>
 
-        {/* ALl Report */}
+        {/* Dasboard Report */}
 
         <Route path='/business-report' element={<BusinessReport />}></Route>
         <Route path='/performance' element={<Performance />}></Route>
@@ -192,14 +192,15 @@ function App() {
         <Route path='/manage-profiles' element={<ManageProfiles />}></Route>
         <Route path='/ewallet' element={<EWallet />}></Route>
         <Route path='/resources' element={<Resources />}></Route>
+        <Route path='/dashboard' element={<MyDashboard />}></Route>
         
         <Route path='/resources-faq' element={<ResourcesFaq />}></Route>
         <Route path='/resources-contact' element={<ResourcesContacts />}></Route>
         <Route path='/library' element={<Library />}></Route>
         <Route path='/enrollment-network' element={<EnrollmentNetworkView />}></Route>
         <Route path='/membership' element={<Membership />}></Route>
-
-
+        <Route path='/share' element={<Share />}></Route>
+        <Route path='/invite' element={<Invite />}></Route>
 
         {/* Optionally add a 404 Not Found route */}
         <Route path="*" element={<h2>Page Not Found</h2>} />

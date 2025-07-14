@@ -2,7 +2,7 @@ import React from 'react';
 
 const EnrollmentNetworkReport = ({ selectedBC, currentData }) => {
   return (
-    <div className="container mb-5">
+    <div className="container mt-5">
       <div className="dataTable">
         <table id="bcTable">
           <thead>

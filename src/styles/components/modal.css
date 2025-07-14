@@ -31,6 +31,13 @@
   width: 550px;
   max-width: 500px;
   padding: 40px 30px;
+  max-height: 95vh;
+
+}
+
+.medium-modal .modal-content{
+  max-height: 95vh;
+  overflow-y: auto;
 }
 
 .large-modal {

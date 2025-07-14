@@ -1,13 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-
 import { BiSolidPencil } from "react-icons/bi";
 import { BsTrash3 } from "react-icons/bs";
 import QuantityPicker from "./QuantityPicker";
-
 import Modal from "../common/PopupModal";
 import ProductDetails from "./ProductDetaills";
-
-import '../../styles/pages/signuppage.css';
+import "../../styles/pages/signuppage.css";
 
 const CartItem = ({
   name,
@@ -23,27 +20,22 @@ const CartItem = ({
   updateItem = true,
   ForAddProduct = false,
   onAdd,
-
+  AddItemList = false,
+  onAddToList,
+  removing = false,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleEdit = () => {
-    setIsModalOpen(true);
-  };
+  const handleEdit = () => setIsModalOpen(true);
+  const handleClose = () => setIsModalOpen(false);
 
-  const handleClose = () => {
-    setIsModalOpen(false);
-  };
-
-  // Sample color and size options (could be passed from parent in the future)
-  const colors = ["#d5ccc3", "#c28170", "#b16c6d", '#c28270', '#c28180'];
+  const colors = ["#d5ccc3", "#c28170", "#b16c6d", "#c28270", "#c28180"];
   const sizes = [
     { fl: "21 FL OZ", ml: "500 ML" },
     { fl: "12 FL OZ", ml: "355 ML" },
     { fl: "21 FL OZ", ml: "400 ML" },
     { fl: "12 FL OZ", ml: "655 ML" },
   ];
-
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState("1 Month Common");
@@ -64,10 +56,9 @@ const CartItem = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-
   return (
     <>
-      <div className="cart-item d-flex justify-content-between align-items-center py-2">
+      <div className={`cart-item d-flex justify-content-between align-items-center py-2 ${removing ? "hide" : ""}`}>
         <div className="left d-flex align-items-center gap-2">
           <div className="p-img">
             <img src={image} alt={name} />
@@ -79,58 +70,73 @@ const CartItem = ({
           </div>
         </div>
 
+        {/* Right Controls */}
         <div className={`right d-flex align-items-center ${showControls ? "gap-3" : ""}`}>
-          {showControls ? (
+          {showControls && (
             <>
               <BiSolidPencil
                 fontSize={30}
                 color="var(--green-color)"
                 onClick={handleEdit}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: "pointer" }}
                 className="edit-tool"
               />
-              <QuantityPicker initial={quantity} onChange={onQuantityChange} defaultSaved={true} saveListClass="savelistCircle" />
+              <QuantityPicker
+                initial={quantity}
+                onChange={onQuantityChange}
+                defaultSaved={true}
+                saveListClass="savelistCircle"
+              />
               <div className="cross-item d-flex align-items-center" onClick={onDelete}>
                 <BsTrash3 fontSize={24} color="var(--green-color)" />
               </div>
-
-
             </>
-          ) : (
-            <span className="qnt">Quantity: {quantity}</span>
           )}
 
+          {!showControls && <span className="qnt">Quantity: {quantity}</span>}
         </div>
 
-
+        {/* For Add Product Layout */}
         {ForAddProduct && (
-          <div className="right d-flex align-items-center gap-3 ">
-            <>
-              <QuantityPicker initial={quantity} onChange={onQuantityChange} defaultSaved={true} saveListClass="savelistCircle" />
+          <div className="right d-flex align-items-center gap-3">
+            <QuantityPicker
+              initial={quantity}
+              onChange={onQuantityChange}
+              defaultSaved={true}
+              saveListClass="savelistCircle"
+            />
+            <div className="cross-item d-flex align-items-center" onClick={onDelete}>
+              <BsTrash3 fontSize={24} color="var(--green-color)" />
+            </div>
+            <div className="btn-sec">
+              <button className="green-btn green-btn-sm" onClick={onAdd}>
+                Add
+              </button>
+            </div>
+          </div>
+        )}
 
-              <div className="cross-item d-flex align-items-center" onClick={onDelete}>
-                <BsTrash3 fontSize={24} color="var(--green-color)" />
-              </div>
-
-              <div className="btn-sec">
-                <button className="green-btn green-btn-sm" onClick={onAdd}>Add</button>
-              </div>
-            </>
+        {/* Add to Share List Layout */}
+        {AddItemList && (
+          <div className="right d-flex align-items-center gap-3">
+            <div className="add-listItems d-flex align-items-center gap-1" onClick={onAddToList}>
+              <div className="add-list">Add to List</div>
+              <div className="icon">+</div>
+            </div>
           </div>
         )}
       </div>
 
-
-      {/* Modal for editing product details */}
+      {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={handleClose} className="medium-modal">
         <div className="product_cart_modal">
           <ProductDetails
             itemNumber={itemCode}
             title={name}
-            description={`Edit your ${name} product`} // optional
+            description={`Edit your ${name} product`}
             newPrice={price}
-            preferredPrice={"75"} // optional
-            learnMoreLink={"#"} // optional
+            preferredPrice={"75"}
+            learnMoreLink={"#"}
             instruction={"You can customize this product."}
             instructionSec={true}
             colorOptions={editOptions.showColor}
@@ -138,7 +144,6 @@ const CartItem = ({
             colors={colors}
             sizes={sizes}
             QuantityToggle={true}
-
           />
         </div>
 
@@ -152,12 +157,9 @@ const CartItem = ({
           <>
             <div className="product_cart_modal">
               <div className="subscribe d-flex align-items-center gap-2 flex-wrap">
-                <b>Subscribe: </b> Arrives every
+                <b>Subscribe:</b> Arrives every
                 <div className="dropdown-container" ref={dropdownRef}>
-                  <span
-                    className="dropdown-btn green-title"
-                    onClick={() => setIsOpen(!isOpen)}
-                  >
+                  <span className="dropdown-btn green-title" onClick={() => setIsOpen(!isOpen)}>
                     {selectedValue}
                   </span>
                   {isOpen && (
@@ -182,8 +184,6 @@ const CartItem = ({
             </div>
           </>
         )}
-
-
       </Modal>
     </>
   );

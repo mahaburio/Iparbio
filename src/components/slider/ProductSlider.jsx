@@ -20,6 +20,7 @@ const ProductSliderInitialize = ({
   btn = true,
   btnSubscribe = false,
   subscriptionSetup = false,
+  btnCopyLink = false,
   data = [],
 }) => {
   const sliderRef = useRef(null);
@@ -109,6 +110,7 @@ const ProductSliderInitialize = ({
                 btn={btn}
                 btnSubscribe={btnSubscribe}
                 subscriptionSetup={subscriptionSetup}
+                btnCopyLink = {btnCopyLink}
               />
             ))}
           </Slider>
