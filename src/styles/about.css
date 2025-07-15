@@ -1,14 +1,10 @@
-
-
-
-.about_us .menu-item .right-items{
+.about_us .menu-item .right-items {
   display: none;
 }
 
 /* TODO ~~~~~~~~~~~~~~~ ABOUT-US ENGLISH ~~~~~~~~~~~~~~~~ */
 
 .about_us .hero-section .container {
-  height: 727px;
   width: 100%;
   background-image: url("../images/ipar-office.webp");
   background-repeat: no-repeat;
@@ -225,7 +221,7 @@
 /* ! ~~~~~~~~~~~ INNOVATION PAGE ~~~~~~~~~~~ */
 
 .innovation_page .hero-section .container {
-  background-image: url("../assets/innovation-hero.png");
+  background-image: url("../images/innovation-hero.webp");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -421,7 +417,7 @@
 
 .quality-control-sec .container {
   min-height: 450px;
-  background-image: url("../assets/green-white.png");
+  background-image: url("../images/green-white.webp");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 850px;
@@ -482,12 +478,12 @@
   color: var(--gray-100);
 }
 
-.quality-control-sec .testtube{
+.quality-control-sec .testtube {
   height: 400px;
   width: 100%;
 }
 
-.quality-control-sec .testtube img{
+.quality-control-sec .testtube img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -497,7 +493,7 @@
 
 .benzin-sec .container {
   min-height: 540px;
-  background-image: url("../assets/_DSC4511\ \(2\).png");
+  background-image: url("../images/dsc.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -530,7 +526,7 @@
 .quality-control .container {
   height: 500px;
   width: 100%;
-  background-image: url("../assets/quality-controll.png");
+  background-image: url("../images/quality-controll.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -730,6 +726,10 @@
   gap: 20px;
 }
 
+.kids-card-section p {
+  font-size: 16px;
+}
+
 .donation_page .gallery-itm {
   position: relative;
 }
@@ -828,7 +828,7 @@
   font-size: 18px;
 }
 
-.donation_page .timeline-ver-card .timeline-item:last-child {
+.donation_page .timeline-with-btn .timeline-ver-card .timeline-item:last-child {
   justify-content: center;
 }
 
@@ -1131,7 +1131,7 @@
 
   .quality-control-sec .container {
     min-height: 450px;
-    background-image: url("../assets/green-white.png");
+    background-image: url("../images/green-white.webp");
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: cover;
@@ -1181,6 +1181,7 @@
     flex-direction: column;
     text-align: left;
     align-items: start;
+    display: flex;
   }
 
   #timelineCard .timeline-item .content .content-card h3 {
@@ -1210,6 +1211,18 @@
 
   .locations .right {
     width: 100%;
+  }
+
+  #horizontalCard .timeline-item:nth-child(2n-1) .content::after {
+    display: none;
+  }
+
+  #horizontalCard .timeline-item:nth-child(2n) .content::after {
+    display: none;
+  }
+
+  .timeline-ver-card .btn-sec {
+    margin-top: 100px !important;
   }
 }
 

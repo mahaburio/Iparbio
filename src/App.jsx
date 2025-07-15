@@ -73,6 +73,13 @@ import MyDashboard from './pages/dashboard/MyDashboard';
 import AboutUs from './pages/about/AboutUs';
 import Community from './pages/about/Community';
 import ContactUs from './pages/about/ContactUs';
+import Donation from './pages/about/Donation';
+import Innovation from './pages/about/Innovation';
+import AboutUsRu from './pages/about/AboutUsRu';
+import CommunityRU from './pages/about/CommunityRu';
+import ContactUsRu from './pages/about/ContactUsRu';
+import InnovationRU from './pages/about/InnovationRu';
+import DonationRU from './pages/about/DontationRu';
 
 // About
 
@@ -210,7 +217,16 @@ function App() {
         {/* ABout */}
         <Route path='/about-us' element={<AboutUs />}></Route>
         <Route path='/community' element={<Community />}></Route>
+        <Route path='/donation' element={<Donation />}></Route>
         <Route path='/contact-us' element={<ContactUs />}></Route>
+        <Route path='/innovation' element={<Innovation />}></Route>
+
+        <Route path='/ru/about-us' element={<AboutUsRu />}></Route>
+        <Route path='/ru/community' element={<CommunityRU />}></Route>
+        <Route path='/ru/contact-us' element={<ContactUsRu />}></Route>
+        <Route path='/ru/innovation' element={<InnovationRU />}></Route>
+        <Route path='/ru/donation' element={<DonationRU />}></Route>
+
 
         {/* Optionally add a 404 Not Found route */}
         <Route path="*" element={<h2>Page Not Found</h2>} />
@@ -220,3 +236,7 @@ function App() {
 }
 
 export default App;
+
+
+
+

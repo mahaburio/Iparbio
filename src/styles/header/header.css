@@ -103,6 +103,11 @@ header .customize-sec .group-list .list-body .ct-img {
   display: none;
 }
 
+header .customize-sec .scrolling-section{
+  overflow-y: auto;
+  max-height: 100%;
+}
+
 header .customize-sec .close-menu {
   font-size: 26px;
   font-weight: 500;
@@ -343,7 +348,7 @@ header .menu-item .nav-list .main-listed-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: 16px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -357,9 +362,10 @@ header .menu-item .nav-list .main-listed-wrapper {
   -o-transition: 0.2s ease;
   transition: 0.2s ease;
   font-weight: 400;
+  margin-top: 18px;
 }
 
-#myAccountDetails .acc-item .icon {
+#myAccountDetails .acc-item .icon-logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -372,12 +378,13 @@ header .menu-item .nav-list .main-listed-wrapper {
   background-color: transparent;
 }
 
-#myAccountDetails .acc-item .icon svg {
+
+#myAccountDetails .acc-item .icon-logo svg {
   height: 26px;
   width: 26px;
 }
 
-#myAccountDetails .acc-item .icon svg path {
+#myAccountDetails .acc-item .icon-logo svg path {
   fill: var(--gray-40);
   -webkit-transition: 0.2s ease;
   -o-transition: 0.2s ease;

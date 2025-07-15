@@ -28,8 +28,6 @@ const AboutUs = () => {
     ],
   };
 
-
-
   const cardData = [
     {
       image: "/images/innovation-in.webp",
@@ -139,7 +137,7 @@ A Brighter World.`}
             {/* Right Image */}
             <div
               className="col-lg-5 mt-lg-0 mt-5 d-flex align-items-center justify-content-center"
-              data-aos="fade-left"
+        
             >
               <div className="img">
                 <img className="w-100" src={sectionData.mainImage} alt="Wellness Innovation" />

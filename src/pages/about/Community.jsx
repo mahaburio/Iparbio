@@ -198,10 +198,10 @@ const Community = () => {
 
       <section class="grid-gallery-section mt-4">
         <div class="container">
-          <h1 class="black fw-medium text-center aos-init aos-animate" data-aos="fade-up">
+          <h1 class="black fw-medium text-center">
             Be Part of Something Bigger
           </h1>
-          <p class="gray text-center mt-3 aos-init aos-animate" data-aos="fade-down">
+          <p class="gray text-center mt-3" >
             Be a part of a community that champions science-backed wellness,
             sustainable living, and a healthier future. At IPAR, every choice
             you make—for your health, your lifestyle, and the planet—creates a

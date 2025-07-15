@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/hero-section/hero.css'
 
-export const HeroSection = ({ title, description, shapeUrl, imageUrl }) => {
+export const HeroSection = ({ title, description, shapeUrl, imageUrl, descTitle, titleShow = false }) => {
   return (
     <section className="hero-section">
       <div className="hero-content pt-5">
@@ -11,6 +11,9 @@ export const HeroSection = ({ title, description, shapeUrl, imageUrl }) => {
             <div className="col-xl-5 col-lg-5 left-content">
               <div className="title" dangerouslySetInnerHTML={{ __html: title }} />
               <div className="desc">{description}</div>
+              {titleShow && (
+                <h2 class="mt-5 black fw-bold">{descTitle}</h2>
+              )}
             </div>
 
             {/* Right Image */}

@@ -41,19 +41,18 @@ const AccordionGroup = ({ title, items = [], defaultOpen = false, screenWidth })
   );
 };
 
-const SidebarAccordion = () => {
+// ✅ Main Component
+const SidebarAccordion = ({ language = "en" }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const sidebarRef = useRef(null);
 
-  // ✅ Update window width on resize
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // ✅ Delegate click for both .allBtn and .categoriesBtn globally
   useEffect(() => {
     const handleShow = (e) => {
       const target = e.target;
@@ -70,11 +69,9 @@ const SidebarAccordion = () => {
     return () => document.removeEventListener("click", handleShow);
   }, []);
 
-  // ✅ Close on outside click
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      const isTrigger =
-        e.target.closest(".allBtn") || e.target.closest(".categoriesBtn");
+      const isTrigger = e.target.closest(".allBtn") || e.target.closest(".categoriesBtn");
 
       if (
         sidebarRef.current &&
@@ -89,10 +86,41 @@ const SidebarAccordion = () => {
     return () => document.removeEventListener("click", handleOutsideClick);
   }, []);
 
-  // ✅ Lock/unlock body scroll
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
+
+  // ✅ Language labels
+  const labels = {
+    en: {
+      newProducts: "New Products",
+      specialOffers: "Special Offers",
+      bestsellers: "Bestsellers",
+      sortBy: "Sort by",
+      benefits: "Benefits",
+      category: "Category",
+      brand: "Brand",
+      sortItems: ["Featured", "Bestselling", "Name", "Lowest Price", "Highest Price"],
+      benefitItems: ["Mood", "Hormone, Sleep", "View all Products"],
+      categoryItems: ["Nutrtions", "Personal Care", "Women's Health", "Eco-home", "All"],
+      brandItems: ["Nutrivero", "Suncella", "HUNAI", "Vertal Orbis", "All"]
+    },
+    ru: {
+      newProducts: "Новые продукты",
+      specialOffers: "Специальные предложения",
+      bestsellers: "Хиты продаж",
+      sortBy: "Сортировать по",
+      benefits: "Польза",
+      category: "Категория",
+      brand: "Бренд",
+      sortItems: ["Рекомендуемые", "Популярные", "Название", "Цена (по возрастанию)", "Цена (по убыванию)"],
+      benefitItems: ["Настроение", "Гормоны и сон", "Просмотреть все продукты"],
+      categoryItems: ["Питание", "Уход за телом", "Женское здоровье", "Эко-дом", "Все"],
+      brandItems: ["Nutrivero", "Suncella", "HUNAI", "Vertal Orbis", "Все"]
+    }
+  };
+
+  const t = labels[language] || labels.en;
 
   return (
     <div
@@ -105,56 +133,45 @@ const SidebarAccordion = () => {
         <i className="ri-close-large-line"></i>
       </div>
 
-      <button className="gray-btn fw-medium w-75 mt-2 text-start">New Products</button>
-      <button className="gray-btn fw-medium w-75 mt-2 text-start">Special Offers</button>
-      <button className="gray-btn fw-medium w-75 mt-2 text-start">Bestsellers</button>
+      <div className="scrolling-section">
+        <button className="gray-btn fw-medium w-75 mt-2 text-start">{t.newProducts}</button>
+        <button className="gray-btn fw-medium w-75 mt-2 text-start">{t.specialOffers}</button>
+        <button className="gray-btn fw-medium w-75 mt-2 text-start">{t.bestsellers}</button>
 
-      <AccordionGroup
-        title="Sort by"
-        defaultOpen={true}
-        screenWidth={windowWidth}
-        items={[
-          { label: "Featured" },
-          { label: "Bestselling" },
-          { label: "Name" },
-          { label: "Lowest Price" },
-          { label: "Highest Price" },
-        ]}
-      />
+        <AccordionGroup
+          title={t.sortBy}
+          defaultOpen={true}
+          screenWidth={windowWidth}
+          items={t.sortItems.map((label) => ({ label }))}
+        />
 
-      <AccordionGroup
-        title="Benefits"
-        screenWidth={windowWidth}
-        items={[
-          { label: "Mood", icon: "../svg/mood.svg" },
-          { label: "Hormone, Sleep", icon: "../svg/bed.svg" },
-          { label: "View all Products", icon: "../svg/bed.svg" },
-        ]}
-      />
+        <AccordionGroup
+          title={t.benefits}
+          screenWidth={windowWidth}
+          items={t.benefitItems.map((label) => ({
+            label,
+            icon: "../svg/bed.svg"
+          }))}
+        />
 
-      <AccordionGroup
-        title="Category"
-        screenWidth={windowWidth}
-        items={[
-          { label: "Nutrtions", icon: "../svg/nutrations.svg" },
-          { label: "Personal Care", icon: "../svg/personal-care.svg" },
-          { label: "Women's Health", icon: "../svg/w-health.svg" },
-          { label: "Eco-home", icon: "../svg/w-health.svg" },
-          { label: "All", icon: "../svg/w-health.svg" },
-        ]}
-      />
+        <AccordionGroup
+          title={t.category}
+          screenWidth={windowWidth}
+          items={t.categoryItems.map((label) => ({
+            label,
+            icon: "../svg/w-health.svg"
+          }))}
+        />
 
-      <AccordionGroup
-        title="Brand"
-        screenWidth={windowWidth}
-        items={[
-          { label: "Nutrivero", icon: "../svg/nutrations.svg" },
-          { label: "Suncella", icon: "../svg/personal-care.svg" },
-          { label: "HUNAI", icon: "../svg/w-health.svg" },
-          { label: "Vertal Orbis", icon: "../svg/w-health.svg" },
-          { label: "All", icon: "../svg/w-health.svg" },
-        ]}
-      />
+        <AccordionGroup
+          title={t.brand}
+          screenWidth={windowWidth}
+          items={t.brandItems.map((label) => ({
+            label,
+            icon: "../svg/w-health.svg"
+          }))}
+        />
+      </div>
     </div>
   );
 };
